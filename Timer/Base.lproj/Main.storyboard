@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-oU-y8n">
+                                <rect key="frame" x="20" y="28" width="100" height="30"/>
+                                <state key="normal" title="Start One-Off">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startOneOffTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QzW-gd-jip"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eas-1I-vDZ">
+                                <rect key="frame" x="20" y="66" width="116" height="30"/>
+                                <state key="normal" title="Start Repeating"/>
+                                <connections>
+                                    <action selector="startRepeatingTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="viA-ZD-0gF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69H-mg-KuR">
+                                <rect key="frame" x="20" y="285" width="46" height="30"/>
+                                <state key="normal" title="Run"/>
+                                <connections>
+                                    <action selector="startUnregisteredTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0pX-cX-cvI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvB-kA-jL8">
+                                <rect key="frame" x="20" y="247" width="149" height="30"/>
+                                <state key="normal" title="Create unregistered"/>
+                                <connections>
+                                    <action selector="createUnregisteredTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EQ8-w0-XvZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihd-hs-b6o">
+                                <rect key="frame" x="20" y="550" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sw4-gt-Z4k"/>
+                                </constraints>
+                                <state key="normal" title="Start Fire"/>
+                                <connections>
+                                    <action selector="startFireDateTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GUb-vo-mVS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RZ-27-Tn7">
+                                <rect key="frame" x="177" y="247" width="83" height="30"/>
+                                <state key="normal" title="Stop All"/>
+                                <connections>
+                                    <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mc6-6S-vyM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ihd-hs-b6o" secondAttribute="bottom" constant="20" id="LL1-28-CJH"/>
+                            <constraint firstItem="Ihd-hs-b6o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zTR-Ek-EMm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="659"/>
+        </scene>
+    </scenes>
+</document>
