@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>16</integer>
+		<key>content</key>
+		<string> 更进一步地，实际工作中，我们更希望通过一个排版文件，来设置需要排版的文字的 </string>
+		<key>color</key>
+		<string>blue</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>16</integer>
+		<key>content</key>
+		<string>字体的大小，颜色。</string>
+		<key>color</key>
+		<string>blue</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>22</integer>
+		<key>content</key>
+		<string> 内容、颜色、字体 </string>
+		<key>color</key>
+		<string>red</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>16</integer>
+		<key>content</key>
+		<string>来自配置文件</string>
+		<key>color</key>
+		<string>black</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>13</integer>
+		<key>content</key>
+		<string>13号字体绿色</string>
+		<key>color</key>
+		<string>green</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>txt</string>
+		<key>size</key>
+		<integer>14</integer>
+		<key>content</key>
+		<string>14号字体,默认颜色</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>img</string>
+		<key>name</key>
+		<string>apple_logo</string>
+		<key>width</key>
+		<integer>138</integer>
+		<key>height</key>
+		<string>153</string>
+	</dict>
+</array>
+</plist>

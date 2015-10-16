@@ -1,0 +1,15 @@
+//
+//  MyCoreTextDemo-Prefix.pch
+//  MyCoreTextDemo
+//
+//  Created by yubinqiang on 15/10/16.
+//  Copyright © 2015年 yubinqiang. All rights reserved.
+//
+
+#ifndef MyCoreTextDemo_Prefix_pch
+#define MyCoreTextDemo_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MyCoreTextDemo_Prefix_pch */

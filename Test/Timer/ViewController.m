@@ -101,7 +101,7 @@
 }
 
 - (void)countedTimerFireMethod:(NSTimer*)theTimer{
-    NSLog(@"%s start at:%@ time count:%@",__PRETTY_FUNCTION__,theTimer.userInfo[@"StartDate"],@(++self.timerCount ).stringValue);
+    NSLog(@"%s start at:%@ time count:%@",__PRETTY_FUNCTION__,theTimer.userInfo[@"StartDate"],@(self.timerCount++).stringValue);
     if (self.timerCount > 3) {
         [theTimer invalidate];
     }
