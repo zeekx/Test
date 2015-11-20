@@ -8,6 +8,8 @@
 
 #import "KSCTData.h"
 #import "KSCTImageData.h"
+@interface KSCTData ()
+@end
 
 @implementation KSCTData
 + (KSCTData *)data {
@@ -36,14 +38,19 @@
         if (imageArray.count == 0) {
             return;
         }
+    } else {
+        KSAssert(NO);
     }
+    
     NSArray *lines = (NSArray *)CTFrameGetLines(self.ctFrame);
+
     CGPoint linesOrigin[lines.count];
     CTFrameGetLineOrigins(self.ctFrame, CFRangeMake(0, 0), linesOrigin);
     
     NSInteger imageIndex = 0;
     KSCTImageData *imageData = imageArray.firstObject;
     for (NSInteger index = 0; index < lines.count; index ++) {
+        KSLog(@"%s %@",__PRETTY_FUNCTION__, NSStringFromCGPoint(linesOrigin[index]));
         if (imageData == nil) {
             return;
         }
@@ -74,17 +81,21 @@
             CGPathRef pathRef = CTFrameGetPath(self.ctFrame);
             CGRect rect = CGPathGetBoundingBox(pathRef);
             CGRect delegateBounds = CGRectOffset(runBounds, rect.origin.x, rect.origin.y);
+            
+
+            
             imageData.bounds = delegateBounds;
             imageIndex ++;
             if (imageIndex == imageArray.count) {
                 imageData = nil;
-                break;
+                return;
             } else {
                 imageData = imageArray[imageIndex];
             }
         }
     }
 }
+
 - (void)dealloc {
     if (_ctFrame != NULL) {
         CFRelease(_ctFrame);

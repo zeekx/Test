@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSString  *name;
 @property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) CGRect    bounds;
+
+- (instancetype)initWithImageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
 @end

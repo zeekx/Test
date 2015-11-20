@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  KSCoreTextViewController.h
 //  MyCoreTextDemo
 //
 //  Created by yubinqiang on 15/7/24.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "KSCTData.h"
 
-@interface ViewController : UIViewController
+@interface KSCoreTextViewController : UIViewController
 @end
 

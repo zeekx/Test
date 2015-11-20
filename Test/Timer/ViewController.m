@@ -35,6 +35,7 @@
                                     repeats:NO];
 }
 
+
 - (IBAction)startRepeatingTimer:(UIButton *)sender{
     [self.repeatingTimer invalidate];
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2
@@ -48,6 +49,7 @@
     [self.repeatingTimer invalidate];
     self.repeatingTimer = nil;
 }
+
 
 - (IBAction)createUnregisteredTimer:(UIButton *)sender{
     NSMethodSignature *methodSignature = [self methodSignatureForSelector:@selector(invocationMethod:)];

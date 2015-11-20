@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Macor.h"
 
 @interface KSCTData : NSObject
 @property (nonatomic, assign) CTFrameRef ctFrame;

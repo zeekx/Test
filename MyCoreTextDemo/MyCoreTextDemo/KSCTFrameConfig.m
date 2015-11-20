@@ -13,7 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.width = 200.0F;
+        self.width = 280.0F;
         self.fontPointSize = 16.0F;
         self.lineSpace = 8.0F;
         self.textColor = RGB(108, 108, 108);

@@ -1,14 +1,14 @@
 //
-//  UIView+CGRect.m
+//  UIView+KSCGRect.m
 //  MyCoreTextDemo
 //
 //  Created by yubinqiang on 15/7/24.
 //  Copyright (c) 2015年 yubinqiang. All rights reserved.
 //
 
-#import "UIView+CGRect.h"
+#import "UIView+KSCGRect.h"
 
-@implementation UIView (CGRect)
+@implementation UIView (KSCGRect)
 - (CGFloat)x {
     return self.frame.origin.x;
 }

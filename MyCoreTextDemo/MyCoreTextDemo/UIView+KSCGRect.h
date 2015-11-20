@@ -1,5 +1,5 @@
 //
-//  UIView+CGRect.h
+//  UIView+KSCGRect.h
 //  MyCoreTextDemo
 //
 //  Created by yubinqiang on 15/7/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (CGRect)
+@interface UIView (KSCGRect)
 - (CGFloat)x;
 - (void)setX:(CGFloat)x;
 

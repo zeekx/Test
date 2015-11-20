@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		A53361A41B6230D000E62D15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361A31B6230D000E62D15 /* main.m */; };
 		A53361A71B6230D000E62D15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361A61B6230D000E62D15 /* AppDelegate.m */; };
-		A53361AA1B6230D000E62D15 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361A91B6230D000E62D15 /* ViewController.m */; };
+		A53361AA1B6230D000E62D15 /* KSCoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361A91B6230D000E62D15 /* KSCoreTextViewController.m */; };
 		A53361AD1B6230D000E62D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53361AB1B6230D000E62D15 /* Main.storyboard */; };
 		A53361AF1B6230D000E62D15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53361AE1B6230D000E62D15 /* Images.xcassets */; };
 		A53361B21B6230D000E62D15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53361B01B6230D000E62D15 /* LaunchScreen.xib */; };
 		A53361BE1B6230D000E62D15 /* MyCoreTextDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361BD1B6230D000E62D15 /* MyCoreTextDemoTests.m */; };
 		A53361C91B62310500E62D15 /* KSCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361C81B62310500E62D15 /* KSCTView.m */; };
-		A53361CD1B62372300E62D15 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361CC1B62372300E62D15 /* UIView+CGRect.m */; };
+		A53361CD1B62372300E62D15 /* UIView+KSCGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361CC1B62372300E62D15 /* UIView+KSCGRect.m */; };
 		A53361D01B623A7600E62D15 /* KSCTFrameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361CF1B623A7600E62D15 /* KSCTFrameConfig.m */; };
-		A53361D31B623C8000E62D15 /* KSCTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361D21B623C8000E62D15 /* KSCTFrameParser.m */; };
+		A53361D31B623C8000E62D15 /* KSCTFrameBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361D21B623C8000E62D15 /* KSCTFrameBuilder.m */; };
 		A53361D61B623C9A00E62D15 /* KSCTData.m in Sources */ = {isa = PBXBuildFile; fileRef = A53361D51B623C9A00E62D15 /* KSCTData.m */; };
 		A53362151B65FECB00E62D15 /* KSCTConfigurationDailySentence.plist in Resources */ = {isa = PBXBuildFile; fileRef = A53362141B65FECB00E62D15 /* KSCTConfigurationDailySentence.plist */; };
+		A540A01A1BFC828A00566EA1 /* KSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540A0191BFC828A00566EA1 /* KSViewController.m */; };
 		A56FCB791B720F2100AF349F /* KSCTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FCB781B720F2100AF349F /* KSCTImageData.m */; };
+		A5DA1CC31BFF020A00521A7E /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1CC21BFF020A00521A7E /* Resource */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,8 @@
 		A53361A31B6230D000E62D15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A53361A51B6230D000E62D15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A53361A61B6230D000E62D15 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A53361A81B6230D000E62D15 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A53361A91B6230D000E62D15 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A53361A81B6230D000E62D15 /* KSCoreTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCoreTextViewController.h; sourceTree = "<group>"; };
+		A53361A91B6230D000E62D15 /* KSCoreTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCoreTextViewController.m; sourceTree = "<group>"; };
 		A53361AC1B6230D000E62D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A53361AE1B6230D000E62D15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A53361B11B6230D000E62D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -50,12 +52,12 @@
 		A53361C71B62310500E62D15 /* KSCTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTView.h; sourceTree = "<group>"; };
 		A53361C81B62310500E62D15 /* KSCTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTView.m; sourceTree = "<group>"; };
 		A53361CA1B62363600E62D15 /* Macor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macor.h; sourceTree = "<group>"; };
-		A53361CB1B62372300E62D15 /* UIView+CGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGRect.h"; sourceTree = "<group>"; };
-		A53361CC1B62372300E62D15 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
+		A53361CB1B62372300E62D15 /* UIView+KSCGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KSCGRect.h"; sourceTree = "<group>"; };
+		A53361CC1B62372300E62D15 /* UIView+KSCGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KSCGRect.m"; sourceTree = "<group>"; };
 		A53361CE1B623A7600E62D15 /* KSCTFrameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTFrameConfig.h; sourceTree = "<group>"; };
 		A53361CF1B623A7600E62D15 /* KSCTFrameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTFrameConfig.m; sourceTree = "<group>"; };
-		A53361D11B623C8000E62D15 /* KSCTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTFrameParser.h; sourceTree = "<group>"; };
-		A53361D21B623C8000E62D15 /* KSCTFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTFrameParser.m; sourceTree = "<group>"; };
+		A53361D11B623C8000E62D15 /* KSCTFrameBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTFrameBuilder.h; sourceTree = "<group>"; };
+		A53361D21B623C8000E62D15 /* KSCTFrameBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTFrameBuilder.m; sourceTree = "<group>"; };
 		A53361D41B623C9A00E62D15 /* KSCTData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTData.h; sourceTree = "<group>"; };
 		A53361D51B623C9A00E62D15 /* KSCTData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTData.m; sourceTree = "<group>"; };
 		A53361D71B623D8B00E62D15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,8 +65,11 @@
 		A53361DB1B623E1600E62D15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A53362141B65FECB00E62D15 /* KSCTConfigurationDailySentence.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KSCTConfigurationDailySentence.plist; sourceTree = "<group>"; };
 		A53DB2801BD0ECA600DA3441 /* MyCoreTextDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyCoreTextDemo-Prefix.pch"; sourceTree = "<group>"; };
+		A540A0181BFC828A00566EA1 /* KSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSViewController.h; sourceTree = "<group>"; };
+		A540A0191BFC828A00566EA1 /* KSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSViewController.m; sourceTree = "<group>"; };
 		A56FCB771B720F2100AF349F /* KSCTImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTImageData.h; sourceTree = "<group>"; };
 		A56FCB781B720F2100AF349F /* KSCTImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTImageData.m; sourceTree = "<group>"; };
+		A5DA1CC21BFF020A00521A7E /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resource; path = MyCoreTextDemo/Resource; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		A53361951B6230D000E62D15 = {
 			isa = PBXGroup;
 			children = (
+				A5DA1CC21BFF020A00521A7E /* Resource */,
 				A53361A01B6230D000E62D15 /* MyCoreTextDemo */,
 				A53361BA1B6230D000E62D15 /* MyCoreTextDemoTests */,
 				A533619F1B6230D000E62D15 /* Products */,
@@ -109,23 +115,22 @@
 				A53362141B65FECB00E62D15 /* KSCTConfigurationDailySentence.plist */,
 				A53361C71B62310500E62D15 /* KSCTView.h */,
 				A53361C81B62310500E62D15 /* KSCTView.m */,
-				A53361D11B623C8000E62D15 /* KSCTFrameParser.h */,
-				A53361D21B623C8000E62D15 /* KSCTFrameParser.m */,
-				A53361D41B623C9A00E62D15 /* KSCTData.h */,
-				A53361D51B623C9A00E62D15 /* KSCTData.m */,
-				A56FCB771B720F2100AF349F /* KSCTImageData.h */,
-				A56FCB781B720F2100AF349F /* KSCTImageData.m */,
+				A53361D11B623C8000E62D15 /* KSCTFrameBuilder.h */,
+				A53361D21B623C8000E62D15 /* KSCTFrameBuilder.m */,
+				A540A01B1BFD733900566EA1 /* Model */,
 				A53361CE1B623A7600E62D15 /* KSCTFrameConfig.h */,
 				A53361CF1B623A7600E62D15 /* KSCTFrameConfig.m */,
-				A53361CB1B62372300E62D15 /* UIView+CGRect.h */,
-				A53361CC1B62372300E62D15 /* UIView+CGRect.m */,
+				A53361CB1B62372300E62D15 /* UIView+KSCGRect.h */,
+				A53361CC1B62372300E62D15 /* UIView+KSCGRect.m */,
 				A53361CA1B62363600E62D15 /* Macor.h */,
 				A53DB2801BD0ECA600DA3441 /* MyCoreTextDemo-Prefix.pch */,
 				A53361A51B6230D000E62D15 /* AppDelegate.h */,
 				A53361A61B6230D000E62D15 /* AppDelegate.m */,
-				A53361A81B6230D000E62D15 /* ViewController.h */,
-				A53361A91B6230D000E62D15 /* ViewController.m */,
+				A53361A81B6230D000E62D15 /* KSCoreTextViewController.h */,
+				A53361A91B6230D000E62D15 /* KSCoreTextViewController.m */,
 				A53361AB1B6230D000E62D15 /* Main.storyboard */,
+				A540A0181BFC828A00566EA1 /* KSViewController.h */,
+				A540A0191BFC828A00566EA1 /* KSViewController.m */,
 				A53361AE1B6230D000E62D15 /* Images.xcassets */,
 				A53361B01B6230D000E62D15 /* LaunchScreen.xib */,
 				A53361A11B6230D000E62D15 /* Supporting Files */,
@@ -160,6 +165,17 @@
 				A53361BC1B6230D000E62D15 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A540A01B1BFD733900566EA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A53361D41B623C9A00E62D15 /* KSCTData.h */,
+				A53361D51B623C9A00E62D15 /* KSCTData.m */,
+				A56FCB771B720F2100AF349F /* KSCTImageData.h */,
+				A56FCB781B720F2100AF349F /* KSCTImageData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53361AD1B6230D000E62D15 /* Main.storyboard in Resources */,
+				A5DA1CC31BFF020A00521A7E /* Resource in Resources */,
 				A53361B21B6230D000E62D15 /* LaunchScreen.xib in Resources */,
 				A53361AF1B6230D000E62D15 /* Images.xcassets in Resources */,
 				A53362151B65FECB00E62D15 /* KSCTConfigurationDailySentence.plist in Resources */,
@@ -264,9 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53361D01B623A7600E62D15 /* KSCTFrameConfig.m in Sources */,
-				A53361D31B623C8000E62D15 /* KSCTFrameParser.m in Sources */,
-				A53361AA1B6230D000E62D15 /* ViewController.m in Sources */,
-				A53361CD1B62372300E62D15 /* UIView+CGRect.m in Sources */,
+				A53361D31B623C8000E62D15 /* KSCTFrameBuilder.m in Sources */,
+				A53361AA1B6230D000E62D15 /* KSCoreTextViewController.m in Sources */,
+				A53361CD1B62372300E62D15 /* UIView+KSCGRect.m in Sources */,
+				A540A01A1BFC828A00566EA1 /* KSViewController.m in Sources */,
 				A53361D61B623C9A00E62D15 /* KSCTData.m in Sources */,
 				A53361A71B6230D000E62D15 /* AppDelegate.m in Sources */,
 				A56FCB791B720F2100AF349F /* KSCTImageData.m in Sources */,
@@ -330,7 +348,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -352,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -376,7 +395,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -391,8 +411,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -402,12 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PREFIX_HEADER = "MyCoreTextDemo/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = MyCoreTextDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kingsoft.iciba.engine.test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -415,12 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PREFIX_HEADER = "MyCoreTextDemo/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = MyCoreTextDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kingsoft.iciba.engine.test.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
