@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5549DAB1C005A740094F4CA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5549DAA1C005A740094F4CA /* CoreText.framework */; };
+		A5549DB01C005F0F0094F4CA /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5549DAF1C005F0F0094F4CA /* MarkupParser.m */; };
+		A5549DB21C0068900094F4CA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5549DB11C0068900094F4CA /* test.txt */; };
+		A5549DB81C0086470094F4CA /* KSCTView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5549DB71C0086470094F4CA /* KSCTView.m */; };
+		A5549DBB1C008B5D0094F4CA /* KSCTColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5549DBA1C008B5D0094F4CA /* KSCTColumnView.m */; };
+		A5DA1D291C0055E700521A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D281C0055E700521A7E /* main.m */; };
+		A5DA1D2C1C0055E700521A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D2B1C0055E700521A7E /* AppDelegate.m */; };
+		A5DA1D2F1C0055E700521A7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D2E1C0055E700521A7E /* ViewController.m */; };
+		A5DA1D321C0055E700521A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D301C0055E700521A7E /* Main.storyboard */; };
+		A5DA1D341C0055E700521A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D331C0055E700521A7E /* Assets.xcassets */; };
+		A5DA1D371C0055E700521A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D351C0055E700521A7E /* LaunchScreen.storyboard */; };
 		A5EDFEB61BC64F1E00376B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEB51BC64F1E00376B71 /* main.m */; };
 		A5EDFEB91BC64F1E00376B71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEB81BC64F1E00376B71 /* AppDelegate.m */; };
 		A5EDFEBC1BC64F1E00376B71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEBB1BC64F1E00376B71 /* ViewController.m */; };
@@ -22,6 +33,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5549DAA1C005A740094F4CA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A5549DAD1C005C420094F4CA /* CoreTextMagazine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreTextMagazine-Prefix.pch"; sourceTree = "<group>"; };
+		A5549DAE1C005F0F0094F4CA /* MarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser.h; sourceTree = "<group>"; };
+		A5549DAF1C005F0F0094F4CA /* MarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkupParser.m; sourceTree = "<group>"; };
+		A5549DB11C0068900094F4CA /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		A5549DB61C0086470094F4CA /* KSCTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTView.h; sourceTree = "<group>"; };
+		A5549DB71C0086470094F4CA /* KSCTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTView.m; sourceTree = "<group>"; };
+		A5549DB91C008B5D0094F4CA /* KSCTColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCTColumnView.h; sourceTree = "<group>"; };
+		A5549DBA1C008B5D0094F4CA /* KSCTColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCTColumnView.m; sourceTree = "<group>"; };
+		A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTextMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5DA1D281C0055E700521A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5DA1D2A1C0055E700521A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A5DA1D2B1C0055E700521A7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A5DA1D2D1C0055E700521A7E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A5DA1D2E1C0055E700521A7E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A5DA1D311C0055E700521A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5DA1D331C0055E700521A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5DA1D361C0055E700521A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5DA1D381C0055E700521A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5EDFEB11BC64F1E00376B71 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EDFEB51BC64F1E00376B71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5EDFEB71BC64F1E00376B71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +75,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5DA1D221C0055E700521A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5549DAB1C005A740094F4CA /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5EDFEAE1BC64F1E00376B71 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,11 +100,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5DA1D261C0055E700521A7E /* CoreTextMagazine */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA1D4B1C00596C00521A7E /* Core Text */,
+				A5DA1D2A1C0055E700521A7E /* AppDelegate.h */,
+				A5DA1D2B1C0055E700521A7E /* AppDelegate.m */,
+				A5DA1D2D1C0055E700521A7E /* ViewController.h */,
+				A5DA1D2E1C0055E700521A7E /* ViewController.m */,
+				A5DA1D301C0055E700521A7E /* Main.storyboard */,
+				A5DA1D331C0055E700521A7E /* Assets.xcassets */,
+				A5DA1D351C0055E700521A7E /* LaunchScreen.storyboard */,
+				A5DA1D381C0055E700521A7E /* Info.plist */,
+				A5DA1D271C0055E700521A7E /* Supporting Files */,
+				A5549DAD1C005C420094F4CA /* CoreTextMagazine-Prefix.pch */,
+			);
+			path = CoreTextMagazine;
+			sourceTree = "<group>";
+		};
+		A5DA1D271C0055E700521A7E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA1D281C0055E700521A7E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5DA1D4B1C00596C00521A7E /* Core Text */ = {
+			isa = PBXGroup;
+			children = (
+				A5549DB61C0086470094F4CA /* KSCTView.h */,
+				A5549DB71C0086470094F4CA /* KSCTView.m */,
+				A5549DB91C008B5D0094F4CA /* KSCTColumnView.h */,
+				A5549DBA1C008B5D0094F4CA /* KSCTColumnView.m */,
+				A5549DAE1C005F0F0094F4CA /* MarkupParser.h */,
+				A5549DAF1C005F0F0094F4CA /* MarkupParser.m */,
+				A5549DB11C0068900094F4CA /* test.txt */,
+			);
+			name = "Core Text";
+			sourceTree = "<group>";
+		};
 		A5EDFEA81BC64F1E00376B71 = {
 			isa = PBXGroup;
 			children = (
+				A5549DAA1C005A740094F4CA /* CoreText.framework */,
 				A5EDFEB31BC64F1E00376B71 /* Test */,
 				A5EDFED01BC64F6C00376B71 /* Timer */,
+				A5DA1D261C0055E700521A7E /* CoreTextMagazine */,
 				A5EDFEB21BC64F1E00376B71 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +156,7 @@
 			children = (
 				A5EDFEB11BC64F1E00376B71 /* Test.app */,
 				A5EDFECF1BC64F6C00376B71 /* Timer.app */,
+				A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +212,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5DA1D241C0055E700521A7E /* CoreTextMagazine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5DA1D3B1C0055E700521A7E /* Build configuration list for PBXNativeTarget "CoreTextMagazine" */;
+			buildPhases = (
+				A5DA1D211C0055E700521A7E /* Sources */,
+				A5DA1D221C0055E700521A7E /* Frameworks */,
+				A5DA1D231C0055E700521A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreTextMagazine;
+			productName = CoreTextMagazine;
+			productReference = A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A5EDFEB01BC64F1E00376B71 /* Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5EDFEC81BC64F1E00376B71 /* Build configuration list for PBXNativeTarget "Test" */;
@@ -174,6 +272,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zeek;
 				TargetAttributes = {
+					A5DA1D241C0055E700521A7E = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					A5EDFEB01BC64F1E00376B71 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -197,11 +298,23 @@
 			targets = (
 				A5EDFEB01BC64F1E00376B71 /* Test */,
 				A5EDFECE1BC64F6C00376B71 /* Timer */,
+				A5DA1D241C0055E700521A7E /* CoreTextMagazine */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5DA1D231C0055E700521A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5DA1D371C0055E700521A7E /* LaunchScreen.storyboard in Resources */,
+				A5DA1D341C0055E700521A7E /* Assets.xcassets in Resources */,
+				A5549DB21C0068900094F4CA /* test.txt in Resources */,
+				A5DA1D321C0055E700521A7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5EDFEAF1BC64F1E00376B71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +338,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5DA1D211C0055E700521A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5549DB01C005F0F0094F4CA /* MarkupParser.m in Sources */,
+				A5DA1D2F1C0055E700521A7E /* ViewController.m in Sources */,
+				A5549DB81C0086470094F4CA /* KSCTView.m in Sources */,
+				A5DA1D2C1C0055E700521A7E /* AppDelegate.m in Sources */,
+				A5DA1D291C0055E700521A7E /* main.m in Sources */,
+				A5549DBB1C008B5D0094F4CA /* KSCTColumnView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5EDFEAD1BC64F1E00376B71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +374,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A5DA1D301C0055E700521A7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5DA1D311C0055E700521A7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5DA1D351C0055E700521A7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5DA1D361C0055E700521A7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		A5EDFEBD1BC64F1E00376B71 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +425,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A5DA1D391C0055E700521A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreTextMagazine/$(PRODUCT_NAME)-Prefix.pch";
+				INFOPLIST_FILE = CoreTextMagazine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.CoreTextMagazine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5DA1D3A1C0055E700521A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreTextMagazine/$(PRODUCT_NAME)-Prefix.pch";
+				INFOPLIST_FILE = CoreTextMagazine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.CoreTextMagazine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A5EDFEC61BC64F1E00376B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -412,6 +584,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5DA1D3B1C0055E700521A7E /* Build configuration list for PBXNativeTarget "CoreTextMagazine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5DA1D391C0055E700521A7E /* Debug */,
+				A5DA1D3A1C0055E700521A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5EDFEAC1BC64F1E00376B71 /* Build configuration list for PBXProject "Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -428,6 +609,7 @@
 				A5EDFECA1BC64F1E00376B71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5EDFEE31BC64F6D00376B71 /* Build configuration list for PBXNativeTarget "Timer" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +618,7 @@
 				A5EDFEE51BC64F6D00376B71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,4 +12,5 @@
 
 @interface KSCTView : UIView
 @property (nonatomic, strong) KSCTData *ctData;
+@property (nonatomic, weak  ) IBOutlet NSLayoutConstraint *heightConstraint;
 @end

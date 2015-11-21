@@ -69,6 +69,11 @@
     }
 }
 
+- (void)layoutSubviews {
+    [self setNeedsDisplay];
+    [super layoutSubviews];
+}
+
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
 
@@ -76,7 +81,7 @@
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     CGContextTranslateCTM(context, 0, CGRectGetHeight(self.bounds));
     CGContextScaleCTM(context, 1.0F, -1.0F);
-    
+
     if (self.ctData) {
         CTFrameDraw(self.ctData.ctFrame, context);
     }

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CoreTextMagazine.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A5DA1D241C0055E700521A7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A5EDFEB01BC64F1E00376B71</key>
 		<dict>
 			<key>primary</key>

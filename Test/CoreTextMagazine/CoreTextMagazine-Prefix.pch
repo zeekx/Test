@@ -1,0 +1,40 @@
+//
+//  CoreTextMagazine-Prefix.pch
+//  Test
+//
+//  Created by yubinqiang on 15/11/21.
+//  Copyright © 2015年 Zeek. All rights reserved.
+//
+
+#ifndef CoreTextMagazine_Prefix_pch
+#define CoreTextMagazine_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <CoreText/CoreText.h>
+#endif
+
+
+#ifdef DEBUG
+
+
+#define debugMethod()   NSLog(@"%s", __func__)
+#define KSLog(...)      NSLog(__VA_ARGS__)
+void assert_output(const char * szFunction, const char *szFile, int nLine, const char *szExpression);
+//#define KSAssert(e) (!(e) ? assert_output(__func__, __FILE__, __LINE__, #e) : (void)0)
+#define KSAssert(e) (!(e) ? assert(e) : (void)0)
+#else
+
+#define debugLog(...)
+#define debugMethod()
+#define KSLog(...)      ((void)0)
+#define KSAssert(e)     ((void)0)
+
+#endif
+
+#define RGB(A, B, C)        RGBA(A,B,C,1.0)
+#define RGBA(A, B, C, a)    [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:a]
+
+#endif /* CoreTextMagazine_Prefix_pch */

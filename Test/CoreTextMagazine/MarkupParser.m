@@ -1,0 +1,84 @@
+//
+//  MarkupParser.m
+//  Test
+//
+//  Created by yubinqiang on 15/11/21.
+//  Copyright © 2015年 Zeek. All rights reserved.
+//
+
+#import "MarkupParser.h"
+
+@implementation MarkupParser
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.font = @"ArialMT";
+        self.color = [UIColor blackColor];
+        self.strokeColor = [UIColor whiteColor];
+        self.strokeWidth = 0.0;
+        self.images = [NSMutableArray array];
+    }
+    return self;
+}
+
+-(NSAttributedString*)attrStringFromMarkup:(NSString*)markup {
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:@""];
+    NSError *regularExpressionError = nil;
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:@"(.*?)(<[^>]+>|\\Z)"
+                                                                                       options:NSRegularExpressionCaseInsensitive | NSRegularExpressionDotMatchesLineSeparators
+                                                                                         error:&regularExpressionError];
+    NSArray *chunks = [regularExpression matchesInString:markup
+                                                 options:kNilOptions
+                                                   range:NSMakeRange(0, markup.length)];
+    for (NSTextCheckingResult* b in chunks) {
+        NSArray* parts = [[markup substringWithRange:b.range]
+                          componentsSeparatedByString:@"<"]; //1
+        CTFontRef fontRef = CTFontCreateWithName((CFStringRef)self.font,
+                                                 24.0f, NULL);
+        //apply the current text style //2
+        
+        NSDictionary* attrs = @{(NSString *)kCTForegroundColorAttributeName:(id)self.color.CGColor,
+                                (NSString *)kCTFontAttributeName:(__bridge id)fontRef,
+                                (NSString *)kCTStrokeColorAttributeName:(id)self.strokeColor.CGColor,
+                                (NSString *)kCTStrokeWidthAttributeName:@(self.strokeWidth) };
+        
+        [mutableAttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[parts objectAtIndex:0] attributes:attrs]];
+        
+        CFRelease(fontRef);
+        
+        //handle new formatting tag //3
+        
+        if (parts.count > 1) {
+            NSString* tag = (NSString*)[parts objectAtIndex:1];
+            if ([tag hasPrefix:@"font"]) {
+                //stroke color
+                NSRegularExpression* scolorRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=strokeColor=\")\\w+" options:0 error:NULL];
+                [scolorRegex enumerateMatchesInString:tag options:0 range:NSMakeRange(0, [tag length]) usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop){
+                    if ([[tag substringWithRange:match.range] isEqualToString:@"none"]) {
+                        self.strokeWidth = 0.0;
+                    } else {
+                        self.strokeWidth = -3.0;
+                        SEL colorSel = NSSelectorFromString([NSString stringWithFormat: @"%@Color", [tag substringWithRange:match.range]]);
+                        self.strokeColor = [UIColor performSelector:colorSel];
+                    }
+                }];
+                //color
+                
+                NSRegularExpression* colorRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=color=\")\\w+" options:0 error:NULL];
+                [colorRegex enumerateMatchesInString:tag options:0 range:NSMakeRange(0, [tag length]) usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop){
+                    SEL colorSel = NSSelectorFromString([NSString stringWithFormat: @"%@Color", [tag substringWithRange:match.range]]);
+                    self.color = [UIColor performSelector:colorSel];
+                }];
+                
+                //face
+                NSRegularExpression* faceRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=face=\")[^\"]+" options:0 error:NULL];
+                [faceRegex enumerateMatchesInString:tag options:0 range:NSMakeRange(0, [tag length]) usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop){
+                    self.font = [tag substringWithRange:match.range];
+                }];
+            } //end of font parsing
+        }//end of handle new formatting tag
+    }
+    return mutableAttributedString;
+}
+@end
