@@ -11,4 +11,5 @@
 @interface KSCTColumnView : UIView
 @property (assign, nonatomic) CTFrameRef ctFrame;
 @property (strong, nonatomic) NSAttributedString *attributedString;
+@property (strong, nonatomic) NSMutableArray     *images;
 @end

@@ -45,6 +45,12 @@
                                                      repeats:YES];
     self.repeatingTimer = timer;
 }
+- (IBAction)startCheck:(UIButton *)sender {
+}
+- (IBAction)startCheck:(UIButton *)sender {
+}
+- (IBAction)startCheck:(UIButton *)sender {
+}
 - (IBAction)stopRepeatingTimer:(UIButton *)sender{
     [self.repeatingTimer invalidate];
     self.repeatingTimer = nil;

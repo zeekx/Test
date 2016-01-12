@@ -9,6 +9,12 @@
 #import "MarkupParser.h"
 
 @implementation MarkupParser
+- (NSMutableArray *)images {
+    if (_images == nil) {
+        _images = [NSMutableArray array];
+    }
+    return _images;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -77,8 +83,87 @@
                     self.font = [tag substringWithRange:match.range];
                 }];
             } //end of font parsing
+            if ([tag hasPrefix:@"img"]) {
+                __block NSNumber *width = @(0);
+                __block NSNumber *height = @(0);
+                __block NSString *fileName = @"";
+                
+                NSRegularExpression *widthRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=width=\")[^\"]+"
+                                                                                       options:kNilOptions
+                                                                                         error:NULL];
+                [widthRegex enumerateMatchesInString:tag
+                                             options:kNilOptions
+                                               range:NSMakeRange(0, tag.length)
+                                          usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                                              width = @([[tag substringWithRange:result.range] intValue]);
+                                          }];
+                
+                NSRegularExpression *heightRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=height=\")\\d[^\"]+"
+                                                                                        options:kNilOptions
+                                                                                          error:NULL];
+                
+                [heightRegex enumerateMatchesInString:tag
+                                              options:kNilOptions
+                                                range:NSMakeRange(0, tag.length)
+                                           usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                                               height = @([[tag substringWithRange:result.range] intValue]);
+                                           }];
+                NSRegularExpression *srcRegex = [[NSRegularExpression alloc] initWithPattern:@"(?<=src=\")[^\"]+"
+                                                                                     options:kNilOptions
+                                                                                       error:NULL];
+                
+                [srcRegex enumerateMatchesInString:tag
+                                           options:kNilOptions
+                                             range:NSMakeRange(0, tag.length)
+                                        usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                                            fileName = [tag substringWithRange:result.range];
+                                        }];
+                
+                [self.images addObject:@{@"width":width,
+                                         @"height":height,
+                                         @"fileName":fileName,
+                                         @"location":@(mutableAttributedString.length)}];
+                
+                CTRunDelegateCallbacks ctRunDelegateCallbacks;
+                ctRunDelegateCallbacks.version = kCTRunDelegateVersion1;
+                ctRunDelegateCallbacks.getAscent = ascentCallback;
+                ctRunDelegateCallbacks.getDescent = descentCallback;
+                ctRunDelegateCallbacks.getWidth = widthCallback;
+                
+                NSDictionary *imageAttribute = @{@"width":width, @"height":height};
+                CTRunDelegateRef delegate = CTRunDelegateCreate(&ctRunDelegateCallbacks, (__bridge void * _Nullable)(imageAttribute));
+                CGFloat headIndent = 0;
+                CGFloat firstLineHeadIndent = 0 + headIndent;
+
+                CTParagraphStyleSetting setting[] = {{kCTParagraphStyleSpecifierFirstLineHeadIndent,sizeof(firstLineHeadIndent),&firstLineHeadIndent},
+                    {kCTParagraphStyleSpecifierHeadIndent,sizeof(headIndent), &headIndent}};
+                CTParagraphStyleRef paragraphStyle =  CTParagraphStyleCreate(setting, sizeof(setting)/sizeof(setting[0]));
+                NSDictionary *imageAttributeWithDelegate = @{(NSString *)kCTRunDelegateAttributeName:(__bridge id)delegate,
+                                                             (NSString *)kCTParagraphStyleAttributeName:(__bridge id)paragraphStyle};
+                
+                NSAttributedString *as = [[NSAttributedString alloc] initWithString:@" "
+                                                                         attributes:imageAttributeWithDelegate];
+                [mutableAttributedString appendAttributedString: as];
+                
+                
+            }//tag:image
+            
+            
+            
         }//end of handle new formatting tag
     }
     return mutableAttributedString;
+}
+
+/* Callbacks */
+
+static CGFloat ascentCallback( void *ref ){
+    return [(NSString*)[(__bridge NSDictionary*)ref objectForKey:@"height"] floatValue];
+}
+static CGFloat descentCallback( void *ref ){
+    return [(NSString*)[(__bridge NSDictionary*)ref objectForKey:@"descent"] floatValue];
+}
+static CGFloat widthCallback( void* ref ){
+    return [(NSString*)[(__bridge NSDictionary*)ref objectForKey:@"width"] floatValue];
 }
 @end

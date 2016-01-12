@@ -9,12 +9,19 @@
 #import "KSCTColumnView.h"
 
 @implementation KSCTColumnView
-
+- (NSMutableArray *)images {
+    if (_images == nil) {
+        _images = [NSMutableArray array];
+    }
+    return _images;
+}
 
 - (void)layoutSubviews {
     [self setNeedsDisplay];
     [super layoutSubviews];
 }
+
+
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
@@ -30,6 +37,13 @@
 //    CTFrameRef ctFrame = CTFramesetterCreateFrame(ctFramesetter, CFRangeMake(0, self.attributedString.length), mutablePath, NULL);
     
     CTFrameDraw(self.ctFrame, context);
+    
+    for (NSArray *imageData in self.images) {
+        UIImage *img = imageData.firstObject;
+        CGRect imgBounds = CGRectFromString(imageData[1]);
+        CGContextDrawImage(context, imgBounds, img.CGImage);
+    }
+    
     
 //    CFRelease(mutablePath);
 //    CFRelease(ctFramesetter);

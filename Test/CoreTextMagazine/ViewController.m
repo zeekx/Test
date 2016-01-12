@@ -20,17 +20,20 @@
     [super viewDidLoad];
 
 }
+
 - (void)testCoreText {
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"txt"];
     NSError *error = nil;
     NSString *text = [NSString stringWithContentsOfURL:url
                                               encoding:NSUTF8StringEncoding error:&error];
     KSAssert(error == nil);
-    NSAttributedString *as = [[MarkupParser new] attrStringFromMarkup:text];
+    MarkupParser *parser = [[MarkupParser alloc] init];
+    NSAttributedString *as = [parser attrStringFromMarkup:text];
     KSAssert(as);
     self.ctView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-    self.ctView.attributedString = as;
-    [self.ctView buildFrames];
+
+    [self.ctView setAttributedString:as withImages:parser.images];
+    [self.ctView buildFrames];    
 }
 
 - (void)viewWillLayoutSubviews {

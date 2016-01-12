@@ -34,11 +34,10 @@
 
 - (void)setup {
     [self setupGesture];
-    [self setAppearance];
+    [self setupAppearance];
 }
 
-
-- (void)setAppearance {
+- (void)setupAppearance {
     self.layer.borderWidth = 0.5F;
     self.layer.borderColor = [UIColor blueColor].CGColor;
     self.translatesAutoresizingMaskIntoConstraints = YES;
@@ -68,30 +67,89 @@
 //    }
 }
 
-//- (void)layoutSubviews {
-//    [self setNeedsDisplay];
-//    [super layoutSubviews];
-//}
-//
-//- (void)drawRect:(CGRect)rect {
-//    [super drawRect:rect];
-//
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
-//    CGContextTranslateCTM(context, 0, CGRectGetHeight(self.bounds));
-//    CGContextScaleCTM(context, 1.0F, -1.0F);
-//    
-//    CTFramesetterRef ctFramesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attributedString);
-//    CGMutablePathRef mutablePath = CGPathCreateMutable();
-//    CGPathAddRect(mutablePath, NULL, self.bounds);
-//    CTFrameRef ctFrame = CTFramesetterCreateFrame(ctFramesetter, CFRangeMake(0, self.attributedString.length), mutablePath, NULL);
-//    
-//    CTFrameDraw(ctFrame, context);
-//    
-//    CFRelease(mutablePath);
-//    CFRelease(ctFramesetter);
-//    CFRelease(ctFrame);
-//}
+
+
+- (NSMutableArray *)images {
+    if (_images == nil) {
+        _images = [NSMutableArray array];
+    }
+    return _images;
+}
+
+-(void)attachImagesWithFrame:(CTFrameRef)f inColumnView:(KSCTColumnView*)col
+{
+    //drawing images
+    NSArray *lines = (NSArray *)CTFrameGetLines(f); //1
+    
+    CGPoint origins[lines.count];
+    CTFrameGetLineOrigins(f, CFRangeMake(0, 0), origins); //2
+    
+    int imgIndex = 0; //3
+    assert(imgIndex < self.images.count);
+    NSDictionary* nextImage = [self.images objectAtIndex:imgIndex];
+    int imgLocation = [[nextImage objectForKey:@"location"] intValue];
+    
+    //find images for the current column
+    CFRange frameRange = CTFrameGetVisibleStringRange(f); //4
+    while ( imgLocation < frameRange.location ) {
+        imgIndex++;
+        if (imgIndex>=[self.images count]) return; //quit if no images for this column
+        nextImage = [self.images objectAtIndex:imgIndex];
+        imgLocation = [[nextImage objectForKey:@"location"] intValue];
+    }
+    
+    NSUInteger lineIndex = 0;
+    for (id lineObj in lines) { //5
+        CTLineRef line = (__bridge CTLineRef)lineObj;
+        
+        for (id runObj in (NSArray *)CTLineGetGlyphRuns(line)) { //6
+            CTRunRef run = (__bridge CTRunRef)runObj;
+            CFRange runRange = CTRunGetStringRange(run);
+            
+            if ( runRange.location <= imgLocation && runRange.location+runRange.length > imgLocation ) { //image in the run.
+                CGRect runBounds;
+                CGFloat ascent;//height above the baseline
+                CGFloat descent;//height below the baseline
+                runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL); //8
+                runBounds.size.height = ascent + descent;
+                
+                CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL); //9
+                runBounds.origin.x = origins[lineIndex].x + self.frame.origin.x + xOffset + frameXOffset;
+                runBounds.origin.y = origins[lineIndex].y + self.frame.origin.y + frameYOffset;
+                runBounds.origin.y -= descent;
+                
+                UIImage *img = [UIImage imageNamed: [nextImage objectForKey:@"fileName"] ];
+                CGPathRef pathRef = CTFrameGetPath(f); //10
+                CGRect colRect = CGPathGetBoundingBox(pathRef);
+                 CFDictionaryRef attributeForRun = CTRunGetAttributes(run);
+                if (CFDictionaryGetCount(attributeForRun) > 0) {
+                    
+                } else {
+                    
+                }
+                
+                CTParagraphStyleRef paragraphStyle = (CTParagraphStyleRef)CFDictionaryGetValue(attributeForRun,kCTParagraphStyleAttributeName);
+                CGFloat firstLineHeadIndent = 0;
+                CTParagraphStyleGetValueForSpecifier(paragraphStyle, kCTParagraphStyleSpecifierFirstLineHeadIndent, sizeof(firstLineHeadIndent), &firstLineHeadIndent);
+                CGRect imgBounds = CGRectOffset(runBounds, colRect.origin.x - frameXOffset - self.contentOffset.x - firstLineHeadIndent,
+                                                colRect.origin.y - frameYOffset - self.frame.origin.y);
+                [col.images addObject: //11
+                 [NSArray arrayWithObjects:img, NSStringFromCGRect(imgBounds) , nil]
+                 ];
+                //load the next image //12
+                imgIndex++;
+                if (imgIndex < [self.images count]) {
+                    nextImage = [self.images objectAtIndex: imgIndex];
+                    imgLocation = [[nextImage objectForKey: @"location"] intValue];
+                } else {
+                    return;
+                }
+                
+            }
+        }
+        lineIndex++;
+    }
+}
 
 - (void)buildFrames {
     frameXOffset = frameYOffset = 20;
@@ -127,7 +185,11 @@
         colView.backgroundColor = [UIColor clearColor];
         
         colView.ctFrame = frame;
+        colView.backgroundColor = columnIndex % 2 == 0 ? [UIColor greenColor] : [UIColor lightGrayColor];
+        [self attachImagesWithFrame:frame inColumnView:colView];
+        
         [self.ctFrames addObject:(__bridge id _Nonnull)(frame)];
+        
         [self addSubview:colView];
 
         CFRelease(path);
@@ -135,8 +197,27 @@
         textPosition += frameRange.length;
         columnIndex ++;
     }
-    NSInteger totalPages = (columnIndex + 0);
+    NSInteger totalPages = (columnIndex + 1)/2;
     self.contentSize = CGSizeMake(totalPages * self.bounds.size.width, textFrame.size.height);
-    
+}
+
+- (void)setAttributedString:(NSAttributedString *)attributedString withImages:(NSMutableArray *)images {
+    self.attributedString = attributedString;
+    self.images = images;
+    CTTextAlignment textAlignment = kCTTextAlignmentJustified;
+    CGFloat headIndent = 0;
+    CGFloat firstLineHeadIndent = headIndent + 18;
+    CGFloat lineSpacing = 6;
+    CGFloat paragraphSpacing = lineSpacing * 1.618;
+    CTParagraphStyleSetting settings [] = { {kCTParagraphStyleSpecifierAlignment,sizeof(textAlignment), &textAlignment},
+                                            {kCTParagraphStyleSpecifierHeadIndent,sizeof(headIndent),&headIndent},
+                                            {kCTParagraphStyleSpecifierFirstLineHeadIndent,sizeof(firstLineHeadIndent), &firstLineHeadIndent},
+                                            {kCTParagraphStyleSpecifierParagraphSpacing,sizeof(paragraphSpacing),&paragraphSpacing},
+                                            {kCTParagraphStyleSpecifierLineSpacing,sizeof(lineSpacing),&lineSpacing}};
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(settings, sizeof(settings)/sizeof(settings[0]));
+    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedString];
+    [mutableAttributedString addAttributes:@{(NSString *)kCTParagraphStyleAttributeName:(id)paragraphStyle}
+                                     range:NSMakeRange(0, attributedString.length)];
+    self.attributedString = mutableAttributedString;
 }
 @end

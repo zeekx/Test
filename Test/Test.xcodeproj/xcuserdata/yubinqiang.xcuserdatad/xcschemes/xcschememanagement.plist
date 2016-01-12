@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BackgroundWithNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>CoreTextMagazine.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>RegularExpression.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Test.xcscheme</key>
 		<dict>
@@ -22,6 +32,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A57A5E801C056463006EFD85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A58674D01C328F6300C82358</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A5DA1D241C0055E700521A7E</key>
 		<dict>
 			<key>primary</key>
