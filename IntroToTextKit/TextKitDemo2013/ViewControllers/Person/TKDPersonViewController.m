@@ -116,13 +116,13 @@
     self.imageView.layer.cornerRadius = self.imageView.bounds.size.width / 2.;
 }
 
-//- (void)viewDidLayoutSubviews
-//{
-//    [super viewDidLayoutSubviews];
-//
-//    self.imageView.layer.masksToBounds = YES;
-//    self.imageView.layer.cornerRadius = self.imageView.bounds.size.width / 2.;
-//}
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.layer.cornerRadius = self.imageView.bounds.size.width / 2.;
+}
 
 - (void)preferredContentSizeChanged:(NSNotification *)aNotification
 {

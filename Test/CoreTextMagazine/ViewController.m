@@ -35,6 +35,8 @@
     [self.ctView setAttributedString:as withImages:parser.images];
     [self.ctView buildFrames];    
 }
+- (IBAction)test3:(UIBarButtonItem *)sender {
+}
 
 - (void)viewWillLayoutSubviews {
     [self testCoreText];

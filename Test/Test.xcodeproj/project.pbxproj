@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */; };
+		A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */; };
 		A5549DAB1C005A740094F4CA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5549DAA1C005A740094F4CA /* CoreText.framework */; };
 		A5549DB01C005F0F0094F4CA /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5549DAF1C005F0F0094F4CA /* MarkupParser.m */; };
 		A5549DB21C0068900094F4CA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5549DB11C0068900094F4CA /* test.txt */; };
@@ -48,6 +50,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNResumeViewController.h; sourceTree = "<group>"; };
+		A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNResumeViewController.m; sourceTree = "<group>"; };
+		A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSearchViewController.h; sourceTree = "<group>"; };
+		A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSearchViewController.m; sourceTree = "<group>"; };
 		A5549DAA1C005A740094F4CA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		A5549DAD1C005C420094F4CA /* CoreTextMagazine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreTextMagazine-Prefix.pch"; sourceTree = "<group>"; };
 		A5549DAE1C005F0F0094F4CA /* MarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser.h; sourceTree = "<group>"; };
@@ -183,7 +189,11 @@
 				A58674D71C328F6300C82358 /* AppDelegate.m */,
 				A58674D91C328F6300C82358 /* ViewController.h */,
 				A58674DA1C328F6300C82358 /* ViewController.m */,
+				A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */,
+				A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */,
 				A58674DC1C328F6300C82358 /* Main.storyboard */,
+				A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */,
+				A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */,
 				A58674DF1C328F6300C82358 /* Assets.xcassets */,
 				A58674E11C328F6300C82358 /* LaunchScreen.storyboard */,
 				A58674E41C328F6300C82358 /* Info.plist */,
@@ -532,6 +542,8 @@
 				A58674DB1C328F6300C82358 /* ViewController.m in Sources */,
 				A58674D81C328F6300C82358 /* AppDelegate.m in Sources */,
 				A58674D51C328F6300C82358 /* main.m in Sources */,
+				A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */,
+				A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +889,7 @@
 				A58674E61C328F6300C82358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5DA1D3B1C0055E700521A7E /* Build configuration list for PBXNativeTarget "CoreTextMagazine" */ = {
 			isa = XCConfigurationList;
