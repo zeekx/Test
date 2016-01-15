@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BEB6A71680FBD1FA6807C7E /* libPods-BackgroundWithNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */; };
 		A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */; };
 		A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */; };
+		A540ACCA1C488BB600E5ACDD /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC91C488BB600E5ACDD /* MTViewController.m */; };
+		A540ACCE1C489B8400E5ACDD /* MyEpisodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACCC1C489B8400E5ACDD /* MyEpisodeTableViewCell.m */; };
+		A540ACCF1C489B8400E5ACDD /* MyEpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540ACCD1C489B8400E5ACDD /* MyEpisodeTableViewCell.xib */; };
 		A5549DAB1C005A740094F4CA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5549DAA1C005A740094F4CA /* CoreText.framework */; };
 		A5549DB01C005F0F0094F4CA /* MarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5549DAF1C005F0F0094F4CA /* MarkupParser.m */; };
 		A5549DB21C0068900094F4CA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5549DB11C0068900094F4CA /* test.txt */; };
@@ -50,10 +54,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackgroundWithNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		473DAACB461C0B379D27985F /* Pods-BackgroundWithNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundWithNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackgroundWithNetworking/Pods-BackgroundWithNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNResumeViewController.h; sourceTree = "<group>"; };
 		A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNResumeViewController.m; sourceTree = "<group>"; };
 		A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSearchViewController.h; sourceTree = "<group>"; };
 		A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSearchViewController.m; sourceTree = "<group>"; };
+		A540ACC81C488BB600E5ACDD /* MTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTViewController.h; sourceTree = "<group>"; };
+		A540ACC91C488BB600E5ACDD /* MTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTViewController.m; sourceTree = "<group>"; };
+		A540ACCB1C489B8400E5ACDD /* MyEpisodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEpisodeTableViewCell.h; sourceTree = "<group>"; };
+		A540ACCC1C489B8400E5ACDD /* MyEpisodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEpisodeTableViewCell.m; sourceTree = "<group>"; };
+		A540ACCD1C489B8400E5ACDD /* MyEpisodeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		A5549DAA1C005A740094F4CA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		A5549DAD1C005C420094F4CA /* CoreTextMagazine-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreTextMagazine-Prefix.pch"; sourceTree = "<group>"; };
 		A5549DAE1C005F0F0094F4CA /* MarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkupParser.h; sourceTree = "<group>"; };
@@ -116,6 +127,7 @@
 		A5EDFEDD1BC64F6D00376B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5EDFEE01BC64F6D00376B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5EDFEE21BC64F6D00376B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6A3C10FDB5825D3A1EF27FB /* Pods-BackgroundWithNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundWithNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackgroundWithNetworking/Pods-BackgroundWithNetworking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEB6A71680FBD1FA6807C7E /* libPods-BackgroundWithNetworking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +171,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42325995FBB43ED740054119 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3C10FDB5825D3A1EF27FB /* Pods-BackgroundWithNetworking.debug.xcconfig */,
+				473DAACB461C0B379D27985F /* Pods-BackgroundWithNetworking.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F893C3DB7DB5C589E233F7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A57A5E821C056463006EFD85 /* RegularExpression */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +222,13 @@
 				A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */,
 				A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */,
 				A58674DC1C328F6300C82358 /* Main.storyboard */,
+				A540ACCB1C489B8400E5ACDD /* MyEpisodeTableViewCell.h */,
+				A540ACCC1C489B8400E5ACDD /* MyEpisodeTableViewCell.m */,
+				A540ACCD1C489B8400E5ACDD /* MyEpisodeTableViewCell.xib */,
 				A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */,
 				A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */,
+				A540ACC81C488BB600E5ACDD /* MTViewController.h */,
+				A540ACC91C488BB600E5ACDD /* MTViewController.m */,
 				A58674DF1C328F6300C82358 /* Assets.xcassets */,
 				A58674E11C328F6300C82358 /* LaunchScreen.storyboard */,
 				A58674E41C328F6300C82358 /* Info.plist */,
@@ -263,6 +298,8 @@
 				A57A5E821C056463006EFD85 /* RegularExpression */,
 				A58674D21C328F6300C82358 /* BackgroundWithNetworking */,
 				A5EDFEB21BC64F1E00376B71 /* Products */,
+				42325995FBB43ED740054119 /* Pods */,
+				4F893C3DB7DB5C589E233F7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -350,9 +387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A58674E71C328F6300C82358 /* Build configuration list for PBXNativeTarget "BackgroundWithNetworking" */;
 			buildPhases = (
+				3C2C5AC6EFAED4223816D237 /* Check Pods Manifest.lock */,
 				A58674CD1C328F6300C82358 /* Sources */,
 				A58674CE1C328F6300C82358 /* Frameworks */,
 				A58674CF1C328F6300C82358 /* Resources */,
+				235D6B92C29AC843CF34100A /* Embed Pods Frameworks */,
+				B3A4B85BB7DC43598670A2A3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -483,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58674E31C328F6300C82358 /* LaunchScreen.storyboard in Resources */,
+				A540ACCF1C489B8400E5ACDD /* MyEpisodeTableViewCell.xib in Resources */,
 				A58674E01C328F6300C82358 /* Assets.xcassets in Resources */,
 				A58674DE1C328F6300C82358 /* Main.storyboard in Resources */,
 			);
@@ -524,6 +565,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		235D6B92C29AC843CF34100A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackgroundWithNetworking/Pods-BackgroundWithNetworking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C2C5AC6EFAED4223816D237 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A4B85BB7DC43598670A2A3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackgroundWithNetworking/Pods-BackgroundWithNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A57A5E7D1C056463006EFD85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -540,10 +629,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58674DB1C328F6300C82358 /* ViewController.m in Sources */,
+				A540ACCA1C488BB600E5ACDD /* MTViewController.m in Sources */,
 				A58674D81C328F6300C82358 /* AppDelegate.m in Sources */,
 				A58674D51C328F6300C82358 /* main.m in Sources */,
 				A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */,
 				A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */,
+				A540ACCE1C489B8400E5ACDD /* MyEpisodeTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +783,7 @@
 		};
 		A58674E51C328F6300C82358 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6A3C10FDB5825D3A1EF27FB /* Pods-BackgroundWithNetworking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BackgroundWithNetworking/Info.plist;
@@ -704,6 +796,7 @@
 		};
 		A58674E61C328F6300C82358 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 473DAACB461C0B379D27985F /* Pods-BackgroundWithNetworking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BackgroundWithNetworking/Info.plist;

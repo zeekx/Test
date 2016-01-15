@@ -1,0 +1,26 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+target 'Test' do
+
+end
+
+target 'Timer' do
+
+end
+
+target 'CoreTextMagazine' do
+
+end
+
+target 'RegularExpression' do
+
+end
+
+target 'BackgroundWithNetworking' do
+pod 'MWFeedParser'  
+pod 'SVProgressHUD'
+end
+

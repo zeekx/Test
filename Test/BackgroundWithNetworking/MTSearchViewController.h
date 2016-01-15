@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MTSearchViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)Cancel:(UIBarButtonItem *)sender;
 
 @end
