@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  BackgroundWithNetworking
+//  Player
 //
-//  Created by yubinqiang on 15/12/29.
-//  Copyright © 2015年 Zeek. All rights reserved.
+//  Created by yubinqiang on 16/1/27.
+//  Copyright © 2016年 Zeek. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[UIApplication sharedApplication]  setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     return YES;
 }
 
@@ -43,8 +42,4 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    self.backgroundSessionCompletionHandler = completionHandler;
-}
 @end

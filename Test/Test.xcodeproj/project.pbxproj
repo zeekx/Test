@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8BEB6A71680FBD1FA6807C7E /* libPods-BackgroundWithNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */; };
+		A5366B011C586DD30045559A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5366B001C586DD30045559A /* main.m */; };
+		A5366B041C586DD30045559A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5366B031C586DD30045559A /* AppDelegate.m */; };
+		A5366B071C586DD30045559A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5366B061C586DD30045559A /* ViewController.m */; };
+		A5366B0A1C586DD30045559A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5366B081C586DD30045559A /* Main.storyboard */; };
+		A5366B0C1C586DD30045559A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5366B0B1C586DD30045559A /* Assets.xcassets */; };
+		A5366B0F1C586DD30045559A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5366B0D1C586DD30045559A /* LaunchScreen.storyboard */; };
+		A5366B151C586DE60045559A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B141C586DE60045559A /* AVFoundation.framework */; };
 		A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */; };
 		A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */; };
 		A540ACCA1C488BB600E5ACDD /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC91C488BB600E5ACDD /* MTViewController.m */; };
@@ -56,6 +63,17 @@
 /* Begin PBXFileReference section */
 		22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackgroundWithNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		473DAACB461C0B379D27985F /* Pods-BackgroundWithNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackgroundWithNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackgroundWithNetworking/Pods-BackgroundWithNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		A5366AFD1C586DD30045559A /* Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Player.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5366B001C586DD30045559A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5366B021C586DD30045559A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A5366B031C586DD30045559A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A5366B051C586DD30045559A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A5366B061C586DD30045559A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A5366B091C586DD30045559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5366B0B1C586DD30045559A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5366B0E1C586DD30045559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5366B101C586DD30045559A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5366B141C586DE60045559A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNResumeViewController.h; sourceTree = "<group>"; };
 		A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNResumeViewController.m; sourceTree = "<group>"; };
 		A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSearchViewController.h; sourceTree = "<group>"; };
@@ -131,6 +149,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5366AFA1C586DD30045559A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5366B151C586DE60045559A /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57A5E7E1C056463006EFD85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,9 +209,34 @@
 		4F893C3DB7DB5C589E233F7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5366B141C586DE60045559A /* AVFoundation.framework */,
 				22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5366AFE1C586DD30045559A /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A5366B021C586DD30045559A /* AppDelegate.h */,
+				A5366B031C586DD30045559A /* AppDelegate.m */,
+				A5366B051C586DD30045559A /* ViewController.h */,
+				A5366B061C586DD30045559A /* ViewController.m */,
+				A5366B081C586DD30045559A /* Main.storyboard */,
+				A5366B0B1C586DD30045559A /* Assets.xcassets */,
+				A5366B0D1C586DD30045559A /* LaunchScreen.storyboard */,
+				A5366B101C586DD30045559A /* Info.plist */,
+				A5366AFF1C586DD30045559A /* Supporting Files */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A5366AFF1C586DD30045559A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5366B001C586DD30045559A /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A57A5E821C056463006EFD85 /* RegularExpression */ = {
@@ -297,6 +348,7 @@
 				A5DA1D261C0055E700521A7E /* CoreTextMagazine */,
 				A57A5E821C056463006EFD85 /* RegularExpression */,
 				A58674D21C328F6300C82358 /* BackgroundWithNetworking */,
+				A5366AFE1C586DD30045559A /* Player */,
 				A5EDFEB21BC64F1E00376B71 /* Products */,
 				42325995FBB43ED740054119 /* Pods */,
 				4F893C3DB7DB5C589E233F7E /* Frameworks */,
@@ -311,6 +363,7 @@
 				A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */,
 				A57A5E811C056463006EFD85 /* RegularExpression.app */,
 				A58674D11C328F6300C82358 /* BackgroundWithNetworking.app */,
+				A5366AFD1C586DD30045559A /* Player.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +419,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5366AFC1C586DD30045559A /* Player */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5366B131C586DD30045559A /* Build configuration list for PBXNativeTarget "Player" */;
+			buildPhases = (
+				A5366AF91C586DD30045559A /* Sources */,
+				A5366AFA1C586DD30045559A /* Frameworks */,
+				A5366AFB1C586DD30045559A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Player;
+			productName = Player;
+			productReference = A5366AFD1C586DD30045559A /* Player.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A57A5E801C056463006EFD85 /* RegularExpression */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57A5E971C056463006EFD85 /* Build configuration list for PBXNativeTarget "RegularExpression" */;
@@ -463,6 +533,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zeek;
 				TargetAttributes = {
+					A5366AFC1C586DD30045559A = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					A57A5E801C056463006EFD85 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -503,11 +576,22 @@
 				A5DA1D241C0055E700521A7E /* CoreTextMagazine */,
 				A57A5E801C056463006EFD85 /* RegularExpression */,
 				A58674D01C328F6300C82358 /* BackgroundWithNetworking */,
+				A5366AFC1C586DD30045559A /* Player */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5366AFB1C586DD30045559A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5366B0F1C586DD30045559A /* LaunchScreen.storyboard in Resources */,
+				A5366B0C1C586DD30045559A /* Assets.xcassets in Resources */,
+				A5366B0A1C586DD30045559A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57A5E7F1C056463006EFD85 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +698,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5366AF91C586DD30045559A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5366B071C586DD30045559A /* ViewController.m in Sources */,
+				A5366B041C586DD30045559A /* AppDelegate.m in Sources */,
+				A5366B011C586DD30045559A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57A5E7D1C056463006EFD85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +768,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A5366B081C586DD30045559A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5366B091C586DD30045559A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5366B0D1C586DD30045559A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5366B0E1C586DD30045559A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		A57A5E8C1C056463006EFD85 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -757,6 +867,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A5366B111C586DD30045559A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Player/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.Player;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5366B121C586DD30045559A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Player/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.Player;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A57A5E951C056463006EFD85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -966,6 +1100,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5366B131C586DD30045559A /* Build configuration list for PBXNativeTarget "Player" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5366B111C586DD30045559A /* Debug */,
+				A5366B121C586DD30045559A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A57A5E971C056463006EFD85 /* Build configuration list for PBXNativeTarget "RegularExpression" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

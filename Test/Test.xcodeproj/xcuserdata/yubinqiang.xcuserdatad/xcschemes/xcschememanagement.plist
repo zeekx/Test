@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Player.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>RegularExpression.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,6 +37,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A5366AFC1C586DD30045559A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A57A5E801C056463006EFD85</key>
 		<dict>
 			<key>primary</key>
