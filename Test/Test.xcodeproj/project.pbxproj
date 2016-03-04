@@ -209,6 +209,7 @@
 		4F893C3DB7DB5C589E233F7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5549DAA1C005A740094F4CA /* CoreText.framework */,
 				A5366B141C586DE60045559A /* AVFoundation.framework */,
 				22F7BFB48659C0B7A7B67850 /* libPods-BackgroundWithNetworking.a */,
 			);
@@ -342,7 +343,6 @@
 		A5EDFEA81BC64F1E00376B71 = {
 			isa = PBXGroup;
 			children = (
-				A5549DAA1C005A740094F4CA /* CoreText.framework */,
 				A5EDFEB31BC64F1E00376B71 /* Test */,
 				A5EDFED01BC64F6C00376B71 /* Timer */,
 				A5DA1D261C0055E700521A7E /* CoreTextMagazine */,
@@ -1107,6 +1107,7 @@
 				A5366B121C586DD30045559A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A57A5E971C056463006EFD85 /* Build configuration list for PBXNativeTarget "RegularExpression" */ = {
 			isa = XCConfigurationList;

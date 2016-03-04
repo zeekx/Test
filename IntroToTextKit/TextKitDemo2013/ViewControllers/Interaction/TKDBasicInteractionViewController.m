@@ -134,6 +134,7 @@
         return NO;
     } else if ([URL.scheme isEqualToString:@"tel"]) {
         NSLog(@"Make a call with %@-%@",URL.path,URL.parameterString);
+        return NO;
     }
 
     return YES;

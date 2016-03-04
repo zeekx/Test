@@ -175,7 +175,8 @@ NSString *const TKDDefaultTokenName = @"TKDDefaultTokenName";
                                                 if(attributesForToken)
                                                     [self addAttributes:attributesForToken range:substringRange];
                                                 if ([substring isEqualToString:@"Alice"]) {
-                                                    [self addAttributes:@{NSUnderlineStyleAttributeName:@(NSUnderlinePatternSolid |NSUnderlineStyleSingle)} range:substringRange];
+                                                    [self addAttributes:@{NSUnderlineStyleAttributeName:@(NSUnderlinePatternSolid |NSUnderlineStyleSingle),
+                                                                          NSTextEffectAttributeName : NSTextEffectLetterpressStyle} range:substringRange];
                                                 }
                                                 
     }];

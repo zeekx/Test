@@ -109,7 +109,7 @@
     self.nameLabel.text = self.demo.person.name;
     self.shortDescriptionTextView.text = self.demo.person.shortDescription;
 
-    self.shortDescriptionTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
+    self.shortDescriptionTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingMiddle;
 
     self.descriptionTextView.attributedText = self.demo.attributedText;
     self.imageView.layer.masksToBounds = YES;

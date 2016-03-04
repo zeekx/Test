@@ -131,7 +131,7 @@
 {
     [super viewDidLayoutSubviews];
 
-    self.textView.textContainer.exclusionPaths = @[[self translatedBezierPath]];
+//    self.textView.textContainer.exclusionPaths = @[[self translatedBezierPath]];
 }
 
 - (IBAction)imagePanned:(id)sender
