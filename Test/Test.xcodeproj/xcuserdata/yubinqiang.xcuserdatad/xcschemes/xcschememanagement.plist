@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ADShow.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>BackgroundWithNetworking.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,16 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>PageViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>PageViewControllerDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Player.xcscheme</key>
 		<dict>
@@ -42,12 +57,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A553DE3E1C97BE6400B1A766</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A57A5E801C056463006EFD85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A58674D01C328F6300C82358</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A59E01211C8EBA87007A1125</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A59E01421C8EBAAB007A1125</key>
 		<dict>
 			<key>primary</key>
 			<true/>

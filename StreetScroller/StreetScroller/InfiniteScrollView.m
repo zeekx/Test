@@ -49,7 +49,7 @@
 
 @interface InfiniteScrollView ()
 
-@property (nonatomic, strong) NSMutableArray *visibleLabels;
+@property (nonatomic, strong) NSMutableArray<UILabel *> *visibleLabels;
 @property (nonatomic, strong) UIView *labelContainerView;
 
 @end
@@ -61,14 +61,15 @@
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        self.contentSize = CGSizeMake(5000, self.frame.size.height);
-        
+        self.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * 5, self.frame.size.height);
+        self.pagingEnabled = YES;
         _visibleLabels = [[NSMutableArray alloc] init];
-        
+
         _labelContainerView = [[UIView alloc] init];
         self.labelContainerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height/2);
+        self.labelContainerView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.labelContainerView];
-
+        self.backgroundColor = [UIColor lightGrayColor];
         [self.labelContainerView setUserInteractionEnabled:NO];
         
         // hide horizontal scroll indicator so our recentering trick is not revealed
@@ -81,34 +82,73 @@
 #pragma mark - Layout
 
 // recenter content periodically to achieve impression of infinite scrolling
+//- (void)recenterIfNecessary
+//{
+//    CGPoint currentOffset = [self contentOffset];
+//    CGFloat contentWidth = [self contentSize].width;
+//    CGFloat centerOffsetX = (contentWidth - [self bounds].size.width) / 2.0;
+//    CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
+//    NSLog(@"%s distance:%@",__PRETTY_FUNCTION__,@(distanceFromCenter).stringValue);
+//    if (distanceFromCenter > (contentWidth / 4.0))
+//    {
+//        self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
+//        NSInteger index = ceilf(self.contentOffset.x / CGRectGetWidth(self.bounds));
+//        // move content by the same amount so it appears to stay still
+//        NSLog(@"%s index:%@",__PRETTY_FUNCTION__, @(index).stringValue);
+//        for (UILabel *label in self.visibleLabels) {
+//            CGPoint center = [self.labelContainerView convertPoint:label.center toView:self];
+//            center.x += (centerOffsetX - currentOffset.x);
+////            center.x = (index * CGRectGetWidth(self.bounds) + CGRectGetWidth(self.bounds)/2);
+//            NSLog(@"%s center:%@",__PRETTY_FUNCTION__, NSStringFromCGPoint(center));
+//            label.center = [self convertPoint:center toView:self.labelContainerView];
+//        }
+//    }
+//}
 - (void)recenterIfNecessary
 {
     CGPoint currentOffset = [self contentOffset];
     CGFloat contentWidth = [self contentSize].width;
     CGFloat centerOffsetX = (contentWidth - [self bounds].size.width) / 2.0;
-    CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
+    NSInteger index = ceilf(self.contentOffset.x / CGRectGetWidth(self.bounds));
+    centerOffsetX = CGRectGetWidth(self.bounds) * (index + 0.5);
     
-    if (distanceFromCenter > (contentWidth / 4.0))
+    CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
+    NSLog(@"%s distance:%@",__PRETTY_FUNCTION__,@(distanceFromCenter).stringValue);
+    if (distanceFromCenter < (contentWidth / 4.0))
     {
         self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
-        
+        NSInteger index = ceilf(self.contentOffset.x / CGRectGetWidth(self.bounds));
+        self.contentOffset = CGPointMake((centerOffsetX/ CGRectGetWidth(self.bounds)) * CGRectGetWidth(self.bounds), 0);
         // move content by the same amount so it appears to stay still
-        for (UILabel *label in self.visibleLabels) {
+        NSLog(@"%s index:%@",__PRETTY_FUNCTION__, @(index).stringValue);
+//        for (UILabel *label in self.visibleLabels) {
+//            CGPoint center = [self.labelContainerView convertPoint:label.center toView:self];
+//            center.x += (centerOffsetX - currentOffset.x);
+//            //            center.x = (index * CGRectGetWidth(self.bounds) + CGRectGetWidth(self.bounds)/2);
+//            NSLog(@"%s center:%@",__PRETTY_FUNCTION__, NSStringFromCGPoint(center));
+//            label.center = [self convertPoint:center toView:self.labelContainerView];
+//        }
+        [self.visibleLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
             CGPoint center = [self.labelContainerView convertPoint:label.center toView:self];
-            center.x += (centerOffsetX - currentOffset.x);
+            center.x = (CGRectGetWidth(self.bounds) * idx - currentOffset.x);
+            //            center.x = (index * CGRectGetWidth(self.bounds) + CGRectGetWidth(self.bounds)/2);
+            NSLog(@"%s center:%@",__PRETTY_FUNCTION__, NSStringFromCGPoint(center));
             label.center = [self convertPoint:center toView:self.labelContainerView];
-        }
+        }];
     }
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+    NSLog(@"%s +++",__PRETTY_FUNCTION__);
     [self recenterIfNecessary];
- 
+    if (CGRectGetWidth(self.bounds) * 2 <  self.contentOffset.x < CGRectGetWidth(self.bounds) * (2 + 1)) {
+//        self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds) * 2, 0);
+    }
     // tile content in visible bounds
     CGRect visibleBounds = [self convertRect:[self bounds] toView:self.labelContainerView];
+    NSLog(@"%s %@",__PRETTY_FUNCTION__,NSStringFromCGRect(visibleBounds));
     CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
     CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
     
@@ -120,7 +160,8 @@
 
 - (UILabel *)insertLabel
 {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 500, 80)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), 80)];
+    label.backgroundColor = [UIColor darkGrayColor];
     [label setNumberOfLines:3];
     [label setText:@"1024 Block Street\nShaffer, CA\n95014"];
     [self.labelContainerView addSubview:label];
@@ -172,7 +213,7 @@
     }
     
     // add labels that are missing on left side
-    UILabel *firstLabel = self.visibleLabels[0];
+    UILabel *firstLabel = self.visibleLabels.firstObject;
     CGFloat leftEdge = CGRectGetMinX([firstLabel frame]);
     while (leftEdge > minimumVisibleX)
     {
@@ -189,12 +230,12 @@
     }
     
     // remove labels that have fallen off left edge
-    firstLabel = self.visibleLabels[0];
+    firstLabel = self.visibleLabels.firstObject;
     while (CGRectGetMaxX([firstLabel frame]) < minimumVisibleX)
     {
         [firstLabel removeFromSuperview];
         [self.visibleLabels removeObjectAtIndex:0];
-        firstLabel = self.visibleLabels[0];
+        firstLabel = self.visibleLabels.firstObject;
     }
 }
 
