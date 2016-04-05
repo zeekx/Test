@@ -29,14 +29,6 @@
 
 #pragma mark - Setter
 
-- (void)setNumberOfPages:(NSUInteger)numberOfPages {
-    _numberOfPages = numberOfPages;
-//    for (NSUInteger i = 0; i < numberOfPages; i++) {
-//        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(304, 536)];
-//        [self.layoutManager addTextContainer:textContainer];
-//    }
-}
-
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -44,6 +36,11 @@
     }
     return self;
 }
+
+- (void)dealloc {
+    [self removeObserverNotification];
+}
+
 - (void)setup {
     NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"File" withExtension:@"txt"];
     NSError *error = nil;
@@ -75,42 +72,24 @@
                                     range:NSMakeRange(0, mutableAttributeString.length)];
     NSLog(@"Add attributes");
     self.textStorage = [[NSTextStorage alloc] initWithAttributedString:mutableAttributeString];
-        NSLog(@"Text storage init.");
+        NSLog(@"Text storage initial");
     self.textContainerInfset = CGPointMake(10, 20);
+    [self addObserverNotification];
 }
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index
                         currentViewController:(DataViewController *)currentViewController
                                    storyboard:(UIStoryboard *)storyboard {
-    // Return the data view controller for the given index.
-//    if (self.numberOfPages == 0 || index >= self.numberOfPages) {
-//        return nil;
-//    }
-
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-    if (![dataViewController setupTextViewWithTextStorage:self.textStorage index:index otherIndex:currentViewController.currentPageIndex]) {
+    if (![dataViewController setupTextViewWithTextStorage:self.textStorage newIndex:index otherIndex:currentViewController.currentPageIndex]) {
         dataViewController = nil;
     };
     return dataViewController;
 }
 
-//- (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
-//    // Return the data view controller for the given index.
-//    if (self.numberOfPages == 0 || index >= self.numberOfPages) {
-//        return nil;
-//    }
-//    // Create a new view controller and pass suitable data.
-//    DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-//    dataViewController.currentPageIndex = index;
-//    [dataViewController setupTextViewWithTextStorage:self.textStorage index:index otherIndex:currentViewController.currentPageIndex];
-//    return dataViewController;
-//}
 
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController {
-    // Return the index of the given data view controller.
-    // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-//    return [self.textContainers indexOfObject:viewController.textContainer];
     return viewController.currentPageIndex;
 }
 
@@ -139,11 +118,18 @@
     return dataViewController;
 }
 
-#pragma mark - Layout manager delegate
-- (void)layoutManager:(NSLayoutManager *)layoutManager didCompleteLayoutForTextContainer:(NSTextContainer *)textContainer atEnd:(BOOL)layoutFinishedFlag {
+#pragma mark - Notification
+- (void)addObserverNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleStatusBarWillChangeOrientation) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
 }
 
-- (void)layoutManager:(NSLayoutManager *)layoutManager textContainer:(NSTextContainer *)textContainer didChangeGeometryFromSize:(CGSize)oldSize {
-    
+- (void)removeObserverNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)handleStatusBarWillChangeOrientation {
+    for (NSUInteger i = 0; i < self.textStorage.layoutManagers.firstObject.textContainers.count; i++) {
+        [self.textStorage.layoutManagers.firstObject removeTextContainerAtIndex:i];
+    }
 }
 @end

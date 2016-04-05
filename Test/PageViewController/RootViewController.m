@@ -52,7 +52,7 @@
                                                                             options:nil];
     self.pageViewController.delegate = self;
 
-    CGSize size = CGRectInset(self.view.bounds, 8, 8).size;
+    CGSize size = CGRectInset(self.view.bounds, 0, 0).size;
     NSLog(@"calc start");
     CGRect rect = [self.modelController.textStorage boundingRectWithSize:CGSizeMake(size.width, CGFLOAT_MAX)
                                                                  options:NSStringDrawingUsesLineFragmentOrigin
@@ -141,3 +141,4 @@
 }
 
 @end
+
