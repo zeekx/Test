@@ -61,7 +61,7 @@
     self.numberOfPages = ceilf(CGRectGetHeight(rect)/size.height);
     [self.modelController.textStorage addLayoutManager:self.layoutManager];
     self.modelController.layoutManager = self.layoutManager;
-    
+//    self.layoutManager.showsInvisibleCharacters = YES;
     self.modelController.numberOfPages = self.numberOfPages;
 
     

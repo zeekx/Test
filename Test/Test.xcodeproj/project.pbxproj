@@ -710,7 +710,7 @@
 					};
 					A59E01421C8EBAAB007A1125 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = X669CU522Z;
+						DevelopmentTeam = 634ZER5EMA;
 					};
 					A5DA1D241C0055E700521A7E = {
 						CreatedOnToolsVersion = 7.1;
@@ -1217,7 +1217,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.PageViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1232,7 +1232,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.PageViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1415,6 +1415,7 @@
 				A553DE5B1C97BE6400B1A766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A57A5E971C056463006EFD85 /* Build configuration list for PBXNativeTarget "RegularExpression" */ = {
 			isa = XCConfigurationList;
