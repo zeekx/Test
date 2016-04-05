@@ -65,7 +65,9 @@
     self.modelController.numberOfPages = self.numberOfPages;
 
     
-    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0
+                                                                       currentViewController:nil
+                                                                                  storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers
                                       direction:UIPageViewControllerNavigationDirectionForward

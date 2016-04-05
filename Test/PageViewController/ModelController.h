@@ -15,7 +15,9 @@
 @property (strong, nonatomic) NSTextStorage *textStorage;
 @property (strong, nonatomic) NSLayoutManager *layoutManager;
 
-- (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
+- (DataViewController *)viewControllerAtIndex:(NSUInteger)index
+                        currentViewController:(DataViewController *)currentViewController
+                                   storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;
 
 @end

@@ -31,10 +31,10 @@
 
 - (void)setNumberOfPages:(NSUInteger)numberOfPages {
     _numberOfPages = numberOfPages;
-    for (NSUInteger i = 0; i < numberOfPages; i++) {
-        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(304, 536)];
-        [self.layoutManager addTextContainer:textContainer];
-    }
+//    for (NSUInteger i = 0; i < numberOfPages; i++) {
+//        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(304, 536)];
+//        [self.layoutManager addTextContainer:textContainer];
+//    }
 }
 
 - (instancetype)init {
@@ -55,12 +55,12 @@
 //                                                                          options:@{NSDocumentTypeDocumentAttribute:NSPlainTextDocumentType}
 //                                                               documentAttributes:nil
 //                                                                            error:&error];
-    NSLog(@"Start");
+    NSLog(@"Read text file to memory START");
     NSMutableAttributedString *mutableAttributeString = [[NSMutableAttributedString alloc] initWithURL:fileURL
                                                                                                options:@{NSDocumentTypeDocumentAttribute:NSPlainTextDocumentType}
                                                                                     documentAttributes:nil
                                                                                                  error:&error];
-    NSLog(@"Read end");
+    NSLog(@"Read text file to memory END");
     NSMutableParagraphStyle *mutablePargraphStyle = [NSMutableParagraphStyle defaultParagraphStyle].mutableCopy;
     mutablePargraphStyle.lineSpacing = 6;
     mutablePargraphStyle.headIndent = 0;
@@ -79,17 +79,33 @@
     self.textContainerInfset = CGPointMake(10, 20);
 }
 
-- (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
+- (DataViewController *)viewControllerAtIndex:(NSUInteger)index
+                        currentViewController:(DataViewController *)currentViewController
+                                   storyboard:(UIStoryboard *)storyboard {
     // Return the data view controller for the given index.
-    if (self.numberOfPages == 0 || index >= self.numberOfPages) {
-        return nil;
-    }
+//    if (self.numberOfPages == 0 || index >= self.numberOfPages) {
+//        return nil;
+//    }
+
     // Create a new view controller and pass suitable data.
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
-    dataViewController.currentPageIndex = index;
-    [dataViewController setDataWithTextStorage:self.textStorage];
+    if (![dataViewController setupTextViewWithTextStorage:self.textStorage index:index otherIndex:currentViewController.currentPageIndex]) {
+        dataViewController = nil;
+    };
     return dataViewController;
 }
+
+//- (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard {
+//    // Return the data view controller for the given index.
+//    if (self.numberOfPages == 0 || index >= self.numberOfPages) {
+//        return nil;
+//    }
+//    // Create a new view controller and pass suitable data.
+//    DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
+//    dataViewController.currentPageIndex = index;
+//    [dataViewController setupTextViewWithTextStorage:self.textStorage index:index otherIndex:currentViewController.currentPageIndex];
+//    return dataViewController;
+//}
 
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController {
     // Return the index of the given data view controller.
@@ -107,7 +123,7 @@
         return nil;
     }
     index--;
-    DataViewController *dataViewController = [self viewControllerAtIndex:index storyboard:viewController.storyboard];
+    DataViewController *dataViewController = [self viewControllerAtIndex:index currentViewController:(DataViewController *)viewController storyboard:viewController.storyboard];
     return dataViewController;
 }
 
@@ -118,10 +134,8 @@
         return nil;
     }
     index++;
-    if (self.numberOfPages == 0 || index > self.numberOfPages) {
-        return nil;
-    }
-    DataViewController *dataViewController = [self viewControllerAtIndex:index storyboard:viewController.storyboard];
+
+    DataViewController *dataViewController = [self viewControllerAtIndex:index currentViewController:(DataViewController *)viewController storyboard:viewController.storyboard];
     return dataViewController;
 }
 

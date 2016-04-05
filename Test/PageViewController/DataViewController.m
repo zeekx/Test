@@ -9,6 +9,7 @@
 #import "DataViewController.h"
 
 @interface DataViewController () {
+    BOOL _layoutManagerFinished;
 
 }
 @property (strong, nonatomic) UITextView *textView;
@@ -36,14 +37,50 @@
     self.divide = CGPointMake(8, 8);
 }
 
+- (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage index:(NSInteger)newIndex otherIndex:(NSInteger)otherIndex{
+    BOOL result = NO;
+    self.currentPageIndex = newIndex;
+    NSLayoutManager *layoutManager = textStorage.layoutManagers.firstObject;
+    layoutManager.delegate = self;
+    layoutManager.allowsNonContiguousLayout = YES;
+    NSLog(@"%s text container count:%ld",__PRETTY_FUNCTION__, layoutManager.textContainers.count);
+    if (newIndex >= 0 && otherIndex >= 0) {
+        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size];
+        if (newIndex > otherIndex) {//下一页
+            if (newIndex == layoutManager.textContainers.count) {
+                [layoutManager addTextContainer:textContainer];
+            } else {//if (newIndex < layoutManager.textContainers.count) {
+                textContainer = layoutManager.textContainers[newIndex];
+            }
+        } else if (otherIndex > newIndex) {//上一页
+//            [layoutManager removeTextContainerAtIndex:MAX(0, otherIndex)];
+            textContainer = layoutManager.textContainers[newIndex];
+        } else if (newIndex == 0 && otherIndex == 0
+                   && layoutManager.textContainers.count == 0) {//开始页
+            [layoutManager insertTextContainer:textContainer atIndex:0];
+        } else {
+            assert(NO);
+        }
+        self.textView = [[UITextView alloc] initWithFrame:self.view.bounds textContainer:textContainer];
+        self.textView.scrollEnabled = NO;
+        self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self.view addSubview:self.textView];
+        
+        [self setupGestureRecognizer];
+        result = _layoutManagerFinished;
+    } else {
+        assert(NO);
+    }
+    return result;
+}
+
 - (void)setDataWithTextStorage:(NSTextStorage *)textStorage {
     NSTextContainer *textContainer = textStorage.layoutManagers.firstObject.textContainers[self.currentPageIndex];
     textContainer.size = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
-    _textView = [[UITextView alloc] initWithFrame:self.view.bounds
-                                    textContainer:textContainer];
-    _textView.scrollEnabled = NO;
-    _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:_textView];
+    self.textView = [[UITextView alloc] initWithFrame:self.view.bounds textContainer:textContainer];
+    self.textView.scrollEnabled = NO;
+    self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.textView];
     
     [self setupGestureRecognizer];
 }
@@ -64,7 +101,7 @@
 
 - (void)setupGestureRecognizer {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapped:)];
-    [_textView addGestureRecognizer:tap];
+    [self.textView addGestureRecognizer:tap];
 }
 
 - (void)textTapped:(UITapGestureRecognizer *)recognizer
@@ -110,5 +147,19 @@
         ///if ([attributes objectForKey:...)] //make a network call, load a cat Pic, etc
         
     }
+}
+
+#pragma mark - Layout manager delegate
+- (void)layoutManagerDidInvalidateLayout:(NSLayoutManager *)sender {
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)layoutManager:(NSLayoutManager *)layoutManager didCompleteLayoutForTextContainer:(NSTextContainer *)textContainer atEnd:(BOOL)layoutFinishedFlag {
+    NSLog(@"%s textContainer:%@, END:%@",__PRETTY_FUNCTION__,textContainer,layoutFinishedFlag ? @"YES" : @"NO");
+    _layoutManagerFinished = YES;
+}
+
+- (void)layoutManager:(NSLayoutManager *)layoutManager textContainer:(NSTextContainer *)textContainer didChangeGeometryFromSize:(CGSize)oldSize {
+    NSLog(@"%s textContainer:%@ oldSize:%@",__PRETTY_FUNCTION__,textContainer,NSStringFromCGSize(oldSize));
 }
 @end
