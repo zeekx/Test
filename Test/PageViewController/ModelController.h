@@ -10,12 +10,14 @@
 
 @class DataViewController;
 
-@interface ModelController : NSObject <UIPageViewControllerDataSource, NSLayoutManagerDelegate>
-@property (assign, nonatomic) NSUInteger numberOfPages;
+@interface ModelController : NSObject <UIPageViewControllerDataSource>
+@property (assign, nonatomic) NSUInteger numberOfPages;//#UNUSED
 @property (strong, nonatomic) NSTextStorage *textStorage;
 @property (strong, nonatomic) NSLayoutManager *layoutManager;
 
-- (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
+- (DataViewController *)viewControllerAtIndex:(NSUInteger)index
+                        currentViewController:(DataViewController *)currentViewController
+                                   storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;
 
 @end

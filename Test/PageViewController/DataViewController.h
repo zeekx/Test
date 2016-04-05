@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DataViewController : UIViewController
+@interface DataViewController : UIViewController<NSLayoutManagerDelegate>
 
-@property (assign, nonatomic) NSUInteger currentPageIndex;
+@property (assign, nonatomic) NSInteger currentPageIndex;
 
-- (void)setDataWithTextStorage:(NSTextStorage *)textStorage;
+
+- (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage newIndex:(NSInteger)index otherIndex:(NSInteger)otherIndex;
+//- (void)setDataWithTextStorage:(NSTextStorage *)textStorage;
 //- (void)setDataWithTextStorage:(NSTextStorage *)textStorage textContainer:(NSTextContainer *)textContainer layoutManager:(NSLayoutManager *)layoutManager;
 @end
 
