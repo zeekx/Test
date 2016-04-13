@@ -6,6 +6,8 @@
 	<dict>
 		<key>ADShow.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
@@ -18,6 +20,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>Master-Detail With Slide.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>PageViewController.xcscheme</key>
 		<dict>
@@ -58,6 +65,11 @@
 			<true/>
 		</dict>
 		<key>A553DE3E1C97BE6400B1A766</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A56553231CB4EC3000B806A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

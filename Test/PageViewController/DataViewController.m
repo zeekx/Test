@@ -20,6 +20,8 @@
 @end
 
 @implementation DataViewController
+
+#pragma mark - Initilization
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -36,9 +38,15 @@
     return self;
 }
 
+- (void)dealloc {
+    [self removeObserverNotification];
+}
+
+
 - (void)setup {
     _layoutManagerFinished = NO;
 //    self.divide = CGPointMake(8, 8);
+    [self addObserverNotification];
 }
 
 - (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage newIndex:(NSInteger)newIndex otherIndex:(NSInteger)otherIndex {
@@ -46,10 +54,8 @@
     self.currentPageIndex = newIndex;
     NSLayoutManager *layoutManager = textStorage.layoutManagers.firstObject;
 #if 0
-    if (YES) {//横屏
-#else
     if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {//横屏
-#endif
+
         layoutManager = textStorage.layoutManagers.lastObject;
         layoutManager.delegate = self;
         layoutManager.allowsNonContiguousLayout = YES;
@@ -132,7 +138,21 @@
     }
         [self setupGestureRecognizerWithViews:self.mutableTextViews];
         result = _layoutManagerFinished;
-
+#else
+    if (self.currentPageIndex < layoutManager.textContainers.count) {
+        NSTextContainer *textContainer = layoutManager.textContainers[self.currentPageIndex];
+        textContainer.size = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
+        _textView = [[UITextView alloc] initWithFrame:self.view.bounds
+                                        textContainer:textContainer];
+        _textView.scrollEnabled = NO;
+        _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self.view addSubview:_textView];
+        result = YES;
+    } else {
+        result = NO;
+    }
+    
+#endif
     return result;
 }
 
@@ -145,6 +165,7 @@
 //}
 //
 
+#pragma mark - Circle of view
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -242,5 +263,17 @@
 
 - (NSInteger)numberOfColumn {
     return 2;
+}
+#pragma mark - Notification
+- (void)addObserverNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleStatusBarWillChangeOrientation) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+}
+
+- (void)removeObserverNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)handleStatusBarWillChangeOrientation {
+    _layoutManagerFinished = NO;
 }
 @end

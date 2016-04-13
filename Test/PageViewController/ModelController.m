@@ -29,6 +29,24 @@
 
 #pragma mark - Setter
 
+- (void)setNumberOfPages:(NSUInteger)numberOfPages {
+    _numberOfPages = numberOfPages;
+    if (self.layoutManager.textContainers.count < numberOfPages) {
+        for (NSUInteger i = numberOfPages - self.layoutManager.textContainers.count; i > 0; i--) {
+            NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(304, 536)];
+            [self.layoutManager addTextContainer:textContainer];
+        }
+    } else {
+        for (NSUInteger i = self.layoutManager.textContainers.count - numberOfPages; i > 0; i--) {
+            [self.layoutManager removeTextContainerAtIndex:self.layoutManager.textContainers.count-1];
+        }
+    }
+//    for (NSUInteger i = 0; i < numberOfPages; i++) {
+//        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(304, 536)];
+//        [self.layoutManager addTextContainer:textContainer];
+//    }
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -113,7 +131,9 @@
         return nil;
     }
     index++;
-
+    if (index >= self.numberOfPages) {
+        return nil;
+    }
     DataViewController *dataViewController = [self viewControllerAtIndex:index currentViewController:(DataViewController *)viewController storyboard:viewController.storyboard];
     return dataViewController;
 }
@@ -128,8 +148,8 @@
 }
 
 - (void)handleStatusBarWillChangeOrientation {
-    for (NSUInteger i = 0; i < self.textStorage.layoutManagers.firstObject.textContainers.count; i++) {
-        [self.textStorage.layoutManagers.firstObject removeTextContainerAtIndex:i];
-    }
+//    for (NSUInteger i = 0; i < self.textStorage.layoutManagers.firstObject.textContainers.count; i++) {
+//        [self.textStorage.layoutManagers.firstObject removeTextContainerAtIndex:i];
+//    }
 }
 @end

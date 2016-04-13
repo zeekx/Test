@@ -283,6 +283,19 @@
     return UIPageViewControllerSpineLocationMid;
 }
 
+#pragma mark - Transition
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    CGRect viewBounds = CGRectMake(0, 0, size.width, size.height);
+    CGSize textSize = CGRectInset(viewBounds, 0, 0).size;
+    NSLog(@"calc start");
+    CGRect rect = [self.modelController.textStorage boundingRectWithSize:CGSizeMake(textSize.width, CGFLOAT_MAX)
+                                                                 options:NSStringDrawingUsesLineFragmentOrigin
+                                                                 context:NULL];
+    NSLog(@"calc end");
+    self.numberOfPages = ceilf(CGRectGetHeight(rect)/textSize.height);
+    self.modelController.numberOfPages = self.numberOfPages;
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
 @end
 
 >>>>>>> origin/master
