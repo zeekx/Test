@@ -97,38 +97,43 @@
         layoutManager = self.textStorage.layoutManagers.lastObject;
     }
 #endif
+    NSArray<NSTextContainer *> *textContainers = [self textContainersWithLayoutManager:layoutManager index:self.currentPageIndex];
+    if (textContainers.count > 0) {
+        self.glyphRange = [self glyphRangeWithLayoutManager:layoutManager textContainers:textContainers];
+//        NSLog(@"%s glyphRange:%@",__PRETTY_FUNCTION__, NSStringFromRange(glyphRange));
+        [self setupTextViewWithTextContainers:textContainers];
+        result = YES;
+    }
+    return result;
+}
+
+- (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers {
+    NSRange glyphRange = NSMakeRange(0, 0);
+    for (NSTextContainer *textContainer in textContainers) {
+        NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
+        glyphRange = NSUnionRange(range, glyphRange);
+    }
+    glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:textContainers.firstObject],
+                              [layoutManager glyphRangeForTextContainer:textContainers.lastObject]);
+    return glyphRange;
+}
+
+- (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager index:(NSInteger)currentPageIndex {
     NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / self.numberOfColumnInPage);
-    if (self.currentPageIndex < numberOfPages) {
-        NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
+    NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
+    if (currentPageIndex < numberOfPages) {
         for (NSUInteger i = 0; i < self.numberOfColumnInPage; i++) {
-            NSUInteger index = self.currentPageIndex * self.numberOfColumnInPage + i;
+            NSUInteger index = currentPageIndex * self.numberOfColumnInPage + i;
             if (index == layoutManager.textContainers.count) {
                 break;
             }
             NSTextContainer *textContainer = layoutManager.textContainers[index];
-            CGSize size = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
-            CGSize columnSize = CGSizeMake(roundf(size.width / self.numberOfColumnInPage), size.height);
-//            textContainer.size = columnSize;
             [mutabTextContainers addObject:textContainer];
         }
-//        self.textView = [[MLTextView alloc] initWithLayoutManager:layoutManager
-//                                                   textContainers:mutabTextContainers
-//                                                   numberOfColumn:self.numberOfColumnInPage];
-//        self.textView.frame = self.view.bounds;
-//        [self.view addSubview:self.textView];
-        NSRange glyphRange = NSMakeRange(0, 0);
-        for (NSTextContainer *textContainer in mutabTextContainers) {
-            NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
-            glyphRange = NSUnionRange(range, glyphRange);
-        }
-        glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:mutabTextContainers.firstObject],
-                                  [layoutManager glyphRangeForTextContainer:mutabTextContainers.lastObject]);
-        self.glyphRange = glyphRange;
-//        NSLog(@"%s glyphRange:%@",__PRETTY_FUNCTION__, NSStringFromRange(glyphRange));
-        [self setupTextViewWithTextContainers:mutabTextContainers];
-        result = YES;
+    } else {
+        mutabTextContainers = nil;
     }
-    return result;
+    return mutabTextContainers;
 }
 
 - (void)setupTextViewWithTextContainers:(NSArray<NSTextContainer *> *)textContainers {

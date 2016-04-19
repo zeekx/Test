@@ -85,7 +85,7 @@
 #if kUseSingleLayoutManager
     [self.modelController.textStorage addLayoutManager:self.layoutManager];
     self.modelController.layoutManager = self.layoutManager;
-    self.modelController.numberOfColumn = [self.modelController pagesWithPageSize:columnSize];
+    self.modelController.numberOfColumn = [self.modelController numberOfTextContainerWithSize:columnSize];
 #else
     [self.modelController.textStorage addLayoutManager:self.layoutManagerForLandscape];
     [self.modelController.textStorage addLayoutManager:self.layoutManagerForPortrait];
@@ -94,7 +94,7 @@
     if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         self.modelController.numberOfColumnForLandsacpe = [self.modelController.textStorage pagesWithPageSize:columnSize];
     } else {
-        self.modelController.numberOfColumnForPortait = [self.modelController.textStorage pagesWithPageSize:columnSize];
+        self.modelController.numberOfColumnForPortrait = [self.modelController.textStorage pagesWithPageSize:columnSize];
     }
 #endif
     DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0
@@ -182,34 +182,24 @@
         CGSize columnSize = CGSizeMake(roundf(textSize.width / [DataViewController numberOfColumnInPage]), textSize.height);
         weakSelf.modelController.textContainerSize = columnSize;
 #if kUseSingleLayoutManager
-        weakSelf.modelController.numberOfColumn = [self.modelController pagesWithPageSize:columnSize];
+        weakSelf.modelController.numberOfColumn = [self.modelController numberOfTextContainerWithSize:columnSize];
 #else
         if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
             weakSelf.modelController.numberOfColumnForLandsacpe = [self.modelController.textStorage pagesWithPageSize:columnSize];
         } else {
-            weakSelf.modelController.numberOfColumnForPortait = [self.modelController.textStorage pagesWithPageSize:columnSize];
+            weakSelf.modelController.numberOfColumnForPortrait = [self.modelController.textStorage pagesWithPageSize:columnSize];
         }
 #endif
 
         
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-//        if (weakSelf.modelController.numberOfPages >= 1
-//            && weakSelf.modelController.currentShowingIndex == weakSelf.modelController.numberOfPages - 1) {
-
-
         DataViewController *dvc = [weakSelf.modelController viewControllerAtIndex:self.modelController.currentShowingIndex
                                                             currentViewController:nil
                                                                        storyboard:self.storyboard];
         [weakSelf.pageViewController setViewControllers:@[dvc]
                                               direction:UIPageViewControllerNavigationDirectionForward
                                                animated:NO
-                                             completion:^(BOOL finished) {
-//                                                 NSTextContainer *textContainer = dvc.mutableTextViews.firstObject.textContainer;
-//                                                 [weakSelf.layoutManager  invalidateDisplayForGlyphRange:[weakSelf.layoutManager glyphRangeForTextContainer:textContainer]];
-//                                                 [dvc updateText];
-                                             }];
-            
-//        }
+                                             completion:NULL];
     }];
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }

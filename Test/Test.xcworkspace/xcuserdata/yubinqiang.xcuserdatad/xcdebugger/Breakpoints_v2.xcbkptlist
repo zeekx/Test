@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
             endingLineNumber = "236"
-            landmarkName = "-layoutManagerDidInvalidateLayout:"
+            landmarkName = "-textTapped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"
             endingLineNumber = "240"
-            landmarkName = "-layoutManager:didCompleteLayoutForTextContainer:atEnd:"
+            landmarkName = "-layoutManagerDidInvalidateLayout:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "244"
             endingLineNumber = "244"
-            landmarkName = "-layoutManager:textContainer:didChangeGeometryFromSize:"
+            landmarkName = "-layoutManager:didCompleteLayoutForTextContainer:atEnd:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/RootViewController.m"
-            timestampString = "482747874.440098"
+            timestampString = "482758631.054414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,12 +180,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482752851.093418"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-setNumberOfColumnForLandsacpe:"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-setup"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -257,28 +257,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PageViewController/ModelController.m"
-            timestampString = "482753283.333175"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
-            landmarkName = "-pagesWithPageSize:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PageViewController/RootViewController.m"
-            timestampString = "482747874.440098"
+            timestampString = "482758631.054414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "-viewWillTransitionToSize:withTransitionCoordinator:"
             landmarkType = "5">
          </BreakpointContent>
@@ -290,28 +274,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482750305.92278"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-setNumberOfColumn:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PageViewController/RootViewController.m"
-            timestampString = "482747880.099932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "-viewWillTransitionToSize:withTransitionCoordinator:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -327,7 +295,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
             endingLineNumber = "236"
-            landmarkName = "-layoutManagerDidInvalidateLayout:"
+            landmarkName = "-textTapped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -338,12 +306,54 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482753283.333175"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
-            landmarkName = "-layoutManager:didCompleteLayoutForTextContainer:atEnd:"
+            startingLineNumber = "408"
+            endingLineNumber = "408">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "414"
+            endingLineNumber = "414">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "402"
+            endingLineNumber = "402">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-setNumberOfColumn:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -354,12 +364,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482752851.093418"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-setNumberOfColumn:"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "-glyphRangeWithLayoutManager:textContainers:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "-textContainersWithLayoutManager:index:numberOfColumn:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "341"
+            endingLineNumber = "341"
+            landmarkName = "-numberOfTextContainerWithSize:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -370,12 +412,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482752851.093418"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "-setNumberOfColumn:"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-indexOfBestMatchWithGlyphRange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -386,12 +428,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482754160.644636"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "-layoutManager:textContainer:didChangeGeometryFromSize:"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-indexOfBestMatchWithGlyphRange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -402,12 +444,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482753283.333175"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
-            landmarkName = "-layoutManagerDidInvalidateLayout:"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-indexOfBestMatchWithGlyphRange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -418,12 +460,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482756419.038246"
+            timestampString = "482765615.929963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-setNumberOfColumn:"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-indexOfBestMatchWithGlyphRange:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            condition = "i == 3"
+            continueAfterRunningActions = "No"
+            filePath = "PageViewController/ModelController.m"
+            timestampString = "482765615.929963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-indexOfBestMatchWithGlyphRange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

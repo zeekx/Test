@@ -15,7 +15,7 @@
 @property (assign, nonatomic) NSUInteger numberOfColumn;
 @property (strong, nonatomic) NSLayoutManager *layoutManager;
 
-@property (assign, nonatomic) NSUInteger numberOfColumnForPortait;
+@property (assign, nonatomic) NSUInteger numberOfColumnForPortrait;
 @property (assign, nonatomic) NSUInteger numberOfColumnForLandsacpe;
 @property (strong, nonatomic) NSTextStorage *textStorage;
 
@@ -31,6 +31,6 @@
                         currentViewController:(DataViewController *)currentViewController
                                    storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;
-- (NSUInteger)pagesWithPageSize:(CGSize)size ;
+- (NSUInteger)numberOfTextContainerWithSize:(CGSize)size ;
 @end
 

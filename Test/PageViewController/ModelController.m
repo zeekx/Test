@@ -22,14 +22,21 @@
 @interface ModelController ()
 @property (assign, nonatomic) CGPoint textContainerInfset;
 @property (copy  , nonatomic) UIBezierPath *bezierPath;
-@property (strong, nonatomic) NSArray<NSValue *> *glyphRanges;
+@property (strong, nonatomic, readonly) NSArray<NSValue *> *glyphRanges;
 @property (assign, nonatomic) NSInteger NUMBEROFPAGES;
+@property (assign, nonatomic) NSInteger numberOfColumnInPage;
 @end
 
 @implementation ModelController
 
 #pragma mark - Properties
+//- (NSArray<NSValue *> *)glyphRanges {
+//    return  UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? self.glyphRangesWithLandscape : self.glyphRangesWithPortrial;
+//}
 
+- (NSInteger)numberOfColumnInPage {
+    return [[DataViewController class] numberOfColumnInPage];
+}
 - (UIBezierPath *)bezierPath {
     if (_bezierPath == nil) {
         
@@ -37,7 +44,7 @@
 
         if (!(self.spineWidth > 0 || self.spineWidth < 0)) {
             exclusionRect = CGRectZero;
-            _bezierPath = nil;//[UIBezierPath bezierPath];
+            _bezierPath = [UIBezierPath bezierPath];
         } else {
             CGRect exclusionRect = CGRectMake(floorf((self.textContainerSize.width - self.spineWidth)*.5), 0,
                                               self.spineWidth, self.textContainerSize.height);
@@ -59,7 +66,7 @@
     assert(self.layoutManagerForPortrait);
     
     if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
-        return ceilf(self.la.textContainers.count * 1.0 / [DataViewController numberOfColumnInPage]);
+        return ceilf(self.layoutManagerForPortrait.textContainers.count * 1.0 / [DataViewController numberOfColumnInPage]);
     } else {
         return ceilf(self.layoutManagerForPortrait.textContainers.count * 1.0 / [DataViewController numberOfColumnInPage]);
     }
@@ -87,16 +94,7 @@
     self.textStorage.layoutManagers.firstObject.delegate = self;
     assert(self.layoutManager);
     _numberOfColumn = numberOfColumn;
-//    if (self.layoutManager.textContainers.count < numberOfColumn) {
-//        for (NSUInteger i = numberOfColumn - self.layoutManager.textContainers.count; i > 0; i--) {
-//            NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.textContainerSize];
-//            [self.layoutManager addTextContainer:textContainer];
-//        }
-//    } else {
-//        for (NSUInteger i = self.layoutManager.textContainers.count - numberOfColumn; i > 0; i--) {
-//            [self.layoutManager removeTextContainerAtIndex:self.layoutManager.textContainers.count-1];
-//        }
-//    }
+    
     //remove
     for (NSInteger i = self.layoutManager.textContainers.count-1; i >= 0; i--) {
         [self.layoutManager removeTextContainerAtIndex:i];
@@ -108,44 +106,65 @@
         if (self.bezierPath) {
             textContainer.exclusionPaths = @[self.bezierPath];
         }
-        
         [self.layoutManager addTextContainer:textContainer];
-        NSRange glyphRange = [self.layoutManager glyphRangeForTextContainer:textContainer];
-        if (NSLocationInRange(self.glyphRange.location, glyphRange)) {
-            self.currentShowingIndex = [self.layoutManager.textContainers indexOfObject:textContainer];
-            NSLog(@"%s location:%@ glyphRange:%@, index:%@", __PRETTY_FUNCTION__,@(self.glyphRange.location), NSStringFromRange(glyphRange),@(self.currentShowingIndex));
-        }
-
+        NSLog(@"%s glyphRange:%@ ", __PRETTY_FUNCTION__,NSStringFromRange([self.layoutManager glyphRangeForTextContainer:textContainer]));
     }
-
-//    for (NSTextContainer *textContainer in self.layoutManager.textContainers) {
-//
-//    textContainer.size = self.textContainerSize;
-//    if (self.bezierPath) {
-//        textContainer.exclusionPaths = @[self.bezierPath];
-//    }
-//        NSRange glyphRange = [self.layoutManager glyphRangeForTextContainer:textContainer];
-//        if (NSLocationInRange(self.glyphRange.location, glyphRange)) {
-//            self.currentShowingIndex = [self.layoutManager.textContainers indexOfObject:textContainer];
-//            NSLog(@"%s location:%@ glyphRange:%@, index:%@", __PRETTY_FUNCTION__,@(self.glyphRange.location), NSStringFromRange(glyphRange),@(self.currentShowingIndex));
-//            break;
-//        }
-//        NSLog(@"%s glyphRange:%@",__PRETTY_FUNCTION__, NSStringFromRange(glyphRange));
-//    }
-//    [self.layoutManager textContainerChangedGeometry:self.layoutManager.textContainers[self.currentShowingIndex]];
+    
+    NSMutableArray<NSValue *> *mutableGlyphRanges = [NSMutableArray arrayWithCapacity:self.numberOfPages];
+    for (NSUInteger column = 0,page = 0; column < self.layoutManager.textContainers.count; column += self.numberOfColumnInPage,page++) {
+        NSArray<NSTextContainer *> *textContainers = [self textContainersWithLayoutManager:self.layoutManager
+                                                                                     index:page
+                                                                            numberOfColumn:self.numberOfColumnInPage];
+        NSRange glyphRange = [self glyphRangeWithLayoutManager:self.layoutManager textContainers:textContainers];
+        [mutableGlyphRanges addObject:[NSValue valueWithRange:glyphRange]];
+    }
+    _glyphRanges = mutableGlyphRanges;
+    
+    
+    NSInteger index = -1;
+    if ((index = [self indexOfBestMatchWithGlyphRange:self.glyphRange]) > -1) {
+        self.currentShowingIndex = index;
+        NSLog(@"%s glyphRange:%@, target:%@ index:%@", __PRETTY_FUNCTION__,NSStringFromRange(self.glyphRange),
+              NSStringFromRange([self.glyphRanges[index] rangeValue]),
+              @(self.currentShowingIndex));
+    }
+    
 }
 
+
+- (NSInteger)indexOfBestMatchWithGlyphRange:(NSRange)glyphRange {
+    NSInteger index = -1;
+    NSArray<NSValue *> *glyphRanges = self.glyphRanges;
+    for (NSUInteger i = 0; i < glyphRanges.count; i++) {
+        NSRange targetRange = [glyphRanges[i] rangeValue];
+        if (NSLocationInRange(glyphRange.location, targetRange)) {
+            if (glyphRange.length == 0) {
+                index = i;
+                break;
+            }
+            if (NSEqualRanges(NSIntersectionRange(glyphRange, targetRange), glyphRange)) {
+                index = i;
+                break;
+            }
+            NSUInteger left = ABS(NSMaxRange(targetRange) - glyphRange.location);
+            NSUInteger right = ABS(NSMaxRange(glyphRange) - NSMaxRange(targetRange));
+            index = left > right ? i : i+1;
+            break;
+        }
+    }
+    return index;
+}
 #else
-- (void)setNumberOfColumnForPortait:(NSUInteger)numberOfColumnForPortait {
+- (void)setNumberOfColumnForPortrait:(NSUInteger)numberOfColumnForPortrait {
     assert(self.layoutManagerForPortrait);
-    _numberOfColumnForPortait = numberOfColumnForPortait;
-        if (self.layoutManagerForPortrait.textContainers.count < numberOfColumnForPortait) {
-            for (NSUInteger i = numberOfColumnForPortait - self.layoutManagerForPortrait.textContainers.count; i > 0; i--) {
+    _numberOfColumnForPortrait = numberOfColumnForPortrait;
+        if (self.layoutManagerForPortrait.textContainers.count < numberOfColumnForPortrait) {
+            for (NSUInteger i = numberOfColumnForPortrait - self.layoutManagerForPortrait.textContainers.count; i > 0; i--) {
                 NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.textContainerSize];
                 [self.layoutManagerForPortrait addTextContainer:textContainer];
             }
         } else {
-            for (NSUInteger i = self.layoutManagerForPortrait.textContainers.count - numberOfColumnForPortait; i > 0; i--) {
+            for (NSUInteger i = self.layoutManagerForPortrait.textContainers.count - numberOfColumnForPortrait; i > 0; i--) {
                 [self.layoutManagerForPortrait removeTextContainerAtIndex:self.layoutManagerForPortrait.textContainers.count-1];
             }
         }
@@ -287,7 +306,7 @@
 //    }
 }
 #pragma mark - ???
-- (NSUInteger)pagesWithPageSize:(CGSize)size {
+- (NSUInteger)numberOfTextContainerWithSize:(CGSize)size {
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:[self content]];
     NSLog(@"%s line:%d calc start",__PRETTY_FUNCTION__, __LINE__);
     
@@ -295,7 +314,6 @@
                                      options:NSStringDrawingUsesLineFragmentOrigin
                                      context:NULL];
     NSLog(@"%s line:%d calc end.pages:%@",__PRETTY_FUNCTION__, __LINE__, @(ceilf(CGRectGetHeight(rect)/size.height)));
-    
     
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     [textStorage addLayoutManager:layoutManager];
@@ -308,13 +326,11 @@
     }
     
     NSInteger pages = -1;
-    NSMutableArray<NSValue *> *glyphRanges = [NSMutableArray array];
-    for(; NSMaxRange(currentGlyphRange) > 0; pages++) {
+    for( ; NSMaxRange(currentGlyphRange) > 0; pages++) {
         [layoutManager addTextContainer:textContainer];
         currentGlyphRange = [layoutManager glyphRangeForTextContainer:textContainer];
         currentCharactersRange = [layoutManager characterRangeForGlyphRange:currentGlyphRange actualGlyphRange:NULL];
         if (currentCharactersRange.location != NSNotFound) {
-            [glyphRanges addObject:[NSValue valueWithRange:currentGlyphRange]];
             [textStorage deleteCharactersInRange:currentCharactersRange];
         }
         [layoutManager removeTextContainerAtIndex:0];
@@ -326,20 +342,51 @@
 }
 
 #pragma mark - Layout manager delegate
-- (void)layoutManagerDidInvalidateLayout:(NSLayoutManager *)sender {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+//- (void)layoutManagerDidInvalidateLayout:(NSLayoutManager *)sender {
+//    NSLog(@"%s",__PRETTY_FUNCTION__);
+//}
+//
+//- (void)layoutManager:(NSLayoutManager *)layoutManager didCompleteLayoutForTextContainer:(NSTextContainer *)textContainer atEnd:(BOOL)layoutFinishedFlag {
+//    
+//    self.NUMBEROFPAGES += (layoutFinishedFlag ? 1 : 0);
+////    _layoutManagerFinished = YES;
+//    NSLog(@"%s textContainer:%@, END:%@ pages:%@",__PRETTY_FUNCTION__,textContainer,layoutFinishedFlag ? @"YES" : @"NO",@(self.NUMBEROFPAGES));
+////    NSLog(@"\n++++++++++\n%@\n++++++++++\n",layoutManager.textContainers);
+//}
+//
+//- (void)layoutManager:(NSLayoutManager *)layoutManager textContainer:(NSTextContainer *)textContainer didChangeGeometryFromSize:(CGSize)oldSize {
+//    NSLog(@"%s textContainer:%@ oldSize:%@",__PRETTY_FUNCTION__,textContainer,NSStringFromCGSize(oldSize));
+//}
+#pragma mark - XXX
+- (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers {
+    NSRange glyphRange = NSMakeRange(0, 0);
+//    for (NSTextContainer *textContainer in textContainers) {
+//        NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
+//        glyphRange = NSUnionRange(range, glyphRange);
+//    }
+    glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:textContainers.firstObject],
+                              [layoutManager glyphRangeForTextContainer:textContainers.lastObject]);
+    return glyphRange;
 }
 
-- (void)layoutManager:(NSLayoutManager *)layoutManager didCompleteLayoutForTextContainer:(NSTextContainer *)textContainer atEnd:(BOOL)layoutFinishedFlag {
-    
-    self.NUMBEROFPAGES += (layoutFinishedFlag ? 1 : 0);
-//    _layoutManagerFinished = YES;
-    NSLog(@"%s textContainer:%@, END:%@ pages:%@",__PRETTY_FUNCTION__,textContainer,layoutFinishedFlag ? @"YES" : @"NO",@(self.NUMBEROFPAGES));
-    NSLog(@"\n++++++++++\n%@\n++++++++++\n",layoutManager.textContainers);
+- (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager
+                                                          index:(NSInteger)currentPageIndex
+                                                 numberOfColumn:(NSInteger)numberOfColumn
+{
+    NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / numberOfColumn);
+    NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:numberOfColumn];
+    if (currentPageIndex < numberOfPages) {
+        for (NSUInteger i = 0; i < numberOfColumn; i++) {
+            NSUInteger index = currentPageIndex * numberOfColumn + i;
+            if (index == layoutManager.textContainers.count) {
+                break;
+            }
+            NSTextContainer *textContainer = layoutManager.textContainers[index];
+            [mutabTextContainers addObject:textContainer];
+        }
+    } else {
+        mutabTextContainers = nil;
+    }
+    return mutabTextContainers;
 }
-
-- (void)layoutManager:(NSLayoutManager *)layoutManager textContainer:(NSTextContainer *)textContainer didChangeGeometryFromSize:(CGSize)oldSize {
-    NSLog(@"%s textContainer:%@ oldSize:%@",__PRETTY_FUNCTION__,textContainer,NSStringFromCGSize(oldSize));
-}
-
 @end
