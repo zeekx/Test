@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLTextView.h"
 
 @interface DataViewController : UIViewController<NSLayoutManagerDelegate>
-
+@property (strong, nonatomic) MLTextView *textView;
 @property (assign, nonatomic) NSInteger currentPageIndex;
-
+@property (assign, nonatomic) NSRange glyphRange;
+@property (strong, nonatomic) NSMutableArray<UITextView *> *mutableTextViews;
 
 - (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage newIndex:(NSInteger)index otherIndex:(NSInteger)otherIndex;
-//- (void)setDataWithTextStorage:(NSTextStorage *)textStorage;
-//- (void)setDataWithTextStorage:(NSTextStorage *)textStorage textContainer:(NSTextContainer *)textContainer layoutManager:(NSLayoutManager *)layoutManager;
++ (NSUInteger)numberOfColumnInPage;
+- (BOOL)updateText;//TODO:起个好名字
 @end
 

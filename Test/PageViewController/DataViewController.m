@@ -8,15 +8,17 @@
 
 #import "DataViewController.h"
 
+
 @interface DataViewController () {
     BOOL _layoutManagerFinished;
 
 }
-@property (strong, nonatomic) UITextView *textView;
-@property (strong, nonatomic) NSMutableArray<UITextView *> *mutableTextViews;
+
+
 @property (strong, nonatomic) NSMutableArray<NSTextContainer *> *mutableTextContainers;
 @property (assign, nonatomic) CGPoint divide;
-@property (readonly, nonatomic) NSInteger numberOfColumn;
+@property (readonly, nonatomic) NSUInteger numberOfColumnInPage;
+@property (weak  , nonatomic) NSTextStorage *textStorage;
 @end
 
 @implementation DataViewController
@@ -50,110 +52,9 @@
 }
 
 - (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage newIndex:(NSInteger)newIndex otherIndex:(NSInteger)otherIndex {
-    BOOL result = NO;
     self.currentPageIndex = newIndex;
-    NSLayoutManager *layoutManager = textStorage.layoutManagers.firstObject;
-#if 0
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {//横屏
-
-        layoutManager = textStorage.layoutManagers.lastObject;
-        layoutManager.delegate = self;
-        layoutManager.allowsNonContiguousLayout = YES;
-        if (newIndex >= 0 && otherIndex >= 0) {
-            CGSize textContainerSize = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
-            textContainerSize.width /= self.numberOfColumn;
-            [self.mutableTextContainers addObject:[[NSTextContainer alloc] initWithSize:textContainerSize]];
-            [self.mutableTextContainers addObject:[[NSTextContainer alloc] initWithSize:textContainerSize]];
-            
-            if (newIndex > otherIndex) {//下一页
-                if (newIndex * self.numberOfColumn == layoutManager.textContainers.count) {
-                    assert(self.mutableTextContainers.count == self.numberOfColumn);
-                    [layoutManager addTextContainer:self.mutableTextContainers.firstObject];
-                    [layoutManager addTextContainer:self.mutableTextContainers.lastObject];
-                } else {
-                    [self.mutableTextContainers replaceObjectsInRange:NSMakeRange(0, self.mutableTextContainers.count)
-                                                 withObjectsFromArray:layoutManager.textContainers
-                                                                range:NSMakeRange(self.numberOfColumn * newIndex, self.mutableTextContainers.count)];
-                }
-            } else if (otherIndex > newIndex) {//上一页
-                //TODO:REMOVE TEXT CONTAINER IF NO NEED.
-                //            [layoutManager removeTextContainerAtIndex:MAX(0, otherIndex)];
-                [self.mutableTextContainers replaceObjectsInRange:NSMakeRange(0, self.mutableTextContainers.count)
-                                             withObjectsFromArray:layoutManager.textContainers
-                                                            range:NSMakeRange(self.numberOfColumn * newIndex, self.mutableTextContainers.count)];
-                
-            } else if (newIndex == 0 && otherIndex == 0
-                       && layoutManager.textContainers.count == 0) {//初始页
-                [layoutManager addTextContainer:self.mutableTextContainers.firstObject];
-                [layoutManager addTextContainer:self.mutableTextContainers.lastObject];
-            } else {
-                assert(NO);
-            }
-            for (NSInteger i = 0; i < self.numberOfColumn; i++) {
-                CGRect frame = CGRectMake(CGRectGetWidth(self.view.bounds) /self.numberOfColumn * i, 0,
-                                          CGRectGetWidth(self.view.bounds) /self.numberOfColumn, CGRectGetHeight(self.view.bounds));
-                UITextView *textView = [[UITextView alloc] initWithFrame:frame textContainer:self.mutableTextContainers[i]];
-                textView.scrollEnabled = NO;
-                textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-                textView.layer.borderColor = [UIColor blueColor].CGColor;
-                textView.layer.borderWidth = 0.5F;
-                [self.view addSubview:textView];
-                [self.mutableTextViews addObject:textView];
-            }
-        } else {
-            assert(NO);
-        }
-    } else { //Portrait
-        layoutManager.delegate = self;
-        layoutManager.allowsNonContiguousLayout = YES;
-        NSLog(@"%s text container count:%ld",__PRETTY_FUNCTION__, layoutManager.textContainers.count);
-        if (newIndex >= 0 && otherIndex >= 0) {
-            NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size];
-            
-            if (newIndex > otherIndex) {//下一页
-                if (newIndex == layoutManager.textContainers.count) {
-                    [layoutManager addTextContainer:textContainer];
-                } else {
-                    textContainer = layoutManager.textContainers[newIndex];
-                }
-            } else if (otherIndex > newIndex) {//上一页
-               //TODO:REMOVE TEXT CONTAINER IF NO NEED.
-                //            [layoutManager removeTextContainerAtIndex:MAX(0, otherIndex)];
-                textContainer = layoutManager.textContainers[newIndex];
-            } else if (newIndex == 0 && otherIndex == 0 && layoutManager.textContainers.count == 0) {//初始页
-                [layoutManager insertTextContainer:textContainer atIndex:0];
-            } else {
-                assert(NO);
-            }
-            
-            UITextView *textView = [[UITextView alloc] initWithFrame:self.view.bounds textContainer:textContainer];
-            textView.scrollEnabled = NO;
-            textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [self.view addSubview:textView];
-            [self.mutableTextViews insertObject:textView atIndex:0];
-        } else {
-            assert(NO);
-        }
-
-    }
-        [self setupGestureRecognizerWithViews:self.mutableTextViews];
-        result = _layoutManagerFinished;
-#else
-    if (self.currentPageIndex < layoutManager.textContainers.count) {
-        NSTextContainer *textContainer = layoutManager.textContainers[self.currentPageIndex];
-        textContainer.size = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
-        _textView = [[UITextView alloc] initWithFrame:self.view.bounds
-                                        textContainer:textContainer];
-        _textView.scrollEnabled = NO;
-        _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self.view addSubview:_textView];
-        result = YES;
-    } else {
-        result = NO;
-    }
-    
-#endif
-    return result;
+    self.textStorage = textStorage;
+    return [self updateText];
 }
 
 
@@ -171,13 +72,111 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateText];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (BOOL)updateText {
+    [self.textView removeFromSuperview];
+    self.textView = nil;
+    BOOL result = NO;
+#if kUseSingleLayoutManager
+    NSLayoutManager *layoutManager = self.textStorage.layoutManagers.firstObject;
+
+#else
+    NSLayoutManager *layoutManager = self.textStorage.layoutManagers.firstObject;
+    if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        layoutManager = self.textStorage.layoutManagers.firstObject;
+    } else {
+        layoutManager = self.textStorage.layoutManagers.lastObject;
+    }
+#endif
+    NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / self.numberOfColumnInPage);
+    if (self.currentPageIndex < numberOfPages) {
+        NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
+        for (NSUInteger i = 0; i < self.numberOfColumnInPage; i++) {
+            NSUInteger index = self.currentPageIndex * self.numberOfColumnInPage + i;
+            if (index == layoutManager.textContainers.count) {
+                break;
+            }
+            NSTextContainer *textContainer = layoutManager.textContainers[index];
+            CGSize size = CGRectInset(self.view.bounds, self.divide.x, self.divide.y).size;
+            CGSize columnSize = CGSizeMake(roundf(size.width / self.numberOfColumnInPage), size.height);
+//            textContainer.size = columnSize;
+            [mutabTextContainers addObject:textContainer];
+        }
+//        self.textView = [[MLTextView alloc] initWithLayoutManager:layoutManager
+//                                                   textContainers:mutabTextContainers
+//                                                   numberOfColumn:self.numberOfColumnInPage];
+//        self.textView.frame = self.view.bounds;
+//        [self.view addSubview:self.textView];
+        NSRange glyphRange = NSMakeRange(0, 0);
+        for (NSTextContainer *textContainer in mutabTextContainers) {
+            NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
+            glyphRange = NSUnionRange(range, glyphRange);
+        }
+        glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:mutabTextContainers.firstObject],
+                                  [layoutManager glyphRangeForTextContainer:mutabTextContainers.lastObject]);
+        self.glyphRange = glyphRange;
+//        NSLog(@"%s glyphRange:%@",__PRETTY_FUNCTION__, NSStringFromRange(glyphRange));
+        [self setupTextViewWithTextContainers:mutabTextContainers];
+        result = YES;
+    }
+    return result;
+}
+
+- (void)setupTextViewWithTextContainers:(NSArray<NSTextContainer *> *)textContainers {
+    for (UIView *subView in self.view.subviews) {
+        [subView removeFromSuperview];
+    }
+    if (textContainers.count == 1) {
+        NSTextContainer *textContainer = textContainers.firstObject;
+        UITextView *textView =[[UITextView alloc] initWithFrame:CGRectMake(0, 0, textContainer.size.width, textContainer.size.height)
+                                                  textContainer:textContainer];
+        [self.view addSubview:textView];
+        [self.mutableTextViews addObject:textView];
+        textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    } else if (textContainers.count == 2) {
+        NSTextContainer *textContainerLeft = textContainers.firstObject;
+        NSTextContainer *textContainerRight = textContainers.lastObject;
+        UITextView *textViewLeft =[[UITextView alloc] initWithFrame:CGRectMake(0, 0, textContainerLeft.size.width, textContainerLeft.size.height)
+                                                  textContainer:textContainerLeft];
+        textViewLeft.scrollEnabled = NO;
+        textViewLeft.selectable = YES;
+        textViewLeft.editable = NO;
+        UITextView *textViewRight =[[UITextView alloc] initWithFrame:CGRectMake(textContainerLeft.size.width, 0, textContainerRight.size.width, textContainerRight.size.height)
+                                                      textContainer:textContainerRight];
+        textViewRight.scrollEnabled = NO;
+        textViewRight.selectable = YES;
+        textViewRight.editable = NO;
+        [self.view addSubview:textViewLeft];
+        [self.view addSubview:textViewRight];
+        [self.mutableTextViews addObject:textViewLeft];
+        [self.mutableTextViews addObject:textViewRight];
+        textViewRight.translatesAutoresizingMaskIntoConstraints = NO;
+        textViewLeft.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary *viewBindings = NSDictionaryOfVariableBindings(textViewLeft, textViewRight);
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textViewLeft(==textViewRight)]-0-[textViewRight]|"
+                                                                         options:kNilOptions
+                                                                         metrics:nil
+                                                                            views:viewBindings]];
+
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewLeft]|"
+                                                                          options:kNilOptions
+                                                                          metrics:nil
+                                                                            views:viewBindings]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewRight]|"
+                                                                          options:kNilOptions
+                                                                          metrics:nil
+                                                                            views:viewBindings]];
+        [self.view layoutIfNeeded];
+    }
 }
 
 - (void)setupGestureRecognizerWithViews:(NSArray<UIView *> *)views {
@@ -249,21 +248,26 @@
 #pragma mark - Lazy properties
 - (NSMutableArray<UITextView *> *)mutableTextViews {
     if (_mutableTextViews == nil) {
-        _mutableTextViews = [NSMutableArray arrayWithCapacity:self.numberOfColumn];
+        _mutableTextViews = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
     }
     return _mutableTextViews;
 }
 
 - (NSMutableArray<NSTextContainer *> *)mutableTextContainers {
     if (_mutableTextContainers == nil) {
-        _mutableTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumn];
+        _mutableTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
     }
     return _mutableTextContainers;
 }
 
-- (NSInteger)numberOfColumn {
-    return 2;
+- (NSUInteger)numberOfColumnInPage {
+    return [[self class] numberOfColumnInPage];
 }
+
++ (NSUInteger)numberOfColumnInPage {
+    return UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? 1 : 1;;
+}
+
 #pragma mark - Notification
 - (void)addObserverNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleStatusBarWillChangeOrientation) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];

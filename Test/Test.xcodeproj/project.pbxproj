@@ -38,6 +38,8 @@
 		A5549DBF1C0306860094F4CA /* BlueSky.png in Resources */ = {isa = PBXBuildFile; fileRef = A5549DBC1C0306860094F4CA /* BlueSky.png */; };
 		A5549DC01C0306860094F4CA /* Mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = A5549DBD1C0306860094F4CA /* Mouse.png */; };
 		A5549DC11C0306860094F4CA /* SimleFace.png in Resources */ = {isa = PBXBuildFile; fileRef = A5549DBE1C0306860094F4CA /* SimleFace.png */; };
+		A56FA1E61CBF749300817848 /* MLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FA1E51CBF749300817848 /* MLTextView.m */; };
+		A56FA1EC1CBF7E9200817848 /* NSTextStorage+MLPages.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */; };
 		A57A5E851C056463006EFD85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E841C056463006EFD85 /* main.m */; };
 		A57A5E881C056463006EFD85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E871C056463006EFD85 /* AppDelegate.m */; };
 		A57A5E8B1C056463006EFD85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E8A1C056463006EFD85 /* ViewController.m */; };
@@ -129,6 +131,11 @@
 		A5549DBC1C0306860094F4CA /* BlueSky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueSky.png; sourceTree = "<group>"; };
 		A5549DBD1C0306860094F4CA /* Mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mouse.png; sourceTree = "<group>"; };
 		A5549DBE1C0306860094F4CA /* SimleFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimleFace.png; sourceTree = "<group>"; };
+		A55800351CC0F07D00B1A3D0 /* PrefixHeader-PageViewController.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrefixHeader-PageViewController.pch"; sourceTree = "<group>"; };
+		A56FA1E41CBF749300817848 /* MLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTextView.h; sourceTree = "<group>"; };
+		A56FA1E51CBF749300817848 /* MLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTextView.m; sourceTree = "<group>"; };
+		A56FA1EA1CBF7E9200817848 /* NSTextStorage+MLPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextStorage+MLPages.h"; sourceTree = "<group>"; };
+		A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextStorage+MLPages.m"; sourceTree = "<group>"; };
 		A57A5E811C056463006EFD85 /* RegularExpression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegularExpression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57A5E841C056463006EFD85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57A5E861C056463006EFD85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -330,6 +337,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A56FA1E71CBF74A500817848 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A56FA1E41CBF749300817848 /* MLTextView.h */,
+				A56FA1E51CBF749300817848 /* MLTextView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A56FA1E81CBF74BF00817848 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A59E01511C8EBAAB007A1125 /* ModelController.h */,
+				A59E01521C8EBAAB007A1125 /* ModelController.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A56FA1E91CBF74CB00817848 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59E014B1C8EBAAB007A1125 /* RootViewController.h */,
+				A59E014C1C8EBAAB007A1125 /* RootViewController.m */,
+				A59E014E1C8EBAAB007A1125 /* DataViewController.h */,
+				A59E014F1C8EBAAB007A1125 /* DataViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A56FA1ED1CBF7E9800817848 /* TextKit Stack */ = {
+			isa = PBXGroup;
+			children = (
+				A56FA1EA1CBF7E9200817848 /* NSTextStorage+MLPages.h */,
+				A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */,
+			);
+			name = "TextKit Stack";
+			sourceTree = "<group>";
+		};
 		A57A5E821C056463006EFD85 /* RegularExpression */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,12 +437,10 @@
 			children = (
 				A59E01481C8EBAAB007A1125 /* AppDelegate.h */,
 				A59E01491C8EBAAB007A1125 /* AppDelegate.m */,
-				A59E014B1C8EBAAB007A1125 /* RootViewController.h */,
-				A59E014C1C8EBAAB007A1125 /* RootViewController.m */,
-				A59E014E1C8EBAAB007A1125 /* DataViewController.h */,
-				A59E014F1C8EBAAB007A1125 /* DataViewController.m */,
-				A59E01511C8EBAAB007A1125 /* ModelController.h */,
-				A59E01521C8EBAAB007A1125 /* ModelController.m */,
+				A56FA1E91CBF74CB00817848 /* Controller */,
+				A56FA1E81CBF74BF00817848 /* Model */,
+				A56FA1E71CBF74A500817848 /* View */,
+				A56FA1ED1CBF7E9800817848 /* TextKit Stack */,
 				A59E01541C8EBAAB007A1125 /* Main.storyboard */,
 				A59E01571C8EBAAB007A1125 /* Assets.xcassets */,
 				A59E01591C8EBAAB007A1125 /* LaunchScreen.storyboard */,
@@ -405,6 +448,7 @@
 				A59E01451C8EBAAB007A1125 /* Supporting Files */,
 				A553DE371C926D3A00B1A766 /* File.rtf */,
 				A553DE391C927FD500B1A766 /* File.txt */,
+				A55800351CC0F07D00B1A3D0 /* PrefixHeader-PageViewController.pch */,
 			);
 			path = PageViewController;
 			sourceTree = "<group>";
@@ -710,10 +754,6 @@
 					};
 					A59E01421C8EBAAB007A1125 = {
 						CreatedOnToolsVersion = 7.2.1;
-<<<<<<< HEAD
-						DevelopmentTeam = 634ZER5EMA;
-=======
->>>>>>> origin/master
 					};
 					A5DA1D241C0055E700521A7E = {
 						CreatedOnToolsVersion = 7.1;
@@ -944,6 +984,8 @@
 				A59E014A1C8EBAAB007A1125 /* AppDelegate.m in Sources */,
 				A59E01531C8EBAAB007A1125 /* ModelController.m in Sources */,
 				A59E01471C8EBAAB007A1125 /* main.m in Sources */,
+				A56FA1EC1CBF7E9200817848 /* NSTextStorage+MLPages.m in Sources */,
+				A56FA1E61CBF749300817848 /* MLTextView.m in Sources */,
 				A59E014D1C8EBAAB007A1125 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,8 +1263,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGETNAME)/PrefixHeader-PageViewController.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = PageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.PageViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1237,8 +1283,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGETNAME)/PrefixHeader-PageViewController.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				INFOPLIST_FILE = PageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.PageViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
