@@ -74,7 +74,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self updateText];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,33 +96,36 @@
         layoutManager = self.textStorage.layoutManagers.lastObject;
     }
 #endif
-    NSArray<NSTextContainer *> *textContainers = [self textContainersWithLayoutManager:layoutManager index:self.currentPageIndex];
+    NSArray<NSTextContainer *> *textContainers = [[self class] textContainersWithLayoutManager:layoutManager
+                                                                                         index:self.currentPageIndex
+                                                                                numberOfColumn:self.numberOfColumnInPage];
     if (textContainers.count > 0) {
-        self.glyphRange = [self glyphRangeWithLayoutManager:layoutManager textContainers:textContainers];
+        self.glyphRange = [[self class] glyphRangeWithLayoutManager:layoutManager textContainers:textContainers];
 //        NSLog(@"%s glyphRange:%@",__PRETTY_FUNCTION__, NSStringFromRange(glyphRange));
         [self setupTextViewWithTextContainers:textContainers];
         result = YES;
+    } else {
+        assert(NO);
     }
     return result;
 }
 
-- (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers {
-    NSRange glyphRange = NSMakeRange(0, 0);
-    for (NSTextContainer *textContainer in textContainers) {
-        NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
-        glyphRange = NSUnionRange(range, glyphRange);
++ (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers {
+    NSRange glyphRange = [layoutManager glyphRangeForTextContainer:textContainers.firstObject];
+    for (NSUInteger i = 1; i < textContainers.count; i++) {
+        glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:textContainers[i]], glyphRange);
     }
-    glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:textContainers.firstObject],
-                              [layoutManager glyphRangeForTextContainer:textContainers.lastObject]);
     return glyphRange;
 }
 
-- (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager index:(NSInteger)currentPageIndex {
-    NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / self.numberOfColumnInPage);
-    NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:self.numberOfColumnInPage];
++ (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager
+                                                          index:(NSInteger)currentPageIndex
+                                                 numberOfColumn:(NSInteger)numberOfColumn {
+    NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / numberOfColumn);
+    NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:numberOfColumn];
     if (currentPageIndex < numberOfPages) {
-        for (NSUInteger i = 0; i < self.numberOfColumnInPage; i++) {
-            NSUInteger index = currentPageIndex * self.numberOfColumnInPage + i;
+        for (NSUInteger i = 0; i < numberOfColumn; i++) {
+            NSUInteger index = currentPageIndex * numberOfColumn + i;
             if (index == layoutManager.textContainers.count) {
                 break;
             }
@@ -144,15 +146,17 @@
         NSTextContainer *textContainer = textContainers.firstObject;
         UITextView *textView =[[UITextView alloc] initWithFrame:CGRectMake(0, 0, textContainer.size.width, textContainer.size.height)
                                                   textContainer:textContainer];
+//        textView.scrollEnabled = NO;
+        textView.selectable = YES;
+        textView.editable = NO;
         [self.view addSubview:textView];
         [self.mutableTextViews addObject:textView];
-        textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     } else if (textContainers.count == 2) {
         NSTextContainer *textContainerLeft = textContainers.firstObject;
         NSTextContainer *textContainerRight = textContainers.lastObject;
         UITextView *textViewLeft =[[UITextView alloc] initWithFrame:CGRectMake(0, 0, textContainerLeft.size.width, textContainerLeft.size.height)
                                                   textContainer:textContainerLeft];
-        textViewLeft.scrollEnabled = NO;
+//        textViewLeft.scrollEnabled = NO;
         textViewLeft.selectable = YES;
         textViewLeft.editable = NO;
         UITextView *textViewRight =[[UITextView alloc] initWithFrame:CGRectMake(textContainerLeft.size.width, 0, textContainerRight.size.width, textContainerRight.size.height)
@@ -164,23 +168,24 @@
         [self.view addSubview:textViewRight];
         [self.mutableTextViews addObject:textViewLeft];
         [self.mutableTextViews addObject:textViewRight];
-        textViewRight.translatesAutoresizingMaskIntoConstraints = NO;
-        textViewLeft.translatesAutoresizingMaskIntoConstraints = NO;
-        NSDictionary *viewBindings = NSDictionaryOfVariableBindings(textViewLeft, textViewRight);
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textViewLeft(==textViewRight)]-0-[textViewRight]|"
-                                                                         options:kNilOptions
-                                                                         metrics:nil
-                                                                            views:viewBindings]];
-
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewLeft]|"
-                                                                          options:kNilOptions
-                                                                          metrics:nil
-                                                                            views:viewBindings]];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewRight]|"
-                                                                          options:kNilOptions
-                                                                          metrics:nil
-                                                                            views:viewBindings]];
-        [self.view layoutIfNeeded];
+//        textViewRight.translatesAutoresizingMaskIntoConstraints = NO;
+//        textViewLeft.translatesAutoresizingMaskIntoConstraints = NO;
+//        NSDictionary *viewBindings = NSDictionaryOfVariableBindings(textViewLeft, textViewRight);
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textViewLeft(==textViewRight)]-0-[textViewRight]|"
+//                                                                         options:kNilOptions
+//                                                                         metrics:nil
+//                                                                            views:viewBindings]];
+//
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewLeft]|"
+//                                                                          options:kNilOptions
+//                                                                          metrics:nil
+//                                                                            views:viewBindings]];
+//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[textViewRight]|"
+//                                                                          options:kNilOptions
+//                                                                          metrics:nil
+//                                                                            views:viewBindings]];
+    } else {
+        assert(NO);
     }
 }
 

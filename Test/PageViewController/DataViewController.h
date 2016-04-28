@@ -18,5 +18,10 @@
 - (BOOL)setupTextViewWithTextStorage:(NSTextStorage *)textStorage newIndex:(NSInteger)index otherIndex:(NSInteger)otherIndex;
 + (NSUInteger)numberOfColumnInPage;
 - (BOOL)updateText;//TODO:起个好名字
+
++ (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers;
++ (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager
+                                                          index:(NSInteger)currentPageIndex
+                                                 numberOfColumn:(NSInteger)numberOfColumn;
 @end
 

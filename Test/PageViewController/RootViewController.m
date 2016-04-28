@@ -36,6 +36,7 @@
 - (NSLayoutManager *)layoutManager {
     if (_layoutManager == nil) {
         _layoutManager = [[NSLayoutManager alloc] init];
+//        _layoutManager.allowsNonContiguousLayout = YES;
     }
     return _layoutManager;
 }
@@ -118,7 +119,7 @@
     [self.pageViewController didMoveToParentViewController:self];
 
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
-    self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+//    self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,10 +140,6 @@
 #pragma mark - UIPageViewController delegate methods
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation {
-    if (self.pageViewController.transitionStyle == UIPageViewControllerTransitionStyleScroll) {
-        return UIPageViewControllerSpineLocationNone;
-    }
-
     if (UIInterfaceOrientationIsPortrait(orientation) || ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)) {
         // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to YES, so set it to NO here.
         
@@ -178,9 +175,14 @@
     CGSize textSize = CGRectInset(viewBounds, 0, 0).size;
     
     __weak typeof(self) weakSelf = self;
+    assert(weakSelf.pageViewController.viewControllers.count == 1);
+    DataViewController *dvc = weakSelf.pageViewController.viewControllers.firstObject;
+    weakSelf.modelController.glyphRange = dvc.glyphRange;
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         CGSize columnSize = CGSizeMake(roundf(textSize.width / [DataViewController numberOfColumnInPage]), textSize.height);
         weakSelf.modelController.textContainerSize = columnSize;
+        
+//        weakSelf.modelController.spineWidth = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? 100 : 0;
 #if kUseSingleLayoutManager
         weakSelf.modelController.numberOfColumn = [self.modelController numberOfTextContainerWithSize:columnSize];
 #else

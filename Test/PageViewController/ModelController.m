@@ -107,51 +107,68 @@
             textContainer.exclusionPaths = @[self.bezierPath];
         }
         [self.layoutManager addTextContainer:textContainer];
-        NSLog(@"%s glyphRange:%@ ", __PRETTY_FUNCTION__,NSStringFromRange([self.layoutManager glyphRangeForTextContainer:textContainer]));
+//        NSLog(@"%s glyphRange:%@ ", __PRETTY_FUNCTION__,NSStringFromRange([self.layoutManager glyphRangeForTextContainer:textContainer]));
     }
     
     NSMutableArray<NSValue *> *mutableGlyphRanges = [NSMutableArray arrayWithCapacity:self.numberOfPages];
     for (NSUInteger column = 0,page = 0; column < self.layoutManager.textContainers.count; column += self.numberOfColumnInPage,page++) {
-        NSArray<NSTextContainer *> *textContainers = [self textContainersWithLayoutManager:self.layoutManager
+        NSArray<NSTextContainer *> *textContainers = [DataViewController textContainersWithLayoutManager:self.layoutManager
                                                                                      index:page
                                                                             numberOfColumn:self.numberOfColumnInPage];
-        NSRange glyphRange = [self glyphRangeWithLayoutManager:self.layoutManager textContainers:textContainers];
+        NSRange glyphRange = [DataViewController glyphRangeWithLayoutManager:self.layoutManager textContainers:textContainers];
         [mutableGlyphRanges addObject:[NSValue valueWithRange:glyphRange]];
     }
     _glyphRanges = mutableGlyphRanges;
     
     
     NSInteger index = -1;
-    if ((index = [self indexOfBestMatchWithGlyphRange:self.glyphRange]) > -1) {
+    if ((index = [self indexOfMatchWithRange:self.glyphRange inRanges:self.glyphRanges]) > -1) {
         self.currentShowingIndex = index;
         NSLog(@"%s glyphRange:%@, target:%@ index:%@", __PRETTY_FUNCTION__,NSStringFromRange(self.glyphRange),
               NSStringFromRange([self.glyphRanges[index] rangeValue]),
               @(self.currentShowingIndex));
+    } else {
+        self.currentShowingIndex = MAX(0, MIN(self.currentShowingIndex, self.numberOfColumnInPage));
     }
-    
+#if DEBUG
+//    [self test];
+#endif
 }
 
 
-- (NSInteger)indexOfBestMatchWithGlyphRange:(NSRange)glyphRange {
+- (NSInteger)indexOfMatchWithRange:(NSRange)range  inRanges:(NSArray<NSValue *> *)ranges{
     NSInteger index = -1;
-    NSArray<NSValue *> *glyphRanges = self.glyphRanges;
-    for (NSUInteger i = 0; i < glyphRanges.count; i++) {
-        NSRange targetRange = [glyphRanges[i] rangeValue];
-        if (NSLocationInRange(glyphRange.location, targetRange)) {
-            if (glyphRange.length == 0) {
+    for (NSInteger i = 0; i < ranges.count; i++) {
+        NSRange targetRange = [ranges[i] rangeValue];
+        if (NSLocationInRange(range.location, targetRange)) {
+            if (range.length == 0) {
                 index = i;
                 break;
             }
-            if (NSEqualRanges(NSIntersectionRange(glyphRange, targetRange), glyphRange)) {
+            if (NSEqualRanges(NSIntersectionRange(range, targetRange), range)) {
                 index = i;
                 break;
             }
-            NSUInteger left = ABS(NSMaxRange(targetRange) - glyphRange.location);
-            NSUInteger right = ABS(NSMaxRange(glyphRange) - NSMaxRange(targetRange));
-            index = left > right ? i : i+1;
+            NSInteger left = NSMaxRange(targetRange) - range.location;
+            assert(left > 0);
+            NSRange nextTargetRange = NSMakeRange(NSNotFound, 0);
+            if (i+1 < ranges.count) {
+                nextTargetRange = [ranges[i+1] rangeValue];
+                if (NSMaxRange(nextTargetRange) > NSMaxRange(range)) {
+                    NSInteger right = NSMaxRange(range) - nextTargetRange.location;
+                    index = left > right ? i : i+1;
+                    break;
+                }
+            } else {
+                // range is the last one object in glyphRanges
+                index = i;
+                break;
+            }
+            //Other
             break;
         }
     }
+//    NSLog(@"%s range:%@ target:%@ index:%@", __PRETTY_FUNCTION__, NSStringFromRange(range),NSStringFromRange([ranges[MAX(0, MIN(index, ranges.count-1))] rangeValue]), @(index));
     return index;
 }
 #else
@@ -357,36 +374,5 @@
 //- (void)layoutManager:(NSLayoutManager *)layoutManager textContainer:(NSTextContainer *)textContainer didChangeGeometryFromSize:(CGSize)oldSize {
 //    NSLog(@"%s textContainer:%@ oldSize:%@",__PRETTY_FUNCTION__,textContainer,NSStringFromCGSize(oldSize));
 //}
-#pragma mark - XXX
-- (NSRange)glyphRangeWithLayoutManager:(NSLayoutManager *)layoutManager textContainers:(NSArray<NSTextContainer *> *)textContainers {
-    NSRange glyphRange = NSMakeRange(0, 0);
-//    for (NSTextContainer *textContainer in textContainers) {
-//        NSRange range = [layoutManager glyphRangeForTextContainer:textContainer];
-//        glyphRange = NSUnionRange(range, glyphRange);
-//    }
-    glyphRange = NSUnionRange([layoutManager glyphRangeForTextContainer:textContainers.firstObject],
-                              [layoutManager glyphRangeForTextContainer:textContainers.lastObject]);
-    return glyphRange;
-}
 
-- (NSArray<NSTextContainer *> *)textContainersWithLayoutManager:(NSLayoutManager *)layoutManager
-                                                          index:(NSInteger)currentPageIndex
-                                                 numberOfColumn:(NSInteger)numberOfColumn
-{
-    NSUInteger numberOfPages = ceilf(layoutManager.textContainers.count * 1.0 / numberOfColumn);
-    NSMutableArray<NSTextContainer *> *mutabTextContainers = [NSMutableArray arrayWithCapacity:numberOfColumn];
-    if (currentPageIndex < numberOfPages) {
-        for (NSUInteger i = 0; i < numberOfColumn; i++) {
-            NSUInteger index = currentPageIndex * numberOfColumn + i;
-            if (index == layoutManager.textContainers.count) {
-                break;
-            }
-            NSTextContainer *textContainer = layoutManager.textContainers[index];
-            [mutabTextContainers addObject:textContainer];
-        }
-    } else {
-        mutabTextContainers = nil;
-    }
-    return mutabTextContainers;
-}
 @end
