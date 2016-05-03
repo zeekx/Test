@@ -225,7 +225,7 @@
     
 }
 - (NSAttributedString *)content {
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"File" withExtension:@"txt"];
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:@"File" withExtension:@"rtf"];
     NSError *error = nil;
     //    NSString *text = [NSString stringWithContentsOfURL:fileURL
     //                                              encoding:NSUTF8StringEncoding
@@ -235,12 +235,13 @@
     //                                                                          options:@{NSDocumentTypeDocumentAttribute:NSPlainTextDocumentType}
     //                                                               documentAttributes:nil
     //                                                                            error:&error];
-    NSLog(@"Read text file to memory START");
+    NSLog(@"%s Read text file to memory START",__PRETTY_FUNCTION__);
+    NSDictionary *at;
     NSMutableAttributedString *mutableAttributeString = [[NSMutableAttributedString alloc] initWithURL:fileURL
-                                                                                               options:@{NSDocumentTypeDocumentAttribute:NSPlainTextDocumentType}
-                                                                                    documentAttributes:nil
+                                                                                               options:@{NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType}
+                                                                                    documentAttributes:&at
                                                                                                  error:&error];
-    NSLog(@"Read text file to memory END");
+    NSLog(@"%s %@\nRead text file to memory END",__PRETTY_FUNCTION__, at);
     NSMutableParagraphStyle *mutablePargraphStyle = [NSMutableParagraphStyle defaultParagraphStyle].mutableCopy;
     mutablePargraphStyle.lineSpacing = 6;
     mutablePargraphStyle.headIndent = 0;
@@ -334,8 +335,8 @@
     
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     [textStorage addLayoutManager:layoutManager];
-    NSRange currentGlyphRange = NSMakeRange(NSNotFound, 0);
-    NSRange currentCharactersRange = NSMakeRange(NSNotFound, 0);
+    NSRange currentGlyphRange = NSMakeRange(NSNotFound, 1);
+//    NSRange currentCharactersRange = NSMakeRange(NSNotFound, 1);
     
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:size];
     if (self.bezierPath) {
@@ -343,14 +344,13 @@
     }
     
     NSInteger pages = -1;
-    for( ; NSMaxRange(currentGlyphRange) > 0; pages++) {
+    for( ; currentGlyphRange.length > 0; pages++) {
+        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:size];
+        if (self.bezierPath) {
+            textContainer.exclusionPaths = @[self.bezierPath];
+        }
         [layoutManager addTextContainer:textContainer];
         currentGlyphRange = [layoutManager glyphRangeForTextContainer:textContainer];
-        currentCharactersRange = [layoutManager characterRangeForGlyphRange:currentGlyphRange actualGlyphRange:NULL];
-        if (currentCharactersRange.location != NSNotFound) {
-            [textStorage deleteCharactersInRange:currentCharactersRange];
-        }
-        [layoutManager removeTextContainerAtIndex:0];
 //        NSLog(@"%s ch:%@, Glyph:%@",__PRETTY_FUNCTION__, NSStringFromRange(currentCharactersRange), NSStringFromRange(currentGlyphRange));
     }
     NSLog(@"%s line:%d SECONED calc end.pages:%@",__PRETTY_FUNCTION__, __LINE__, @(pages));

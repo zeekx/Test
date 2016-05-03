@@ -13,6 +13,8 @@
 		</dict>
 		<key>BackgroundWithNetworking.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
@@ -31,13 +33,10 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>PageViewControllerDemo.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
 		<key>Player.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
@@ -46,6 +45,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>TKDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -53,6 +57,8 @@
 		</dict>
 		<key>Timer.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
@@ -95,6 +101,16 @@
 			<true/>
 		</dict>
 		<key>A5DA1D241C0055E700521A7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5E185A01CD300AF0053CD33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5E185BB1CD301030053CD33</key>
 		<dict>
 			<key>primary</key>
 			<true/>

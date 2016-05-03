@@ -16,9 +16,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self addKVO];
 }
 
+- (void)addKVO {
+    [self addObserver:self forKeyPath:@"view.bounds" options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:@"view.frame" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"view.bounds"]) {
+        id value = change[NSKeyValueChangeNewKey];
+        NSLog(@"%s bounds:%@",__PRETTY_FUNCTION__, value);
+    } else if ([keyPath isEqualToString:@"view.frame"]) {
+        id value = change[NSKeyValueChangeNewKey];
+        NSLog(@"\n%s frame:%@",__PRETTY_FUNCTION__, value);
+    }
+}
+
+- (void)removeKVO {
+    [self removeObserver:self forKeyPath:@"view.bounds"];
+    [self removeObserver:self forKeyPath:@"view.frame"];
+}
+
+- (void)dealloc {
+    [self removeKVO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -40,6 +40,8 @@
 		A5549DC11C0306860094F4CA /* SimleFace.png in Resources */ = {isa = PBXBuildFile; fileRef = A5549DBE1C0306860094F4CA /* SimleFace.png */; };
 		A56FA1E61CBF749300817848 /* MLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FA1E51CBF749300817848 /* MLTextView.m */; };
 		A56FA1EC1CBF7E9200817848 /* NSTextStorage+MLPages.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */; };
+		A573EFFB1CD36BFE005E1144 /* KSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A573EFFA1CD36BFE005E1144 /* KSTextView.m */; };
+		A573EFFE1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m in Sources */ = {isa = PBXBuildFile; fileRef = A573EFFD1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m */; };
 		A57A5E851C056463006EFD85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E841C056463006EFD85 /* main.m */; };
 		A57A5E881C056463006EFD85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E871C056463006EFD85 /* AppDelegate.m */; };
 		A57A5E8B1C056463006EFD85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A57A5E8A1C056463006EFD85 /* ViewController.m */; };
@@ -66,6 +68,12 @@
 		A5DA1D321C0055E700521A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D301C0055E700521A7E /* Main.storyboard */; };
 		A5DA1D341C0055E700521A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D331C0055E700521A7E /* Assets.xcassets */; };
 		A5DA1D371C0055E700521A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DA1D351C0055E700521A7E /* LaunchScreen.storyboard */; };
+		A5E185C01CD301030053CD33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E185BF1CD301030053CD33 /* main.m */; };
+		A5E185C31CD301030053CD33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E185C21CD301030053CD33 /* AppDelegate.m */; };
+		A5E185C61CD301030053CD33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E185C51CD301030053CD33 /* ViewController.m */; };
+		A5E185C91CD301030053CD33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E185C71CD301030053CD33 /* Main.storyboard */; };
+		A5E185CB1CD301030053CD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E185CA1CD301030053CD33 /* Assets.xcassets */; };
+		A5E185CE1CD301030053CD33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E185CC1CD301030053CD33 /* LaunchScreen.storyboard */; };
 		A5EDFEB61BC64F1E00376B71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEB51BC64F1E00376B71 /* main.m */; };
 		A5EDFEB91BC64F1E00376B71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEB81BC64F1E00376B71 /* AppDelegate.m */; };
 		A5EDFEBC1BC64F1E00376B71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EDFEBB1BC64F1E00376B71 /* ViewController.m */; };
@@ -136,6 +144,10 @@
 		A56FA1E51CBF749300817848 /* MLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTextView.m; sourceTree = "<group>"; };
 		A56FA1EA1CBF7E9200817848 /* NSTextStorage+MLPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextStorage+MLPages.h"; sourceTree = "<group>"; };
 		A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextStorage+MLPages.m"; sourceTree = "<group>"; };
+		A573EFF91CD36BFE005E1144 /* KSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTextView.h; sourceTree = "<group>"; };
+		A573EFFA1CD36BFE005E1144 /* KSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTextView.m; sourceTree = "<group>"; };
+		A573EFFC1CD381E6005E1144 /* PropertyWithParaphraseOfWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyWithParaphraseOfWord.h; sourceTree = "<group>"; };
+		A573EFFD1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyWithParaphraseOfWord.m; sourceTree = "<group>"; };
 		A57A5E811C056463006EFD85 /* RegularExpression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegularExpression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57A5E841C056463006EFD85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A57A5E861C056463006EFD85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +192,16 @@
 		A5DA1D331C0055E700521A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5DA1D361C0055E700521A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5DA1D381C0055E700521A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5E185BC1CD301030053CD33 /* TKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5E185BF1CD301030053CD33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5E185C11CD301030053CD33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A5E185C21CD301030053CD33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A5E185C41CD301030053CD33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A5E185C51CD301030053CD33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A5E185C81CD301030053CD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5E185CA1CD301030053CD33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5E185CD1CD301030053CD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5E185CF1CD301030053CD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5EDFEB11BC64F1E00376B71 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EDFEB51BC64F1E00376B71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5EDFEB71BC64F1E00376B71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -246,6 +268,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5549DAB1C005A740094F4CA /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5E185B91CD301030053CD33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +402,42 @@
 				A56FA1EB1CBF7E9200817848 /* NSTextStorage+MLPages.m */,
 			);
 			name = "TextKit Stack";
+			sourceTree = "<group>";
+		};
+		A573EFF81CD36B35005E1144 /* TextKit Stack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "TextKit Stack";
+			sourceTree = "<group>";
+		};
+		A573EFFF1CD381EB005E1144 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A573EFFC1CD381E6005E1144 /* PropertyWithParaphraseOfWord.h */,
+				A573EFFD1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A573F0001CD381FE005E1144 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5E185C11CD301030053CD33 /* AppDelegate.h */,
+				A5E185C21CD301030053CD33 /* AppDelegate.m */,
+				A5E185C41CD301030053CD33 /* ViewController.h */,
+				A5E185C51CD301030053CD33 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A573F0011CD38213005E1144 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A573EFF91CD36BFE005E1144 /* KSTextView.h */,
+				A573EFFA1CD36BFE005E1144 /* KSTextView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A57A5E821C056463006EFD85 /* RegularExpression */ = {
@@ -504,6 +569,30 @@
 			name = "Core Text";
 			sourceTree = "<group>";
 		};
+		A5E185BD1CD301030053CD33 /* TKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A573EFF81CD36B35005E1144 /* TextKit Stack */,
+				A573EFFF1CD381EB005E1144 /* Model */,
+				A573F0011CD38213005E1144 /* View */,
+				A573F0001CD381FE005E1144 /* Controller */,
+				A5E185C71CD301030053CD33 /* Main.storyboard */,
+				A5E185CA1CD301030053CD33 /* Assets.xcassets */,
+				A5E185CC1CD301030053CD33 /* LaunchScreen.storyboard */,
+				A5E185CF1CD301030053CD33 /* Info.plist */,
+				A5E185BE1CD301030053CD33 /* Supporting Files */,
+			);
+			path = TKDemo;
+			sourceTree = "<group>";
+		};
+		A5E185BE1CD301030053CD33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5E185BF1CD301030053CD33 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A5EDFEA81BC64F1E00376B71 = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +604,7 @@
 				A5366AFE1C586DD30045559A /* Player */,
 				A59E01441C8EBAAB007A1125 /* PageViewController */,
 				A553DE401C97BE6400B1A766 /* ADShow */,
+				A5E185BD1CD301030053CD33 /* TKDemo */,
 				A5EDFEB21BC64F1E00376B71 /* Products */,
 				42325995FBB43ED740054119 /* Pods */,
 				4F893C3DB7DB5C589E233F7E /* Frameworks */,
@@ -532,6 +622,7 @@
 				A5366AFD1C586DD30045559A /* Player.app */,
 				A59E01431C8EBAAB007A1125 /* PageViewController.app */,
 				A553DE3F1C97BE6400B1A766 /* ADShow.app */,
+				A5E185BC1CD301030053CD33 /* TKDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -692,6 +783,23 @@
 			productReference = A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A5E185BB1CD301030053CD33 /* TKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5E185D01CD301030053CD33 /* Build configuration list for PBXNativeTarget "TKDemo" */;
+			buildPhases = (
+				A5E185B81CD301030053CD33 /* Sources */,
+				A5E185B91CD301030053CD33 /* Frameworks */,
+				A5E185BA1CD301030053CD33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKDemo;
+			productName = TKDemo;
+			productReference = A5E185BC1CD301030053CD33 /* TKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A5EDFEB01BC64F1E00376B71 /* Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5EDFEC81BC64F1E00376B71 /* Build configuration list for PBXNativeTarget "Test" */;
@@ -758,6 +866,9 @@
 					A5DA1D241C0055E700521A7E = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					A5E185BB1CD301030053CD33 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					A5EDFEB01BC64F1E00376B71 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -787,6 +898,7 @@
 				A5366AFC1C586DD30045559A /* Player */,
 				A59E01421C8EBAAB007A1125 /* PageViewController */,
 				A553DE3E1C97BE6400B1A766 /* ADShow */,
+				A5E185BB1CD301030053CD33 /* TKDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -856,6 +968,16 @@
 				A5549DC01C0306860094F4CA /* Mouse.png in Resources */,
 				A5549DB21C0068900094F4CA /* test.txt in Resources */,
 				A5DA1D321C0055E700521A7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5E185BA1CD301030053CD33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5E185CE1CD301030053CD33 /* LaunchScreen.storyboard in Resources */,
+				A5E185CB1CD301030053CD33 /* Assets.xcassets in Resources */,
+				A5E185C91CD301030053CD33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1125,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5E185B81CD301030053CD33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A573EFFE1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m in Sources */,
+				A5E185C61CD301030053CD33 /* ViewController.m in Sources */,
+				A573EFFB1CD36BFE005E1144 /* KSTextView.m in Sources */,
+				A5E185C31CD301030053CD33 /* AppDelegate.m in Sources */,
+				A5E185C01CD301030053CD33 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5EDFEAD1BC64F1E00376B71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1118,6 +1252,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				A5DA1D361C0055E700521A7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5E185C71CD301030053CD33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5E185C81CD301030053CD33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5E185CC1CD301030053CD33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5E185CD1CD301030053CD33 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1326,6 +1476,32 @@
 			};
 			name = Release;
 		};
+		A5E185D11CD301030053CD33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = TKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.TKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5E185D21CD301030053CD33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = TKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kingsoft.zeek.TKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A5EDFEC61BC64F1E00376B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1505,6 +1681,15 @@
 			buildConfigurations = (
 				A5DA1D391C0055E700521A7E /* Debug */,
 				A5DA1D3A1C0055E700521A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5E185D01CD301030053CD33 /* Build configuration list for PBXNativeTarget "TKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5E185D11CD301030053CD33 /* Debug */,
+				A5E185D21CD301030053CD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

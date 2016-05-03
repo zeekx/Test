@@ -180,12 +180,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482838153.328712"
+            timestampString = "483588175.3868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "-setup"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "-viewControllerAtIndex:currentViewController:storyboard:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -306,11 +306,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482838153.328712"
+            timestampString = "483588175.3868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442">
+            startingLineNumber = "447"
+            endingLineNumber = "447">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -320,11 +320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482838153.328712"
+            timestampString = "483588175.3868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "448"
-            endingLineNumber = "448">
+            startingLineNumber = "453"
+            endingLineNumber = "453">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482838153.328712"
+            timestampString = "483588175.3868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436">
+            startingLineNumber = "441"
+            endingLineNumber = "441">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -364,13 +364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PageViewController/ModelController.m"
-            timestampString = "482838153.328712"
+            timestampString = "483588175.3868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
-            landmarkName = "-numberOfTextContainerWithSize:"
-            landmarkType = "5">
+            startingLineNumber = "411"
+            endingLineNumber = "411">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -385,7 +383,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
             endingLineNumber = "187"
-            landmarkName = "-indexOfMatchWithRange:inRanges:"
+            landmarkName = "-setNumberOfColumnForPortrait:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -468,6 +466,70 @@
             endingLineNumber = "136"
             landmarkName = "+textContainersWithLayoutManager:index:numberOfColumn:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TKDemo/KSTextView.m"
+            timestampString = "483967123.192772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-drawRect:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TKDemo/KSTextView.m"
+            timestampString = "483967123.192772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "-drawRect:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KSTextView drawRect:]"
+                  moduleName = "TKDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yubinqiang/Documents/Workspace/Sample/Test/Test/TKDemo/KSTextView.m"
+                  timestampString = "483958203.834488"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "1800">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KSTextView drawRect:]"
+                  moduleName = "TKDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yubinqiang/Documents/Workspace/Sample/Test/Test/TKDemo/KSTextView.m"
+                  timestampString = "483958203.834613"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "1904">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
