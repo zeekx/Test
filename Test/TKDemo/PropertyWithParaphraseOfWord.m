@@ -22,7 +22,7 @@
     if (self) {
         self.property = [NSString stringWithFormat:@"%@.",property];
         self.paraphrase = paraphrase;
-        self.content = [NSString stringWithFormat:@"%@%@",self.property, paraphrase];
+        self.content = [NSString stringWithFormat:@"%@%@\n",self.property, paraphrase];
     }
     return self;
 }

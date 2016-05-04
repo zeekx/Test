@@ -24,15 +24,16 @@
     self.textView = [[KSTextView alloc] initWithFrame:CGRectZero];
     self.textView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.textView];
+    NSDictionary *metrics = @{@"leading":@0,@"trailing":@0,@"top":@0, @"bottom":@0};
     NSDictionary *viewBindings = NSDictionaryOfVariableBindings(_textView);
     self.textView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[_textView]-8-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-leading-[_textView]-trailing-|"
                                                                      options:kNilOptions
-                                                                     metrics:nil
+                                                                     metrics:metrics
                                                                        views:viewBindings]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[_textView]-20-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_textView]-bottom-|"
                                                                       options:kNilOptions
-                                                                      metrics:nil
+                                                                      metrics:metrics
                                                                         views:viewBindings]];
 
 }
