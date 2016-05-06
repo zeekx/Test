@@ -37,11 +37,12 @@
     self.frame = frame;
     
 //
-    self.propertiesWithParaphrases = @[[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"vt.承认；同意；准许；授予"]
-                                       ,[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"n.拨款；补助金；授给物（如财产、授地、专有权、补助、拨款等）"]
-                                       ,[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"n.拨款；补助金；授给物"]
+    self.propertiesWithParaphrases = @[
+//                                       [PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"vt.承认；同意；准许；授予"],
+                                       [PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"n.拨款；补助金；授给物（如财产、授地、专有权、补助、拨款等）- 拨款；补助金；授给物（如财产、授地、专有权、补助、拨款等）"]
+//                                       ,[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"n.拨款；补助金；授给物"]
 
-                                       ,[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"vi.同意"]
+//                                       ,[PropertyWithParaphraseOfWord PropertyWithParaphraseOfWordWithString:@"vi.同意"]
                                        ];
     NSMutableString *mutableString = [[NSMutableString alloc] init];
     for (PropertyWithParaphraseOfWord *ppw in self.propertiesWithParaphrases) {
@@ -53,8 +54,8 @@
     mutableParagraphStyle.firstLineHeadIndent = 0;
     [self.textStorage addAttributes:@{
 //                                      NSBackgroundColorAttributeName:[UIColor darkGrayColor],
-//                                      NSUnderlineStyleAttributeName:@2,
-//                                      NSUnderlineColorAttributeName:[UIColor blackColor],
+//                                      NSUnderlineStyleAttributeName:@2
+//                                      ,NSUnderlineColorAttributeName:[UIColor blackColor],
 //                                      NSParagraphStyleAttributeName:mutableParagraphStyle
                                       } range:NSMakeRange(0, self.textStorage.length)];
 
@@ -66,7 +67,7 @@
     
     self.textContainer = [[NSTextContainer alloc] initWithSize:self.bounds.size];
     self.textContainer.lineFragmentPadding = 0;
-    [self.layoutManager addTextContainer:self.textContainer];
+//    [self.layoutManager addTextContainer:self.textContainer];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -76,51 +77,75 @@
     {
         NSUInteger currentDrawingCharacterRangeLocation = 0;
         CGPoint origin = CGPointMake(0, 0);
-        CGFloat lineSpacing = 13.80;
-        CGFloat maxWidthOfProperty = 30;
+        CGFloat lineSpacing = 0;
+        CGFloat maxWidthOfProperty = 160;
         
         for (NSUInteger i = 0; i < self.propertiesWithParaphrases.count; i++) {
+            
             PropertyWithParaphraseOfWord *ppw = self.propertiesWithParaphrases[i];
             NSRange propertyCharacterRange = NSMakeRange(currentDrawingCharacterRangeLocation, ppw.property.length);
-            CGPoint propertyPoint = CGPointMake(origin.x, 0);
+            CGPoint propertyPoint = CGPointMake(0, 0);
             NSRange actualCharacterRange = NSMakeRange(NSNotFound, 0);
             NSRange propertyGlyphRange = [self.layoutManager glyphRangeForCharacterRange:propertyCharacterRange
                                                                      actualCharacterRange:&actualCharacterRange];
-            CGPoint propertyLocation = CGPointMake(origin.x, origin.y + lineSpacing * i);
-//            [self.layoutManager setLocation:propertyLocation forStartOfGlyphRange:propertyCharacterRange];
+            
+            NSTextContainer *propertyTextContainer = [[NSTextContainer alloc] initWithSize:CGSizeZero];
+            [self.layoutManager addTextContainer:propertyTextContainer];
+            CGRect propertyTextViewFrame = CGRectZero;
+            UITextView *propertyTextView = [[UITextView alloc] initWithFrame:CGRectZero textContainer:propertyTextContainer];
+            propertyTextView.backgroundColor = [UIColor blueColor];
+//            [self addSubview:propertyTextView];
+            [self.layoutManager setTextContainer:propertyTextContainer forGlyphRange:propertyGlyphRange];
+            
+            CGRect propertylineFrameRect = [self.layoutManager lineFragmentRectForGlyphAtIndex:currentDrawingCharacterRangeLocation effectiveRange:NULL];
+            
+            CGRect propertylineFrameUsedRect = [self.layoutManager lineFragmentUsedRectForGlyphAtIndex:currentDrawingCharacterRangeLocation effectiveRange:NULL];
+            CGRect propertyBounding = [self.layoutManager boundingRectForGlyphRange:propertyGlyphRange inTextContainer:propertyTextContainer];
+            //            [self.layoutManager drawBackgroundForGlyphRange:propertyGlyphRange atPoint:propertyPoint];
             [self.layoutManager drawGlyphsForGlyphRange:propertyGlyphRange atPoint:propertyPoint];
 
+  
             
-            CGRect lineFrameRect = [self.layoutManager lineFragmentRectForGlyphAtIndex:currentDrawingCharacterRangeLocation effectiveRange:NULL];
-            CGRect lineFrameUsedRect = [self.layoutManager lineFragmentUsedRectForGlyphAtIndex:currentDrawingCharacterRangeLocation effectiveRange:NULL];
-            
-            CGPoint locationForGlyphIndex = [self.layoutManager locationForGlyphAtIndex:currentDrawingCharacterRangeLocation];
-        
-            CGRect boundingForGlyphIndex = [self.layoutManager boundingRectForGlyphRange:NSMakeRange(currentDrawingCharacterRangeLocation, 1) inTextContainer:self.textContainer];
-            
-            CGRect propertyBounding = [self.layoutManager boundingRectForGlyphRange:propertyCharacterRange inTextContainer:self.textContainer];
-            
-            
-        
             NSRange paraphraseCharacterRange = NSMakeRange(NSMaxRange(propertyCharacterRange), ppw.paraphrase.length);
             NSRange actualParaphraseChracterRange = NSMakeRange(NSNotFound, 0);
             NSRange paraphraseGlyphRange = [self.layoutManager glyphRangeForCharacterRange:paraphraseCharacterRange
                                                                       actualCharacterRange:&actualParaphraseChracterRange];
             
-            CGPoint paraphraseLocation = CGPointMake(maxWidthOfProperty,  propertyPoint.y+lineSpacing);
-            CGRect paraphraseBounding = [self.layoutManager boundingRectForGlyphRange:paraphraseGlyphRange inTextContainer:self.textContainer];
-//            CGRect paraphraseLineFrameRect = [self.layoutManager lineFragmentRectForGlyphAtIndex:currentDrawingCharacterRangeLocation effectiveRange:NULL];
-            [self.layoutManager setLocation:paraphraseLocation forStartOfGlyphRange:paraphraseGlyphRange];
+            NSTextContainer *paraphraseTextContainer = [[NSTextContainer alloc] initWithSize:CGSizeMake(CGRectGetWidth(self.bounds) - maxWidthOfProperty, CGRectGetHeight(self.bounds))];
+            [self.layoutManager addTextContainer:paraphraseTextContainer];
+            [self.layoutManager setTextContainer:paraphraseTextContainer forGlyphRange:paraphraseGlyphRange];
+            
 
-            CGPoint paraphrasePoint = CGPointMake(maxWidthOfProperty - CGRectGetMaxX(propertyBounding), propertyPoint.y);
-            paraphrasePoint = CGPointMake(0, 0);
+            [self.layoutManager ensureLayoutForTextContainer:paraphraseTextContainer];
+            [self.layoutManager ensureLayoutForGlyphRange:paraphraseGlyphRange];
+            
+            CGRect propertyUsedRect = [self.layoutManager usedRectForTextContainer:propertyTextContainer];
+            CGPoint paraphraseLocation = CGPointMake(maxWidthOfProperty,  CGRectGetMaxY(propertylineFrameUsedRect));
+            CGRect paraphraseBounding = [self.layoutManager boundingRectForGlyphRange:paraphraseGlyphRange inTextContainer:paraphraseTextContainer];
+            CGRect paraphraseLineFrameRect = [self.layoutManager lineFragmentRectForGlyphAtIndex:NSMaxRange(propertyGlyphRange)
+                                                                                    effectiveRange:NULL];
+            CGRect paraphraseLineFrameUsedRect = [self.layoutManager lineFragmentUsedRectForGlyphAtIndex:NSMaxRange(propertyGlyphRange) effectiveRange:NULL];
+            CGRect paraphraseTextContainerUsedRect = [self.layoutManager usedRectForTextContainer:paraphraseTextContainer];
+            CGPoint paraphrasePoint = CGPointMake(maxWidthOfProperty - CGRectGetMaxX(propertyBounding), -16.8F);
+
+//            paraphrasePoint = CGPointMake(maxWidthOfProperty - CGRectGetWidth(propertyBounding), 0);
+//            paraphrasePoint = CGPointZero;
+//            [self.layoutManager drawBackgroundForGlyphRange:paraphraseGlyphRange atPoint:CGPointMake(CGRectGetMinX(propertyBounding), -16.8)];
             [self.layoutManager drawGlyphsForGlyphRange:paraphraseGlyphRange atPoint:paraphrasePoint];
-
+            paraphraseTextContainerUsedRect = [self.layoutManager usedRectForTextContainer:paraphraseTextContainer];
             currentDrawingCharacterRangeLocation += (ppw.length);
-//            origin.y += 13.8;
+//            origin.y += 16.8;
         }
     }
 }
+
+//- (NSControlCharacterAction)layoutManager:(NSLayoutManager *)layoutManager shouldUseAction:(NSControlCharacterAction)action forControlCharacterAtIndex:(NSUInteger)charIndex {
+////    CGRect bounding = [layoutManager boundingRectForGlyphRange:NSMakeRange(charIndex, 1) inTextContainer:self.textContainer];
+////    if (CGRectGetMaxX(bounding)) {
+////        action |= NSControlCharacterActionLineBreak;
+////    }
+//    return action;
+//}
 
 - (CGFloat)layoutManager:(NSLayoutManager *)layoutManager paragraphSpacingBeforeGlyphAtIndex:(NSUInteger)glyphIndex withProposedLineFragmentRect:(CGRect)rect {
     return 0;

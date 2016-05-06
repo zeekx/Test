@@ -15,6 +15,7 @@
 		A5366B0C1C586DD30045559A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5366B0B1C586DD30045559A /* Assets.xcassets */; };
 		A5366B0F1C586DD30045559A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5366B0D1C586DD30045559A /* LaunchScreen.storyboard */; };
 		A5366B151C586DE60045559A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5366B141C586DE60045559A /* AVFoundation.framework */; };
+		A53F750B1CDB4B130020467C /* TDTextLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F750A1CDB4B130020467C /* TDTextLayoutManager.m */; };
 		A540ACC41C4777BB00E5ACDD /* BNResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */; };
 		A540ACC71C4798B800E5ACDD /* MTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC61C4798B800E5ACDD /* MTSearchViewController.m */; };
 		A540ACCA1C488BB600E5ACDD /* MTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A540ACC91C488BB600E5ACDD /* MTViewController.m */; };
@@ -102,6 +103,8 @@
 		A5366B0E1C586DD30045559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5366B101C586DD30045559A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5366B141C586DE60045559A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A53F75091CDB4B130020467C /* TDTextLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTextLayoutManager.h; sourceTree = "<group>"; };
+		A53F750A1CDB4B130020467C /* TDTextLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTextLayoutManager.m; sourceTree = "<group>"; };
 		A540ACC21C4777BB00E5ACDD /* BNResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNResumeViewController.h; sourceTree = "<group>"; };
 		A540ACC31C4777BB00E5ACDD /* BNResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNResumeViewController.m; sourceTree = "<group>"; };
 		A540ACC51C4798B800E5ACDD /* MTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSearchViewController.h; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 		A573EFF81CD36B35005E1144 /* TextKit Stack */ = {
 			isa = PBXGroup;
 			children = (
+				A53F75091CDB4B130020467C /* TDTextLayoutManager.h */,
+				A53F750A1CDB4B130020467C /* TDTextLayoutManager.m */,
 			);
 			name = "TextKit Stack";
 			sourceTree = "<group>";
@@ -1129,6 +1134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F750B1CDB4B130020467C /* TDTextLayoutManager.m in Sources */,
 				A573EFFE1CD381E6005E1144 /* PropertyWithParaphraseOfWord.m in Sources */,
 				A5E185C61CD301030053CD33 /* ViewController.m in Sources */,
 				A573EFFB1CD36BFE005E1144 /* KSTextView.m in Sources */,
