@@ -45,6 +45,12 @@ static NSString * const reuseIdentifier = @"Cell";
     self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 20, 8);
     self.flowLayout.itemSize = CGSizeMake(160, 100);
     
+    self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TTCollectionViewCell" bundle:nil]
+          forCellWithReuseIdentifier:reuseIdentifier];
+    self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    self.collectionView.allowsMultipleSelection = YES;
+    
 }
 
 - (void)viewDidLoad {
@@ -67,11 +73,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //    }
 //    self.colors = mutableColors;
     // Do any additional setup after loading the view.
-    self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
-    [self.collectionView registerNib:[UINib nibWithNibName:@"TTCollectionViewCell" bundle:nil]
-          forCellWithReuseIdentifier:reuseIdentifier];
-    self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
-    self.collectionView.allowsMultipleSelection = YES;
+
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButton:)];
     
