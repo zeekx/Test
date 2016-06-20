@@ -11,6 +11,11 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>AFCollectionViewFlowLayout.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>BackgroundWithNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -38,7 +43,7 @@
 		<key>PageViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
@@ -69,7 +74,7 @@
 		<key>TKDemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>

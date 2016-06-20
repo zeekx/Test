@@ -122,6 +122,41 @@
 		A5D17E4F1D1780C600F06F57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D17E4D1D1780C600F06F57 /* Main.storyboard */; };
 		A5D17E511D1780C600F06F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D17E501D1780C600F06F57 /* Assets.xcassets */; };
 		A5D17E541D1780C600F06F57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D17E521D1780C600F06F57 /* LaunchScreen.storyboard */; };
+		A5D17E5B1D1783B000F06F57 /* AFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E5A1D1783B000F06F57 /* AFCollectionViewController.m */; };
+		A5D17E5E1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E5D1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.m */; };
+		A5D17E611D17878900F06F57 /* AFCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E601D17878900F06F57 /* AFCollectionViewFlowLayout.m */; };
+		A5D17EBC1D1790FB00F06F57 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17E9E1D1790FB00F06F57 /* 0.jpg */; };
+		A5D17EBD1D1790FB00F06F57 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17E9F1D1790FB00F06F57 /* 1.jpg */; };
+		A5D17EBE1D1790FB00F06F57 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA01D1790FB00F06F57 /* 2.jpg */; };
+		A5D17EBF1D1790FB00F06F57 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA11D1790FB00F06F57 /* 3.jpg */; };
+		A5D17EC01D1790FB00F06F57 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA21D1790FB00F06F57 /* 4.jpg */; };
+		A5D17EC11D1790FB00F06F57 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA31D1790FB00F06F57 /* 5.jpg */; };
+		A5D17EC21D1790FB00F06F57 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA41D1790FB00F06F57 /* 6.jpg */; };
+		A5D17EC31D1790FB00F06F57 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA51D1790FB00F06F57 /* 7.jpg */; };
+		A5D17EC41D1790FB00F06F57 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA61D1790FB00F06F57 /* 8.jpg */; };
+		A5D17EC51D1790FB00F06F57 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA71D1790FB00F06F57 /* 9.jpg */; };
+		A5D17EC61D1790FB00F06F57 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA81D1790FB00F06F57 /* 10.jpg */; };
+		A5D17EC71D1790FB00F06F57 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EA91D1790FB00F06F57 /* 11.jpg */; };
+		A5D17EC81D1790FB00F06F57 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAA1D1790FB00F06F57 /* 12.jpg */; };
+		A5D17EC91D1790FB00F06F57 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAB1D1790FB00F06F57 /* 13.jpg */; };
+		A5D17ECA1D1790FB00F06F57 /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAC1D1790FB00F06F57 /* 14.jpg */; };
+		A5D17ECB1D1790FB00F06F57 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAD1D1790FB00F06F57 /* 15.jpg */; };
+		A5D17ECC1D1790FB00F06F57 /* 16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAE1D1790FB00F06F57 /* 16.jpg */; };
+		A5D17ECD1D1790FB00F06F57 /* 17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EAF1D1790FB00F06F57 /* 17.jpg */; };
+		A5D17ECE1D1790FB00F06F57 /* 18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB01D1790FB00F06F57 /* 18.jpg */; };
+		A5D17ECF1D1790FB00F06F57 /* 19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB11D1790FB00F06F57 /* 19.jpg */; };
+		A5D17ED01D1790FB00F06F57 /* 20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB21D1790FB00F06F57 /* 20.jpg */; };
+		A5D17ED11D1790FB00F06F57 /* 21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB31D1790FB00F06F57 /* 21.jpg */; };
+		A5D17ED21D1790FB00F06F57 /* 22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB41D1790FB00F06F57 /* 22.jpg */; };
+		A5D17ED31D1790FB00F06F57 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB51D1790FB00F06F57 /* 23.jpg */; };
+		A5D17ED41D1790FB00F06F57 /* 24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB61D1790FB00F06F57 /* 24.jpg */; };
+		A5D17ED51D1790FB00F06F57 /* 25.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB71D1790FB00F06F57 /* 25.jpg */; };
+		A5D17ED61D1790FB00F06F57 /* 26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB81D1790FB00F06F57 /* 26.jpg */; };
+		A5D17ED71D1790FB00F06F57 /* 27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EB91D1790FB00F06F57 /* 27.jpg */; };
+		A5D17ED81D1790FB00F06F57 /* 28.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EBA1D1790FB00F06F57 /* 28.jpg */; };
+		A5D17ED91D1790FB00F06F57 /* 29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5D17EBB1D1790FB00F06F57 /* 29.jpg */; };
+		A5D17EDD1D17C07C00F06F57 /* AFPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17EDC1D17C07C00F06F57 /* AFPhotoModel.m */; };
+		A5D17EE01D17C14800F06F57 /* AFCollectionViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17EDF1D17C14800F06F57 /* AFCollectionViewHeaderView.m */; };
 		A5DA1D291C0055E700521A7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D281C0055E700521A7E /* main.m */; };
 		A5DA1D2C1C0055E700521A7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D2B1C0055E700521A7E /* AppDelegate.m */; };
 		A5DA1D2F1C0055E700521A7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DA1D2E1C0055E700521A7E /* ViewController.m */; };
@@ -323,6 +358,46 @@
 		A5D17E501D1780C600F06F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D17E531D1780C600F06F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D17E551D1780C600F06F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5D17E591D1783B000F06F57 /* AFCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewController.h; sourceTree = "<group>"; };
+		A5D17E5A1D1783B000F06F57 /* AFCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewController.m; sourceTree = "<group>"; };
+		A5D17E5C1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewFlowLayoutCell.h; sourceTree = "<group>"; };
+		A5D17E5D1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewFlowLayoutCell.m; sourceTree = "<group>"; };
+		A5D17E5F1D17878900F06F57 /* AFCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		A5D17E601D17878900F06F57 /* AFCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		A5D17E9E1D1790FB00F06F57 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		A5D17E9F1D1790FB00F06F57 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		A5D17EA01D1790FB00F06F57 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		A5D17EA11D1790FB00F06F57 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		A5D17EA21D1790FB00F06F57 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		A5D17EA31D1790FB00F06F57 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		A5D17EA41D1790FB00F06F57 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		A5D17EA51D1790FB00F06F57 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		A5D17EA61D1790FB00F06F57 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		A5D17EA71D1790FB00F06F57 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		A5D17EA81D1790FB00F06F57 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		A5D17EA91D1790FB00F06F57 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
+		A5D17EAA1D1790FB00F06F57 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		A5D17EAB1D1790FB00F06F57 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = "<group>"; };
+		A5D17EAC1D1790FB00F06F57 /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpg; sourceTree = "<group>"; };
+		A5D17EAD1D1790FB00F06F57 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
+		A5D17EAE1D1790FB00F06F57 /* 16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16.jpg; sourceTree = "<group>"; };
+		A5D17EAF1D1790FB00F06F57 /* 17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 17.jpg; sourceTree = "<group>"; };
+		A5D17EB01D1790FB00F06F57 /* 18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 18.jpg; sourceTree = "<group>"; };
+		A5D17EB11D1790FB00F06F57 /* 19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 19.jpg; sourceTree = "<group>"; };
+		A5D17EB21D1790FB00F06F57 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
+		A5D17EB31D1790FB00F06F57 /* 21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 21.jpg; sourceTree = "<group>"; };
+		A5D17EB41D1790FB00F06F57 /* 22.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 22.jpg; sourceTree = "<group>"; };
+		A5D17EB51D1790FB00F06F57 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
+		A5D17EB61D1790FB00F06F57 /* 24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 24.jpg; sourceTree = "<group>"; };
+		A5D17EB71D1790FB00F06F57 /* 25.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 25.jpg; sourceTree = "<group>"; };
+		A5D17EB81D1790FB00F06F57 /* 26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 26.jpg; sourceTree = "<group>"; };
+		A5D17EB91D1790FB00F06F57 /* 27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 27.jpg; sourceTree = "<group>"; };
+		A5D17EBA1D1790FB00F06F57 /* 28.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 28.jpg; sourceTree = "<group>"; };
+		A5D17EBB1D1790FB00F06F57 /* 29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 29.jpg; sourceTree = "<group>"; };
+		A5D17EDB1D17C07C00F06F57 /* AFPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoModel.h; sourceTree = "<group>"; };
+		A5D17EDC1D17C07C00F06F57 /* AFPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPhotoModel.m; sourceTree = "<group>"; };
+		A5D17EDE1D17C14800F06F57 /* AFCollectionViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewHeaderView.h; sourceTree = "<group>"; };
+		A5D17EDF1D17C14800F06F57 /* AFCollectionViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewHeaderView.m; sourceTree = "<group>"; };
 		A5DA1D251C0055E700521A7E /* CoreTextMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTextMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DA1D281C0055E700521A7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5DA1D2A1C0055E700521A7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -843,11 +918,22 @@
 		A5D17E431D1780C600F06F57 /* AFCollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				A5D17EDA1D17910200F06F57 /* Photos */,
+				A5D17EDB1D17C07C00F06F57 /* AFPhotoModel.h */,
+				A5D17EDC1D17C07C00F06F57 /* AFPhotoModel.m */,
 				A5D17E471D1780C600F06F57 /* AppDelegate.h */,
 				A5D17E481D1780C600F06F57 /* AppDelegate.m */,
 				A5D17E4A1D1780C600F06F57 /* ViewController.h */,
 				A5D17E4B1D1780C600F06F57 /* ViewController.m */,
+				A5D17E591D1783B000F06F57 /* AFCollectionViewController.h */,
+				A5D17E5A1D1783B000F06F57 /* AFCollectionViewController.m */,
+				A5D17E5C1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.h */,
+				A5D17E5D1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.m */,
+				A5D17E5F1D17878900F06F57 /* AFCollectionViewFlowLayout.h */,
+				A5D17E601D17878900F06F57 /* AFCollectionViewFlowLayout.m */,
 				A5D17E4D1D1780C600F06F57 /* Main.storyboard */,
+				A5D17EDE1D17C14800F06F57 /* AFCollectionViewHeaderView.h */,
+				A5D17EDF1D17C14800F06F57 /* AFCollectionViewHeaderView.m */,
 				A5D17E501D1780C600F06F57 /* Assets.xcassets */,
 				A5D17E521D1780C600F06F57 /* LaunchScreen.storyboard */,
 				A5D17E551D1780C600F06F57 /* Info.plist */,
@@ -862,6 +948,43 @@
 				A5D17E451D1780C600F06F57 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5D17EDA1D17910200F06F57 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A5D17E9E1D1790FB00F06F57 /* 0.jpg */,
+				A5D17E9F1D1790FB00F06F57 /* 1.jpg */,
+				A5D17EA01D1790FB00F06F57 /* 2.jpg */,
+				A5D17EA11D1790FB00F06F57 /* 3.jpg */,
+				A5D17EA21D1790FB00F06F57 /* 4.jpg */,
+				A5D17EA31D1790FB00F06F57 /* 5.jpg */,
+				A5D17EA41D1790FB00F06F57 /* 6.jpg */,
+				A5D17EA51D1790FB00F06F57 /* 7.jpg */,
+				A5D17EA61D1790FB00F06F57 /* 8.jpg */,
+				A5D17EA71D1790FB00F06F57 /* 9.jpg */,
+				A5D17EA81D1790FB00F06F57 /* 10.jpg */,
+				A5D17EA91D1790FB00F06F57 /* 11.jpg */,
+				A5D17EAA1D1790FB00F06F57 /* 12.jpg */,
+				A5D17EAB1D1790FB00F06F57 /* 13.jpg */,
+				A5D17EAC1D1790FB00F06F57 /* 14.jpg */,
+				A5D17EAD1D1790FB00F06F57 /* 15.jpg */,
+				A5D17EAE1D1790FB00F06F57 /* 16.jpg */,
+				A5D17EAF1D1790FB00F06F57 /* 17.jpg */,
+				A5D17EB01D1790FB00F06F57 /* 18.jpg */,
+				A5D17EB11D1790FB00F06F57 /* 19.jpg */,
+				A5D17EB21D1790FB00F06F57 /* 20.jpg */,
+				A5D17EB31D1790FB00F06F57 /* 21.jpg */,
+				A5D17EB41D1790FB00F06F57 /* 22.jpg */,
+				A5D17EB51D1790FB00F06F57 /* 23.jpg */,
+				A5D17EB61D1790FB00F06F57 /* 24.jpg */,
+				A5D17EB71D1790FB00F06F57 /* 25.jpg */,
+				A5D17EB81D1790FB00F06F57 /* 26.jpg */,
+				A5D17EB91D1790FB00F06F57 /* 27.jpg */,
+				A5D17EBA1D1790FB00F06F57 /* 28.jpg */,
+				A5D17EBB1D1790FB00F06F57 /* 29.jpg */,
+			);
+			name = Photos;
 			sourceTree = "<group>";
 		};
 		A5DA1D261C0055E700521A7E /* CoreTextMagazine */ = {
@@ -1452,9 +1575,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D17ECC1D1790FB00F06F57 /* 16.jpg in Resources */,
+				A5D17ECA1D1790FB00F06F57 /* 14.jpg in Resources */,
+				A5D17EC71D1790FB00F06F57 /* 11.jpg in Resources */,
+				A5D17EC51D1790FB00F06F57 /* 9.jpg in Resources */,
+				A5D17EC41D1790FB00F06F57 /* 8.jpg in Resources */,
+				A5D17ED61D1790FB00F06F57 /* 26.jpg in Resources */,
+				A5D17EC31D1790FB00F06F57 /* 7.jpg in Resources */,
+				A5D17EC01D1790FB00F06F57 /* 4.jpg in Resources */,
+				A5D17ED91D1790FB00F06F57 /* 29.jpg in Resources */,
+				A5D17ECB1D1790FB00F06F57 /* 15.jpg in Resources */,
+				A5D17ED51D1790FB00F06F57 /* 25.jpg in Resources */,
+				A5D17EC91D1790FB00F06F57 /* 13.jpg in Resources */,
+				A5D17EBE1D1790FB00F06F57 /* 2.jpg in Resources */,
+				A5D17EBC1D1790FB00F06F57 /* 0.jpg in Resources */,
+				A5D17ECF1D1790FB00F06F57 /* 19.jpg in Resources */,
+				A5D17EC11D1790FB00F06F57 /* 5.jpg in Resources */,
+				A5D17ED21D1790FB00F06F57 /* 22.jpg in Resources */,
+				A5D17ECE1D1790FB00F06F57 /* 18.jpg in Resources */,
+				A5D17EC81D1790FB00F06F57 /* 12.jpg in Resources */,
+				A5D17ED71D1790FB00F06F57 /* 27.jpg in Resources */,
+				A5D17EC21D1790FB00F06F57 /* 6.jpg in Resources */,
+				A5D17EC61D1790FB00F06F57 /* 10.jpg in Resources */,
+				A5D17ECD1D1790FB00F06F57 /* 17.jpg in Resources */,
 				A5D17E541D1780C600F06F57 /* LaunchScreen.storyboard in Resources */,
 				A5D17E511D1780C600F06F57 /* Assets.xcassets in Resources */,
+				A5D17ED11D1790FB00F06F57 /* 21.jpg in Resources */,
 				A5D17E4F1D1780C600F06F57 /* Main.storyboard in Resources */,
+				A5D17ED41D1790FB00F06F57 /* 24.jpg in Resources */,
+				A5D17ED31D1790FB00F06F57 /* 23.jpg in Resources */,
+				A5D17EBF1D1790FB00F06F57 /* 3.jpg in Resources */,
+				A5D17EBD1D1790FB00F06F57 /* 1.jpg in Resources */,
+				A5D17ED01D1790FB00F06F57 /* 20.jpg in Resources */,
+				A5D17ED81D1790FB00F06F57 /* 28.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,7 +1805,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D17E4C1D1780C600F06F57 /* ViewController.m in Sources */,
+				A5D17EE01D17C14800F06F57 /* AFCollectionViewHeaderView.m in Sources */,
+				A5D17E5B1D1783B000F06F57 /* AFCollectionViewController.m in Sources */,
 				A5D17E491D1780C600F06F57 /* AppDelegate.m in Sources */,
+				A5D17E611D17878900F06F57 /* AFCollectionViewFlowLayout.m in Sources */,
+				A5D17E5E1D1784CB00F06F57 /* AFCollectionViewFlowLayoutCell.m in Sources */,
+				A5D17EDD1D17C07C00F06F57 /* AFPhotoModel.m in Sources */,
 				A5D17E461D1780C600F06F57 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
