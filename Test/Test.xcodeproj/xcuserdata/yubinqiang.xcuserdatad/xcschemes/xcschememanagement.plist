@@ -28,6 +28,11 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>CollectionViewDimension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>CoreTextMagazine.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -93,6 +98,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A505C7D71D1A682B0063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A5366AFC1C586DD30045559A</key>
 		<dict>
 			<key>primary</key>
