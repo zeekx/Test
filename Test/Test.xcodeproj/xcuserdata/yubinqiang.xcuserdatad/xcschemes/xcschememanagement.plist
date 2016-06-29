@@ -13,6 +13,8 @@
 		</dict>
 		<key>AFCollectionViewFlowLayout.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
@@ -25,11 +27,20 @@
 		</dict>
 		<key>CollectionView.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>CollectionViewCoverFlow.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>CollectionViewDimension.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
@@ -68,11 +79,15 @@
 		</dict>
 		<key>SimpleScrollView.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
 		<key>Survey.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
@@ -85,6 +100,8 @@
 		</dict>
 		<key>Test.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
@@ -99,6 +116,31 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A505C7D71D1A682B0063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A505C8F41D2280790063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A505C9251D2284B90063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A505C9B41D22A18B0063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A505CA2A1D22A5BF0063588A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A505CA451D22A7EB0063588A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
