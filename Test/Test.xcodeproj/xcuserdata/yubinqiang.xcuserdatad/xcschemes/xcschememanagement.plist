@@ -112,6 +112,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>UICollectionViewChangeLayout.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -176,6 +181,11 @@
 			<true/>
 		</dict>
 		<key>A58674D01C328F6300C82358</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A589F1B01D24B5A3002BB6E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

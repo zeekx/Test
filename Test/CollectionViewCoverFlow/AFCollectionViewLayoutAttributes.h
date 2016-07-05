@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AFCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
-@property (nonatomic, assign) BOOL shouldReasterize;
+@property (nonatomic, assign) BOOL shouldRasterize;
 @property (nonatomic, assign) CGFloat maskingValue;
 @end

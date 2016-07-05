@@ -13,7 +13,7 @@
 - (instancetype)copyWithZone:(NSZone *)zone {
     AFCollectionViewLayoutAttributes *layoutAttributes = [super copyWithZone:zone];
     layoutAttributes.maskingValue = self.maskingValue;
-    layoutAttributes.shouldReasterize = self.shouldReasterize;
+    layoutAttributes.shouldRasterize = self.shouldRasterize;
     return layoutAttributes;
 }
 
@@ -21,7 +21,7 @@
     BOOL isEqual = [super isEqual:object];
     if (isEqual && [object isKindOfClass:AFCollectionViewLayoutAttributes.class]) {
         AFCollectionViewLayoutAttributes *layoutAttributesObject = (AFCollectionViewLayoutAttributes *)object;
-        return (self.shouldReasterize == layoutAttributesObject.shouldReasterize)
+        return (self.shouldRasterize == layoutAttributesObject.shouldRasterize)
                 && ABS(self.maskingValue - layoutAttributesObject.maskingValue) < 0.0001;
     } else {
         return NO;
