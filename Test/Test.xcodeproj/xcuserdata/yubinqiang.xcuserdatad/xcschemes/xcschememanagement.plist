@@ -34,6 +34,8 @@
 		</dict>
 		<key>CollectionViewCoverFlow.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
@@ -114,8 +116,15 @@
 		</dict>
 		<key>UICollectionViewChangeLayout.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+		<key>ViewControllerTransition.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -211,6 +220,11 @@
 			<true/>
 		</dict>
 		<key>A5DA1D241C0055E700521A7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5E108891D2FA71200BAC167</key>
 		<dict>
 			<key>primary</key>
 			<true/>

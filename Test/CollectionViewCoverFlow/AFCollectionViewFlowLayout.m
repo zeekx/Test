@@ -131,7 +131,7 @@ const CGFloat kItemHeight = kItemWidth;
 - (CGPoint) targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset
                                  withScrollingVelocity:(CGPoint)velocity
 {
-#if 1
+#if 0
     // Returns a point where we want the collection view to stop
     // scrolling at. First, calculate the proposed center of the
     // collection view once the collection view has stopped
