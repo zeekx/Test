@@ -197,7 +197,7 @@
         textPosition += frameRange.length;
         columnIndex ++;
     }
-    NSInteger totalPages = (columnIndex + 1)/2;
+    NSInteger totalPages = (columnIndex + 1)*.5;
     self.contentSize = CGSizeMake(totalPages * self.bounds.size.width, textFrame.size.height);
 }
 

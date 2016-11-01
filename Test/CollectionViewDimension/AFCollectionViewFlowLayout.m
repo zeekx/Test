@@ -37,7 +37,9 @@ const CGFloat kItemHeight = kItemWidth;
     self.itemSize = kItemSize;
     self.minimumLineSpacing = 8.0F;
     self.minimumInteritemSpacing = 8.0F;
+    
 }
+
 - (void)setLayoutMode:(AFCollectionViewFlowLayoutMode)layoutMode {
     _layoutMode = layoutMode;
     [self invalidateLayout];

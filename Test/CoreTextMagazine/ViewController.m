@@ -37,9 +37,11 @@
 }
 - (IBAction)test3:(UIBarButtonItem *)sender {
 }
-
-- (void)viewWillLayoutSubviews {
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self testCoreText];
+}
+- (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
 }
 

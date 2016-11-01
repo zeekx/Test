@@ -34,7 +34,7 @@ static NSString *const kAFDecoration = @"Decoration";
 //    self.sectionInset = UIEdgeInsetsMake(8.0F, 30, 20, 30);
     self.minimumLineSpacing = 8.0F;
     self.minimumInteritemSpacing = 8.0F;
-//    self.itemSize = kItemSize;
+    self.itemSize = kItemSize;
     self.headerReferenceSize = CGSizeMake(60, 30);
     [self registerClass:[AFDecorationView class] forDecorationViewOfKind:kAFDecoration];
 }

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray<NSDate *> *mutableDates;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSArray<NSString *> *imageNames;
 @end
 
 @implementation TTCollectionViewController
@@ -39,15 +40,17 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)setup {
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"h:mm:ss a" options:kNilOptions locale:[NSLocale currentLocale]]];
-    self.flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    self.flowLayout.minimumInteritemSpacing = 40.0F;
-    self.flowLayout.minimumLineSpacing = 40.0F;
-    self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 20, 8);
-    self.flowLayout.itemSize = CGSizeMake(160, 100);
+//    self.flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+//    self.flowLayout.minimumInteritemSpacing = 40.0F;
+//    self.flowLayout.minimumLineSpacing = 40.0F;
+//    self.flowLayout.sectionInset = UIEdgeInsetsMake(8, 8, 20, 8);
+//    self.flowLayout.itemSize = CGSizeMake(160, 100);
     
     self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     [self.collectionView registerNib:[UINib nibWithNibName:@"TTCollectionViewCell" bundle:nil]
           forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TTCollectionDecorationView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"H"];
+    
     self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     self.collectionView.allowsMultipleSelection = YES;
     
@@ -74,8 +77,8 @@ static NSString * const reuseIdentifier = @"Cell";
 //    self.colors = mutableColors;
     // Do any additional setup after loading the view.
 
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButton:)];
+    self.imageNames = @[@"0.jpg",@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",@"5.jpg"];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddButton:)];
     
 }
 - (void)handleAddButton:(UIBarButtonItem *)sender {
@@ -119,6 +122,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.imageNames.count;
     return self.mutableDates.count;
 }
 
@@ -129,9 +133,16 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.layer.borderColor = [UIColor blueColor].CGColor;
     cell.layer.borderWidth = 0.5F;
 //    cell.contentView.backgroundColor = [UIColor lightGrayColor];
-    cell.text = [self.dateFormatter stringFromDate:[NSDate date]];
+//    cell.text = [self.dateFormatter stringFromDate:[NSDate date]];
+    cell.imageView.image  = [UIImage imageNamed:[@(indexPath.item).stringValue stringByAppendingString:@".jpg"]];
     return cell;
 }
+
+
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"H" forIndexPath:indexPath];
+//    return view;
+//}
 
 #pragma mark <UICollectionViewDelegate>
 

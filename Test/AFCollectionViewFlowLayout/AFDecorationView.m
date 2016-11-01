@@ -16,7 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        self.imageView.image = [UIImage imageNamed:@"pen.jpg"];
+        self.imageView.image = [UIImage imageNamed:@"binder"];
         self.imageView.contentMode = UIViewContentModeLeft;
         [self addSubview:self.imageView];
     }

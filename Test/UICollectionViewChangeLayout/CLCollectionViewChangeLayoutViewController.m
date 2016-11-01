@@ -33,23 +33,38 @@ static NSString *const kCellReuseId = @"CLCollectionViewCell";
     [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES];
 }
 - (IBAction)trash:(id)sender {
-    self.numberOfCells -= 1;
-    [self.collectionView reloadData];
+    [self removeItem];
 }
 
 - (IBAction)valueChanged:(UISegmentedControl *)sender {
-    if (self.collectionView.collectionViewLayout == self.flowLayout) {
-        [self.collectionView.collectionViewLayout invalidateLayout];
-        [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES];
-    } else {
-        [self.collectionView.collectionViewLayout invalidateLayout];
+    [self.collectionView.collectionViewLayout invalidateLayout];
+    if (self.collectionView.collectionViewLayout == self.circleLayout) {
         [self.collectionView setCollectionViewLayout:self.flowLayout animated:YES];
+    } else {
+        [self.collectionView setCollectionViewLayout:self.circleLayout animated:YES];
     }
 }
 
 - (IBAction)add:(id)sender {
-    self.numberOfCells++;
-    [self.collectionView reloadData];
+    [self addItem];
+}
+
+- (void)addItem {
+    self.numberOfCells += 1;
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.numberOfCells -1 inSection:0]]];
+    }
+                                  completion:NULL];
+}
+
+- (void)removeItem {
+    if (self.numberOfCells > 0) {
+        self.numberOfCells -= 1;
+        [self.collectionView performBatchUpdates:^{
+            [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.numberOfCells inSection:0]]];
+        } completion:NULL];
+    }
+    
 }
 
 #pragma mark - Colletion view data source

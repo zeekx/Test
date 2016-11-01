@@ -182,7 +182,7 @@ static NSString *const headerViewReuseId = @"AFCollectionViewHeaderView";
 
 #pragma mark - 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(100, 100);
+    return CGSizeMake(375, 100);
 }
 #pragma mark - -
 

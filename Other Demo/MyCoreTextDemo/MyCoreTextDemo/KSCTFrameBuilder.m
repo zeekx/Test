@@ -16,7 +16,7 @@
     NSAttributedString *attributeString = [[NSAttributedString alloc] initWithString:content attributes:attributes];
     
     //创建 CTFramesetterRef 的实例
-    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)attributeString);
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attributeString);
     
     //获取 可用绘制区域的 height
     CGSize constraintSize = CGSizeMake(config.width, CGFLOAT_MAX);

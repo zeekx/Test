@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TTCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (copy  , nonatomic) NSString *text;
 @end

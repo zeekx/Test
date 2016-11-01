@@ -51,7 +51,7 @@
         layoutAttributes.center = self.center;
     } else {
         layoutAttributes.center = CGPointMake(self.center.x + radius * cosf(2 * M_PI * indexPath.item / self.numberOfCells + M_PI), self.center.y + radius * sinf(2 * M_PI * indexPath.item / self.numberOfCells + M_PI));
-        NSLog(@"item:%@,*:%f,center:%@\n",@(indexPath.item).stringValue,cosf(2 * M_PI * indexPath.item / self.numberOfCells) ,NSStringFromCGPoint(layoutAttributes.center));
+//        NSLog(@"item:%@,*:%f,center:%@\n",@(indexPath.item).stringValue,cosf(2 * M_PI * indexPath.item / self.numberOfCells) ,NSStringFromCGPoint(layoutAttributes.center));
         layoutAttributes.transform3D = CATransform3DMakeRotation((2*M_PI*indexPath.item / self.numberOfCells), 0, 0, 1);
     }
     return layoutAttributes;

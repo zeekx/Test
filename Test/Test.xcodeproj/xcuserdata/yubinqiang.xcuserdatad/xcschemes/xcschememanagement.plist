@@ -28,14 +28,14 @@
 		<key>CollectionView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
 		<key>CollectionViewCoverFlow.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
@@ -49,7 +49,7 @@
 		<key>CoreTextMagazine.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
@@ -78,6 +78,13 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>SVG.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>20</integer>
 		</dict>
 		<key>SimpleScrollView.xcscheme</key>
 		<dict>
@@ -117,12 +124,14 @@
 		<key>UICollectionViewChangeLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
 		<key>ViewControllerTransition.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
@@ -165,6 +174,16 @@
 			<true/>
 		</dict>
 		<key>A53ABC581D10EAA700FF006F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5436FCF1D743FE500587D58</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5436FE71D743FE500587D58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
