@@ -1,22 +1,27 @@
 //
-//  CTPGLayoutImageViewController.m
+//  CTPGManualLineBreakingViewController.m
 //  Test
 //
-//  Created by yubinqiang on 16/10/27.
+//  Created by yubinqiang on 16/12/16.
 //  Copyright © 2016年 Zeek. All rights reserved.
 //
 
-#import "CTPGLayoutImageViewController.h"
+#import "CTPGManualLineBreakingViewController.h"
 
-@interface CTPGLayoutImageViewController ()
+@interface CTPGManualLineBreakingViewController ()
 
 @end
 
-@implementation CTPGLayoutImageViewController
+@implementation CTPGManualLineBreakingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

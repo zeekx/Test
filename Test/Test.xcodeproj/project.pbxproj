@@ -235,10 +235,14 @@
 		A5B0E3401D6BF2E800DF48D2 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5B0E33A1D6BF2E800DF48D2 /* 5.jpg */; };
 		A5B0E3461D6BF44800DF48D2 /* TTCollectionDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B0E3441D6BF44800DF48D2 /* TTCollectionDecorationView.m */; };
 		A5B0E3471D6BF44800DF48D2 /* TTCollectionDecorationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B0E3451D6BF44800DF48D2 /* TTCollectionDecorationView.xib */; };
+		A5BFBD951E03C6BC00FCADF5 /* CTPGCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD941E03C6BC00FCADF5 /* CTPGCustomViewController.m */; };
+		A5BFBD991E03C6DA00FCADF5 /* CTPGCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD981E03C6DA00FCADF5 /* CTPGCustomView.m */; };
+		A5BFBD9C1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD9B1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m */; };
 		A5C2D66C1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D66B1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m */; };
 		A5C2D6711D66F3FA0036DB52 /* ATDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D66F1D66F3FA0036DB52 /* ATDecorationView.m */; };
 		A5CD68A51DBF48D2008A1132 /* CTPGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68A41DBF48D2008A1132 /* CTPGTableViewController.m */; };
 		A5CD68AB1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68AA1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m */; };
+		A5CE94481E038352002533B6 /* CTPGManualLineBreakingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CE94471E038352002533B6 /* CTPGManualLineBreakingViewController.m */; };
 		A5D17E461D1780C600F06F57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E451D1780C600F06F57 /* main.m */; };
 		A5D17E491D1780C600F06F57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E481D1780C600F06F57 /* AppDelegate.m */; };
 		A5D17E4C1D1780C600F06F57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D17E4B1D1780C600F06F57 /* ViewController.m */; };
@@ -649,6 +653,12 @@
 		A5B0E3431D6BF44800DF48D2 /* TTCollectionDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCollectionDecorationView.h; sourceTree = "<group>"; };
 		A5B0E3441D6BF44800DF48D2 /* TTCollectionDecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCollectionDecorationView.m; sourceTree = "<group>"; };
 		A5B0E3451D6BF44800DF48D2 /* TTCollectionDecorationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTCollectionDecorationView.xib; sourceTree = "<group>"; };
+		A5BFBD931E03C6BC00FCADF5 /* CTPGCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGCustomViewController.h; sourceTree = "<group>"; };
+		A5BFBD941E03C6BC00FCADF5 /* CTPGCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGCustomViewController.m; sourceTree = "<group>"; };
+		A5BFBD971E03C6DA00FCADF5 /* CTPGCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGCustomView.h; sourceTree = "<group>"; };
+		A5BFBD981E03C6DA00FCADF5 /* CTPGCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGCustomView.m; sourceTree = "<group>"; };
+		A5BFBD9A1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGPropertyWithParaphrase.h; sourceTree = "<group>"; };
+		A5BFBD9B1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGPropertyWithParaphrase.m; sourceTree = "<group>"; };
 		A5C2D66B1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		A5C2D66D1D66F2FB0036DB52 /* AFCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		A5C2D66E1D66F3FA0036DB52 /* ATDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATDecorationView.h; sourceTree = "<group>"; };
@@ -657,6 +667,8 @@
 		A5CD68A41DBF48D2008A1132 /* CTPGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGTableViewController.m; sourceTree = "<group>"; };
 		A5CD68A91DBF4B6F008A1132 /* CTPGLayoutParagraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGLayoutParagraphView.h; sourceTree = "<group>"; };
 		A5CD68AA1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGLayoutParagraphView.m; sourceTree = "<group>"; };
+		A5CE94461E038352002533B6 /* CTPGManualLineBreakingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGManualLineBreakingViewController.h; sourceTree = "<group>"; };
+		A5CE94471E038352002533B6 /* CTPGManualLineBreakingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGManualLineBreakingViewController.m; sourceTree = "<group>"; };
 		A5D17E421D1780C600F06F57 /* AFCollectionViewFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFCollectionViewFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D17E451D1780C600F06F57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5D17E471D1780C600F06F57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1581,6 +1593,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A5BFBD961E03C6C200FCADF5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A5BFBD931E03C6BC00FCADF5 /* CTPGCustomViewController.h */,
+				A5BFBD941E03C6BC00FCADF5 /* CTPGCustomViewController.m */,
+				A5BFBD971E03C6DA00FCADF5 /* CTPGCustomView.h */,
+				A5BFBD981E03C6DA00FCADF5 /* CTPGCustomView.m */,
+				A5BFBD9A1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.h */,
+				A5BFBD9B1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		A5CE94491E038357002533B6 /* Manual Line Breaking */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE94461E038352002533B6 /* CTPGManualLineBreakingViewController.h */,
+				A5CE94471E038352002533B6 /* CTPGManualLineBreakingViewController.m */,
+			);
+			name = "Manual Line Breaking";
+			sourceTree = "<group>";
+		};
 		A5D17E431D1780C600F06F57 /* AFCollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1710,8 @@
 				A5986A9C1DC1F37B0060A14B /* Columnar */,
 				A5986AA31DC1F3FE0060A14B /* Layout Image */,
 				A5986AAD1DC1F5B90060A14B /* Basic Paraphrase */,
+				A5CE94491E038357002533B6 /* Manual Line Breaking */,
+				A5BFBD961E03C6C200FCADF5 /* Custom */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
@@ -2868,11 +2904,15 @@
 				A5DA1D291C0055E700521A7E /* main.m in Sources */,
 				A5549DBB1C008B5D0094F4CA /* KSCTColumnView.m in Sources */,
 				A5CD68AB1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m in Sources */,
+				A5BFBD991E03C6DA00FCADF5 /* CTPGCustomView.m in Sources */,
+				A5CE94481E038352002533B6 /* CTPGManualLineBreakingViewController.m in Sources */,
 				A5986AA21DC1F3F80060A14B /* CTPGLayoutImageView.m in Sources */,
 				A51C43601DBF4EC900201AD6 /* CTPGSimpleTextView.m in Sources */,
+				A5BFBD9C1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m in Sources */,
 				A5CD68A51DBF48D2008A1132 /* CTPGTableViewController.m in Sources */,
 				A5986A9F1DC1F3E70060A14B /* CTPGLayoutImageViewController.m in Sources */,
 				A5986A981DC1F3560060A14B /* CTPGColumnarView.m in Sources */,
+				A5BFBD951E03C6BC00FCADF5 /* CTPGCustomViewController.m in Sources */,
 				A5986AA61DC1F4900060A14B /* CTPGLayoutParagraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

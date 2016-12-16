@@ -25,23 +25,42 @@
     
     CFStringRef keys[] = { kCTForegroundColorAttributeName,kCTFontAttributeName };
     CFTypeRef values[] = { [UIColor blueColor].CGColor,font};
+    assert(keys[0]);
+    CFDictionaryRef attributes = CFDictionaryCreate(kCFAllocatorDefault, (const void**)&keys,
+                                                   (const void**)&values, sizeof(keys) / sizeof(keys[0]),
+                                                   &kCFTypeDictionaryKeyCallBacks,
+                                                   &kCFTypeDictionaryValueCallBacks);
     
-    CFDictionaryRef attributes =
-    CFDictionaryCreate(kCFAllocatorDefault, (const void**)&keys,
-                       (const void**)&values, sizeof(keys) / sizeof(keys[0]),
-                       &kCFTypeDictionaryKeyCallBacks,
-                       &kCFTypeDictionaryValueCallBacks);
-    
-    CFAttributedStringRef attrString = CFAttributedStringCreate(kCFAllocatorDefault, string, attributes);
+    CFAttributedStringRef attributedString = CFAttributedStringCreate(kCFAllocatorDefault, string, attributes);
     CFRelease(string);
     CFRelease(attributes);
     
-    CTLineRef line = CTLineCreateWithAttributedString(attrString);
-    
+    CTLineRef line = CTLineCreateWithAttributedString(attributedString);
+    CGSize targetSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
+    CGRect textBounds = [(__bridge_transfer NSAttributedString *)attributedString boundingRectWithSize:targetSize
+                                                                                         options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin
+                                                                                         context:NULL];
+    NSLog(@"%s textBounds:%@",__PRETTY_FUNCTION__,NSStringFromCGRect(textBounds));
+    CGRect lineBounds = CTLineGetBoundsWithOptions(line, kNilOptions);//kCTLineBoundsUseGlyphPathBounds | kCTLineBoundsUseOpticalBounds);
+    NSLog(@"%s lineBounds:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(lineBounds));
     // Set text position and draw the line into the graphics context
-    CGContextSetTextPosition(context, 10.0, 100.0);
+    CGContextSetTextPosition(context, 10.0, 10.0);
     CTLineDraw(line, context);
     CFRelease(line);
+
+/*
+//    lineBounds = CTLineGetBoundsWithOptions(line, kCTLineBoundsExcludeTypographicShifts);
+//    NSLog(@"%s lineBounds:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(lineBounds));
+    
+    lineBounds = CTLineGetBoundsWithOptions(line, kCTLineBoundsUseHangingPunctuation);
+    NSLog(@"%s lineBounds:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(lineBounds));
+    
+    lineBounds = CTLineGetBoundsWithOptions(line, kCTLineBoundsUseGlyphPathBounds);
+    NSLog(@"%s lineBounds:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(lineBounds));
+    
+    lineBounds = CTLineGetBoundsWithOptions(line, kCTLineBoundsUseOpticalBounds);
+    NSLog(@"%s lineBounds:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(lineBounds));
+  */
 }
 
 
