@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ATViewControllerA : UITableViewController <UIViewControllerTransitioningDelegate>
+@interface ATViewControllerA : UIViewController <UIViewControllerTransitioningDelegate>
 
 @end

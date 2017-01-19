@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CTPGPropertyWithParaphrase;
 @interface CTPGCustomView : UIView
-
+@property (strong, nonatomic) CTPGPropertyWithParaphrase *propertyWithParaphrase;
 @end

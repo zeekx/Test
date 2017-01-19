@@ -112,7 +112,7 @@
             startingLineNumber = "119"
             endingLineNumber = "119"
             landmarkName = "-attrStringFromMarkup:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,7 +128,7 @@
             startingLineNumber = "109"
             endingLineNumber = "109"
             landmarkName = "-attrStringFromMarkup:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

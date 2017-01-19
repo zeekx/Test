@@ -63,7 +63,7 @@
     NSLog(@"%s PathBoundingBox:%@",__PRETTY_FUNCTION__, NSStringFromCGRect(PathBoundingBox));
     CGMutablePathRef path = CGPathCreateMutable();
     CGRect bounds = self.bounds;
-    bounds = CGRectMake(20, 20, 200, 200);
+    bounds = CGRectMake(20, 200, 200, 200);
     //    bounds.origin = CGPointMake(10, 20);
     //    bounds = self.bounds;
     CGPathAddRect(path, NULL, bounds);

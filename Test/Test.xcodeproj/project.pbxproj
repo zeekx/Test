@@ -238,8 +238,16 @@
 		A5BFBD951E03C6BC00FCADF5 /* CTPGCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD941E03C6BC00FCADF5 /* CTPGCustomViewController.m */; };
 		A5BFBD991E03C6DA00FCADF5 /* CTPGCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD981E03C6DA00FCADF5 /* CTPGCustomView.m */; };
 		A5BFBD9C1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFBD9B1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m */; };
+		A5C23C7C1E07C63C0030DF16 /* CTPGNonRectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C23C7B1E07C63C0030DF16 /* CTPGNonRectangleView.m */; };
+		A5C23C801E07C6560030DF16 /* CTPGNonRectangleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C23C7F1E07C6560030DF16 /* CTPGNonRectangleViewController.m */; };
 		A5C2D66C1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D66B1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m */; };
 		A5C2D6711D66F3FA0036DB52 /* ATDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D66F1D66F3FA0036DB52 /* ATDecorationView.m */; };
+		A5C2D77F1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D77E1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.m */; };
+		A5C2D7821E26528600AD63CB /* ATDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D7811E26528600AD63CB /* ATDismissTransition.m */; };
+		A5C2D7851E26534F00AD63CB /* ATViewControllerAGes.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D7841E26534F00AD63CB /* ATViewControllerAGes.m */; };
+		A5C2D7891E26536D00AD63CB /* ATViewControllerBGes.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D7881E26536D00AD63CB /* ATViewControllerBGes.m */; };
+		A5C2D78C1E27191F00AD63CB /* ATPresentTranstion.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D78B1E27191F00AD63CB /* ATPresentTranstion.m */; };
+		A5C2D78F1E27192D00AD63CB /* ATTransation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C2D78E1E27192D00AD63CB /* ATTransation.m */; };
 		A5CD68A51DBF48D2008A1132 /* CTPGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68A41DBF48D2008A1132 /* CTPGTableViewController.m */; };
 		A5CD68AB1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CD68AA1DBF4B6F008A1132 /* CTPGLayoutParagraphView.m */; };
 		A5CE94481E038352002533B6 /* CTPGManualLineBreakingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CE94471E038352002533B6 /* CTPGManualLineBreakingViewController.m */; };
@@ -659,10 +667,26 @@
 		A5BFBD981E03C6DA00FCADF5 /* CTPGCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGCustomView.m; sourceTree = "<group>"; };
 		A5BFBD9A1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGPropertyWithParaphrase.h; sourceTree = "<group>"; };
 		A5BFBD9B1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGPropertyWithParaphrase.m; sourceTree = "<group>"; };
+		A5C23C7A1E07C63C0030DF16 /* CTPGNonRectangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGNonRectangleView.h; sourceTree = "<group>"; };
+		A5C23C7B1E07C63C0030DF16 /* CTPGNonRectangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGNonRectangleView.m; sourceTree = "<group>"; };
+		A5C23C7E1E07C6560030DF16 /* CTPGNonRectangleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGNonRectangleViewController.h; sourceTree = "<group>"; };
+		A5C23C7F1E07C6560030DF16 /* CTPGNonRectangleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGNonRectangleViewController.m; sourceTree = "<group>"; };
 		A5C2D66B1D66F2D60036DB52 /* AFCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		A5C2D66D1D66F2FB0036DB52 /* AFCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		A5C2D66E1D66F3FA0036DB52 /* ATDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATDecorationView.h; sourceTree = "<group>"; };
 		A5C2D66F1D66F3FA0036DB52 /* ATDecorationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATDecorationView.m; sourceTree = "<group>"; };
+		A5C2D77D1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATGesturePercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		A5C2D77E1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATGesturePercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		A5C2D7801E26528600AD63CB /* ATDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATDismissTransition.h; sourceTree = "<group>"; };
+		A5C2D7811E26528600AD63CB /* ATDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATDismissTransition.m; sourceTree = "<group>"; };
+		A5C2D7831E26534F00AD63CB /* ATViewControllerAGes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATViewControllerAGes.h; sourceTree = "<group>"; };
+		A5C2D7841E26534F00AD63CB /* ATViewControllerAGes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATViewControllerAGes.m; sourceTree = "<group>"; };
+		A5C2D7871E26536D00AD63CB /* ATViewControllerBGes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATViewControllerBGes.h; sourceTree = "<group>"; };
+		A5C2D7881E26536D00AD63CB /* ATViewControllerBGes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATViewControllerBGes.m; sourceTree = "<group>"; };
+		A5C2D78A1E27191F00AD63CB /* ATPresentTranstion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATPresentTranstion.h; sourceTree = "<group>"; };
+		A5C2D78B1E27191F00AD63CB /* ATPresentTranstion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATPresentTranstion.m; sourceTree = "<group>"; };
+		A5C2D78D1E27192D00AD63CB /* ATTransation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTransation.h; sourceTree = "<group>"; };
+		A5C2D78E1E27192D00AD63CB /* ATTransation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTransation.m; sourceTree = "<group>"; };
 		A5CD68A31DBF48D2008A1132 /* CTPGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGTableViewController.h; sourceTree = "<group>"; };
 		A5CD68A41DBF48D2008A1132 /* CTPGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPGTableViewController.m; sourceTree = "<group>"; };
 		A5CD68A91DBF4B6F008A1132 /* CTPGLayoutParagraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPGLayoutParagraphView.h; sourceTree = "<group>"; };
@@ -1606,6 +1630,36 @@
 			name = Custom;
 			sourceTree = "<group>";
 		};
+		A5C23C7D1E07C6410030DF16 /* Non Rectangle */ = {
+			isa = PBXGroup;
+			children = (
+				A5C23C7A1E07C63C0030DF16 /* CTPGNonRectangleView.h */,
+				A5C23C7B1E07C63C0030DF16 /* CTPGNonRectangleView.m */,
+				A5C23C7E1E07C6560030DF16 /* CTPGNonRectangleViewController.h */,
+				A5C23C7F1E07C6560030DF16 /* CTPGNonRectangleViewController.m */,
+			);
+			name = "Non Rectangle";
+			sourceTree = "<group>";
+		};
+		A5C2D7861E26535C00AD63CB /* Ges */ = {
+			isa = PBXGroup;
+			children = (
+				A5C2D7831E26534F00AD63CB /* ATViewControllerAGes.h */,
+				A5C2D7841E26534F00AD63CB /* ATViewControllerAGes.m */,
+				A5C2D77D1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.h */,
+				A5C2D77E1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.m */,
+				A5C2D7801E26528600AD63CB /* ATDismissTransition.h */,
+				A5C2D7811E26528600AD63CB /* ATDismissTransition.m */,
+				A5C2D7871E26536D00AD63CB /* ATViewControllerBGes.h */,
+				A5C2D7881E26536D00AD63CB /* ATViewControllerBGes.m */,
+				A5C2D78A1E27191F00AD63CB /* ATPresentTranstion.h */,
+				A5C2D78B1E27191F00AD63CB /* ATPresentTranstion.m */,
+				A5C2D78D1E27192D00AD63CB /* ATTransation.h */,
+				A5C2D78E1E27192D00AD63CB /* ATTransation.m */,
+			);
+			name = Ges;
+			sourceTree = "<group>";
+		};
 		A5CE94491E038357002533B6 /* Manual Line Breaking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,6 +1766,7 @@
 				A5986AAD1DC1F5B90060A14B /* Basic Paraphrase */,
 				A5CE94491E038357002533B6 /* Manual Line Breaking */,
 				A5BFBD961E03C6C200FCADF5 /* Custom */,
+				A5C23C7D1E07C6410030DF16 /* Non Rectangle */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
@@ -1744,6 +1799,7 @@
 		A5E1088B1D2FA71200BAC167 /* ViewControllerTransition */ = {
 			isa = PBXGroup;
 			children = (
+				A5C2D7861E26535C00AD63CB /* Ges */,
 				A5E1088F1D2FA71200BAC167 /* AppDelegate.h */,
 				A5E108901D2FA71200BAC167 /* AppDelegate.m */,
 				A5E108951D2FA71200BAC167 /* Main.storyboard */,
@@ -2899,6 +2955,7 @@
 				A5DA1D2F1C0055E700521A7E /* ViewController.m in Sources */,
 				A5986A9B1DC1F3730060A14B /* CTPGColumnarViewController.m in Sources */,
 				A5986AA91DC1F59C0060A14B /* CTPGBasicParaphraseViewController.m in Sources */,
+				A5C23C801E07C6560030DF16 /* CTPGNonRectangleViewController.m in Sources */,
 				A5549DB81C0086470094F4CA /* KSCTView.m in Sources */,
 				A5DA1D2C1C0055E700521A7E /* AppDelegate.m in Sources */,
 				A5DA1D291C0055E700521A7E /* main.m in Sources */,
@@ -2911,6 +2968,7 @@
 				A5BFBD9C1E03FEFE00FCADF5 /* CTPGPropertyWithParaphrase.m in Sources */,
 				A5CD68A51DBF48D2008A1132 /* CTPGTableViewController.m in Sources */,
 				A5986A9F1DC1F3E70060A14B /* CTPGLayoutImageViewController.m in Sources */,
+				A5C23C7C1E07C63C0030DF16 /* CTPGNonRectangleView.m in Sources */,
 				A5986A981DC1F3560060A14B /* CTPGColumnarView.m in Sources */,
 				A5BFBD951E03C6BC00FCADF5 /* CTPGCustomViewController.m in Sources */,
 				A5986AA61DC1F4900060A14B /* CTPGLayoutParagraphViewController.m in Sources */,
@@ -2921,11 +2979,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5C2D78F1E27192D00AD63CB /* ATTransation.m in Sources */,
+				A5C2D77F1E2650BF00AD63CB /* ATGesturePercentDrivenInteractiveTransition.m in Sources */,
 				A5E108911D2FA71200BAC167 /* AppDelegate.m in Sources */,
 				A5E1088E1D2FA71200BAC167 /* main.m in Sources */,
+				A5C2D7821E26528600AD63CB /* ATDismissTransition.m in Sources */,
 				A5E108A31D2FA7A000BAC167 /* ATViewControllerA.m in Sources */,
+				A5C2D7891E26536D00AD63CB /* ATViewControllerBGes.m in Sources */,
+				A5C2D7851E26534F00AD63CB /* ATViewControllerAGes.m in Sources */,
 				A5E108A61D2FA7AE00BAC167 /* ATViewControllerB.m in Sources */,
 				A5E108A91D2FA80000BAC167 /* ATViewControllerAnimator.m in Sources */,
+				A5C2D78C1E27191F00AD63CB /* ATPresentTranstion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

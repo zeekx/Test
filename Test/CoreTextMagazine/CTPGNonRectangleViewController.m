@@ -1,26 +1,22 @@
 //
-//  ATViewControllerB.m
+//  CTPGNonRectangleViewController.m
 //  Test
 //
-//  Created by yubinqiang on 16/7/8.
+//  Created by yubinqiang on 16/12/19.
 //  Copyright © 2016年 Zeek. All rights reserved.
 //
 
-#import "ATViewControllerB.h"
+#import "CTPGNonRectangleViewController.h"
 
-@interface ATViewControllerB ()
+@interface CTPGNonRectangleViewController ()
 
 @end
 
-@implementation ATViewControllerB
+@implementation CTPGNonRectangleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-- (IBAction)handleCloseButtonTouchUpInside:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES
-                                                  completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {
