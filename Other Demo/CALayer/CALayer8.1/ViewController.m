@@ -43,6 +43,7 @@
 - (void)animationDidStop:(CABasicAnimation*)anim finished:(BOOL)flag {
     if (flag) {
         [CATransaction setDisableActions:YES];
+//        [CATransaction setAnimationDuration:.26 * 3];
         [CATransaction begin];
         self.colorLayer.backgroundColor = (__bridge CGColorRef)anim.toValue;
         [CATransaction commit];

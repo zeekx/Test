@@ -1,16 +1,14 @@
 //
 //  ViewController.m
-//  CALayer7.1
+//  CALayer7.2
 //
-//  Created by yubinqiang on 16/2/17.
-//  Copyright © 2016年 Kingsoft. All rights reserved.
+//  Created by 51Talk_iGS on 2017/4/21.
+//  Copyright © 2017年 Kingsoft. All rights reserved.
 //
-
 
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UIView *colorView;
 @property (strong, nonatomic) CALayer *layer;
 @end
@@ -28,15 +26,15 @@
 }
 
 - (IBAction)changeColor:(UIButton *)sender {
+    [CATransaction begin];
+    NSLog(@"%s duration:%f",__PRETTY_FUNCTION__, [CATransaction animationDuration]);
+    [CATransaction setAnimationDuration:.25 * 10];
     CGFloat red = arc4random() / (CGFloat)INT_MAX;
     CGFloat green = arc4random() / (CGFloat)INT_MAX;
     CGFloat blue = arc4random() / (CGFloat)INT_MAX;
     self.layer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
+    [CATransaction commit];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

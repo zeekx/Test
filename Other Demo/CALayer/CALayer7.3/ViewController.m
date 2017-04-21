@@ -34,25 +34,28 @@
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromLeft;
     NSMutableDictionary *mutableDictionary = self.layer.actions.mutableCopy;
+    if (mutableDictionary == nil) {
+        mutableDictionary = [NSMutableDictionary dictionary];
+    }
     [mutableDictionary setValue:transition forKey:@"backgroundColor"];
     self.layer.actions = mutableDictionary;
-    self.colorView.layer.actions = @{@"backgroundColor":transition};
-//    [self.colorView.layer addSublayer:self.layer];
+//    self.colorView.layer.actions = @{@"backgroundColor":transition};
+    [self.colorView.layer addSublayer:self.layer];
     self.transition = transition;
 }
 
 - (IBAction)changeColor:(UIButton *)sender {
     [CATransaction begin];
-    [CATransaction setAnimationDuration:2.6];
+    [CATransaction setAnimationDuration:.26];
 //    [CATransaction setCompletionBlock:^{
 //        self.colorView.layer.affineTransform = CGAffineTransformRotate(self.colorView.layer.affineTransform, M_PI_2);
 //    }];
-//    CGFloat red = arc4random() / (CGFloat)INT_MAX;
-//    CGFloat green = arc4random() / (CGFloat)INT_MAX;
-//    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
-//    self.colorView.layer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
+    CGFloat red = arc4random() / (CGFloat)INT_MAX;
+    CGFloat green = arc4random() / (CGFloat)INT_MAX;
+    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
+    self.layer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
 //    self.colorView.layer.opacity = 1;
-    [self.colorView.layer addAnimation:self.transition forKey:@"opacity"];
+//    [self.colorView.layer addAnimation:self.transition forKey:@"opacity"];
     [CATransaction commit];
 }
 
