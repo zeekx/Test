@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>CALayer7.3.2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>CALayer7.3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -88,6 +93,11 @@
 			<true/>
 		</dict>
 		<key>0AEE109D1EAA07DF005917E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0AEE10B81EAA12BB005917E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
