@@ -15,4 +15,5 @@
 
 @interface ATViewControllerBGes : UIViewController
 @property (weak  , nonatomic) id<ATViewControllerBGesDelegate> dismissDelegate;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @end

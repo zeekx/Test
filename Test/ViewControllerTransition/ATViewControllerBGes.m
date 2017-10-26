@@ -19,6 +19,8 @@
     [super viewDidLoad];
     self.title = @"B";
     self.dismissTransition = [[ATDismissTransition alloc] init];
+    self.view.backgroundColor = [UIColor colorWithWhite:1 alpha:.6];
+    self.button.backgroundColor = [UIColor blueColor];
 }
 
 - (void)didReceiveMemoryWarning {

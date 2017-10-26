@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *durationTF;
+@property (weak, nonatomic) IBOutlet UITextField *rcTF;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @end
 
