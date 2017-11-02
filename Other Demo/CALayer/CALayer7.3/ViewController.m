@@ -56,7 +56,12 @@
     self.layer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
 //    self.colorView.layer.opacity = 1;
 //    [self.colorView.layer addAnimation:self.transition forKey:@"opacity"];
+    NSLog(@"action commit-outside :%@",[self.view.layer actionForKey:@"backgroundColor"]);
     [CATransaction commit];
+    NSLog(@"action commit-outside :%@",[self.view.layer actionForKey:@"backgroundColor"]);
+//    print("action commit-outside :\(String(describing: self.view.layer.action(forKey: "backgroundColor")))")
+    [CATransaction commit];
+
 }
 
 - (void)didReceiveMemoryWarning {

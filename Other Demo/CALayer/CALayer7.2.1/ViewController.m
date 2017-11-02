@@ -36,7 +36,7 @@
     [CATransaction setCompletionBlock:^{
         self.layer.affineTransform = CGAffineTransformRotate(self.layer.affineTransform, M_PI_2);
     }];
-    
+
     CGFloat red = arc4random() / (CGFloat)INT_MAX;
     CGFloat green = arc4random() / (CGFloat)INT_MAX;
     CGFloat blue = arc4random() / (CGFloat)INT_MAX;

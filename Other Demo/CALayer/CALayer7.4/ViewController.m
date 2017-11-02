@@ -32,10 +32,15 @@
         self.colorLayer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
         
     } else {
+        NSLog(@"-position:%@", NSStringFromCGPoint(self.colorLayer.position));
         [CATransaction begin];
         [CATransaction setAnimationDuration:5];
         self.colorLayer.position = touchPoint;
         [CATransaction commit];
+        NSLog(@"+position:%@", NSStringFromCGPoint(self.colorLayer.position));
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"pos:%@",NSStringFromCGPoint(self.colorLayer.presentationLayer.position));
+        });
     }
 }
 
